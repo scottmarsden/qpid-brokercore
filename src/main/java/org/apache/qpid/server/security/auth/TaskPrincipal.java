@@ -31,12 +31,22 @@ public class TaskPrincipal implements Principal, Serializable
 
     public TaskPrincipal(final String name)
     {
-        _name = name;
+        String cipherName8142 =  "DES";
+		try{
+			System.out.println("cipherName-8142" + javax.crypto.Cipher.getInstance(cipherName8142).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_name = name;
     }
 
     @Override
     public String getName()
     {
-        return _name;
+        String cipherName8143 =  "DES";
+		try{
+			System.out.println("cipherName-8143" + javax.crypto.Cipher.getInstance(cipherName8143).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _name;
     }
 }

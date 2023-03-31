@@ -45,17 +45,32 @@ public class BindingMessages
 
     static
     {
-        Locale locale = Locale.US;
+        String cipherName15560 =  "DES";
+		try{
+			System.out.println("cipherName-15560" + javax.crypto.Cipher.getInstance(cipherName15560).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Locale locale = Locale.US;
         String localeSetting = System.getProperty("qpid.broker_locale");
         if (localeSetting != null)
         {
-            String[] localeParts = localeSetting.split("_");
+            String cipherName15561 =  "DES";
+			try{
+				System.out.println("cipherName-15561" + javax.crypto.Cipher.getInstance(cipherName15561).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String[] localeParts = localeSetting.split("_");
             String language = (localeParts.length > 0 ? localeParts[0] : "");
             String country = (localeParts.length > 1 ? localeParts[1] : "");
             String variant = "";
             if (localeParts.length > 2)
             {
-                variant = localeSetting.substring(language.length() + 1 + country.length() + 1);
+                String cipherName15562 =  "DES";
+				try{
+					System.out.println("cipherName-15562" + javax.crypto.Cipher.getInstance(cipherName15562).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				variant = localeSetting.substring(language.length() + 1 + country.length() + 1);
             }
             locale = new Locale(language, country, variant);
         }
@@ -69,7 +84,12 @@ public class BindingMessages
 
     static
     {
-        LoggerFactory.getLogger(BINDING_LOG_HIERARCHY);
+        String cipherName15563 =  "DES";
+		try{
+			System.out.println("cipherName-15563" + javax.crypto.Cipher.getInstance(cipherName15563).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		LoggerFactory.getLogger(BINDING_LOG_HIERARCHY);
         LoggerFactory.getLogger(CREATED_LOG_HIERARCHY);
         LoggerFactory.getLogger(DELETED_LOG_HIERARCHY);
         LoggerFactory.getLogger(OPERATION_LOG_HIERARCHY);
@@ -86,7 +106,12 @@ public class BindingMessages
      */
     public static LogMessage CREATED(String param1)
     {
-        String rawMessage = _messages.getString("CREATED");
+        String cipherName15564 =  "DES";
+		try{
+			System.out.println("cipherName-15564" + javax.crypto.Cipher.getInstance(cipherName15564).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String rawMessage = _messages.getString("CREATED");
 
         final Object[] messageArguments = {param1};
         // Create a new MessageFormat to ensure thread safety.
@@ -100,25 +125,50 @@ public class BindingMessages
             @Override
             public String toString()
             {
-                return message;
+                String cipherName15565 =  "DES";
+				try{
+					System.out.println("cipherName-15565" + javax.crypto.Cipher.getInstance(cipherName15565).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return message;
             }
 
             @Override
             public String getLogHierarchy()
             {
-                return CREATED_LOG_HIERARCHY;
+                String cipherName15566 =  "DES";
+				try{
+					System.out.println("cipherName-15566" + javax.crypto.Cipher.getInstance(cipherName15566).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return CREATED_LOG_HIERARCHY;
             }
 
             @Override
             public boolean equals(final Object o)
             {
-                if (this == o)
+                String cipherName15567 =  "DES";
+				try{
+					System.out.println("cipherName-15567" + javax.crypto.Cipher.getInstance(cipherName15567).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (this == o)
                 {
-                    return true;
+                    String cipherName15568 =  "DES";
+					try{
+						System.out.println("cipherName-15568" + javax.crypto.Cipher.getInstance(cipherName15568).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return true;
                 }
                 if (o == null || getClass() != o.getClass())
                 {
-                    return false;
+                    String cipherName15569 =  "DES";
+					try{
+						System.out.println("cipherName-15569" + javax.crypto.Cipher.getInstance(cipherName15569).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return false;
                 }
 
                 final LogMessage that = (LogMessage) o;
@@ -130,7 +180,12 @@ public class BindingMessages
             @Override
             public int hashCode()
             {
-                int result = toString().hashCode();
+                String cipherName15570 =  "DES";
+				try{
+					System.out.println("cipherName-15570" + javax.crypto.Cipher.getInstance(cipherName15570).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int result = toString().hashCode();
                 result = 31 * result + getLogHierarchy().hashCode();
                 return result;
             }
@@ -146,7 +201,12 @@ public class BindingMessages
      */
     public static LogMessage DELETED(String param1)
     {
-        String rawMessage = _messages.getString("DELETED");
+        String cipherName15571 =  "DES";
+		try{
+			System.out.println("cipherName-15571" + javax.crypto.Cipher.getInstance(cipherName15571).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String rawMessage = _messages.getString("DELETED");
 
         final Object[] messageArguments = {param1};
         // Create a new MessageFormat to ensure thread safety.
@@ -160,25 +220,50 @@ public class BindingMessages
             @Override
             public String toString()
             {
-                return message;
+                String cipherName15572 =  "DES";
+				try{
+					System.out.println("cipherName-15572" + javax.crypto.Cipher.getInstance(cipherName15572).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return message;
             }
 
             @Override
             public String getLogHierarchy()
             {
-                return DELETED_LOG_HIERARCHY;
+                String cipherName15573 =  "DES";
+				try{
+					System.out.println("cipherName-15573" + javax.crypto.Cipher.getInstance(cipherName15573).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return DELETED_LOG_HIERARCHY;
             }
 
             @Override
             public boolean equals(final Object o)
             {
-                if (this == o)
+                String cipherName15574 =  "DES";
+				try{
+					System.out.println("cipherName-15574" + javax.crypto.Cipher.getInstance(cipherName15574).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (this == o)
                 {
-                    return true;
+                    String cipherName15575 =  "DES";
+					try{
+						System.out.println("cipherName-15575" + javax.crypto.Cipher.getInstance(cipherName15575).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return true;
                 }
                 if (o == null || getClass() != o.getClass())
                 {
-                    return false;
+                    String cipherName15576 =  "DES";
+					try{
+						System.out.println("cipherName-15576" + javax.crypto.Cipher.getInstance(cipherName15576).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return false;
                 }
 
                 final LogMessage that = (LogMessage) o;
@@ -190,7 +275,12 @@ public class BindingMessages
             @Override
             public int hashCode()
             {
-                int result = toString().hashCode();
+                String cipherName15577 =  "DES";
+				try{
+					System.out.println("cipherName-15577" + javax.crypto.Cipher.getInstance(cipherName15577).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int result = toString().hashCode();
                 result = 31 * result + getLogHierarchy().hashCode();
                 return result;
             }
@@ -206,7 +296,12 @@ public class BindingMessages
      */
     public static LogMessage OPERATION(String param1)
     {
-        String rawMessage = _messages.getString("OPERATION");
+        String cipherName15578 =  "DES";
+		try{
+			System.out.println("cipherName-15578" + javax.crypto.Cipher.getInstance(cipherName15578).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String rawMessage = _messages.getString("OPERATION");
 
         final Object[] messageArguments = {param1};
         // Create a new MessageFormat to ensure thread safety.
@@ -220,25 +315,50 @@ public class BindingMessages
             @Override
             public String toString()
             {
-                return message;
+                String cipherName15579 =  "DES";
+				try{
+					System.out.println("cipherName-15579" + javax.crypto.Cipher.getInstance(cipherName15579).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return message;
             }
 
             @Override
             public String getLogHierarchy()
             {
-                return OPERATION_LOG_HIERARCHY;
+                String cipherName15580 =  "DES";
+				try{
+					System.out.println("cipherName-15580" + javax.crypto.Cipher.getInstance(cipherName15580).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return OPERATION_LOG_HIERARCHY;
             }
 
             @Override
             public boolean equals(final Object o)
             {
-                if (this == o)
+                String cipherName15581 =  "DES";
+				try{
+					System.out.println("cipherName-15581" + javax.crypto.Cipher.getInstance(cipherName15581).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (this == o)
                 {
-                    return true;
+                    String cipherName15582 =  "DES";
+					try{
+						System.out.println("cipherName-15582" + javax.crypto.Cipher.getInstance(cipherName15582).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return true;
                 }
                 if (o == null || getClass() != o.getClass())
                 {
-                    return false;
+                    String cipherName15583 =  "DES";
+					try{
+						System.out.println("cipherName-15583" + javax.crypto.Cipher.getInstance(cipherName15583).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return false;
                 }
 
                 final LogMessage that = (LogMessage) o;
@@ -250,7 +370,12 @@ public class BindingMessages
             @Override
             public int hashCode()
             {
-                int result = toString().hashCode();
+                String cipherName15584 =  "DES";
+				try{
+					System.out.println("cipherName-15584" + javax.crypto.Cipher.getInstance(cipherName15584).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				int result = toString().hashCode();
                 result = 31 * result + getLogHierarchy().hashCode();
                 return result;
             }
@@ -260,6 +385,11 @@ public class BindingMessages
 
     private BindingMessages()
     {
+		String cipherName15585 =  "DES";
+		try{
+			System.out.println("cipherName-15585" + javax.crypto.Cipher.getInstance(cipherName15585).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 }

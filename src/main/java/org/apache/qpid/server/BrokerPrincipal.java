@@ -34,26 +34,51 @@ public class BrokerPrincipal implements Principal, Serializable
 
     public BrokerPrincipal(Broker<?> broker)
     {
-        _broker = broker;
+        String cipherName9308 =  "DES";
+		try{
+			System.out.println("cipherName-9308" + javax.crypto.Cipher.getInstance(cipherName9308).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_broker = broker;
         _name = "broker:" + broker.getName() + "-" + broker.getId();
     }
 
     @Override
     public String getName()
     {
-        return _name;
+        String cipherName9309 =  "DES";
+		try{
+			System.out.println("cipherName-9309" + javax.crypto.Cipher.getInstance(cipherName9309).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _name;
     }
 
     @Override
     public boolean equals(Object o)
     {
-        if (this == o)
+        String cipherName9310 =  "DES";
+		try{
+			System.out.println("cipherName-9310" + javax.crypto.Cipher.getInstance(cipherName9310).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (this == o)
         {
-            return true;
+            String cipherName9311 =  "DES";
+			try{
+				System.out.println("cipherName-9311" + javax.crypto.Cipher.getInstance(cipherName9311).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
         if (o == null || getClass() != o.getClass())
         {
-            return false;
+            String cipherName9312 =  "DES";
+			try{
+				System.out.println("cipherName-9312" + javax.crypto.Cipher.getInstance(cipherName9312).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
 
         BrokerPrincipal that = (BrokerPrincipal) o;
@@ -63,6 +88,11 @@ public class BrokerPrincipal implements Principal, Serializable
     @Override
     public int hashCode()
     {
-        return _broker.hashCode();
+        String cipherName9313 =  "DES";
+		try{
+			System.out.println("cipherName-9313" + javax.crypto.Cipher.getInstance(cipherName9313).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _broker.hashCode();
     }
 }

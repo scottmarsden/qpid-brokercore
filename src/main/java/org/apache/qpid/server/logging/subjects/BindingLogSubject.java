@@ -41,7 +41,12 @@ public class BindingLogSubject extends AbstractLogSubject
     public BindingLogSubject(String routingKey, Exchange<?> exchange,
                              Queue<?> queue)
     {
-        VirtualHost<?> virtualHost = queue.getVirtualHost();
+        String cipherName15760 =  "DES";
+		try{
+			System.out.println("cipherName-15760" + javax.crypto.Cipher.getInstance(cipherName15760).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		VirtualHost<?> virtualHost = queue.getVirtualHost();
         setLogStringWithFormat(BINDING_FORMAT,
                                virtualHost.getName(),
                                exchange.getType(),

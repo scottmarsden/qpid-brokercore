@@ -37,6 +37,11 @@ public abstract class OrderedQueueEntry extends QueueEntryImpl
     public OrderedQueueEntry(OrderedQueueEntryList queueEntryList)
     {
         super(queueEntryList);
+		String cipherName13604 =  "DES";
+		try{
+			System.out.println("cipherName-13604" + javax.crypto.Cipher.getInstance(cipherName13604).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public OrderedQueueEntry(OrderedQueueEntryList queueEntryList,
@@ -44,31 +49,61 @@ public abstract class OrderedQueueEntry extends QueueEntryImpl
                              final MessageEnqueueRecord messageEnqueueRecord)
     {
         super(queueEntryList, message, messageEnqueueRecord);
+		String cipherName13605 =  "DES";
+		try{
+			System.out.println("cipherName-13605" + javax.crypto.Cipher.getInstance(cipherName13605).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public OrderedQueueEntry getNextNode()
     {
-        return _next;
+        String cipherName13606 =  "DES";
+		try{
+			System.out.println("cipherName-13606" + javax.crypto.Cipher.getInstance(cipherName13606).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _next;
     }
 
     @Override
     public OrderedQueueEntry getNextValidEntry()
     {
 
-        OrderedQueueEntry next = getNextNode();
+        String cipherName13607 =  "DES";
+		try{
+			System.out.println("cipherName-13607" + javax.crypto.Cipher.getInstance(cipherName13607).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		OrderedQueueEntry next = getNextNode();
         while(next != null && next.isDeleted())
         {
 
-            final OrderedQueueEntry newNext = next.getNextNode();
+            String cipherName13608 =  "DES";
+			try{
+				System.out.println("cipherName-13608" + javax.crypto.Cipher.getInstance(cipherName13608).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final OrderedQueueEntry newNext = next.getNextNode();
             if(newNext != null)
             {
-                OrderedQueueEntryList._nextUpdater.compareAndSet(this,next, newNext);
+                String cipherName13609 =  "DES";
+				try{
+					System.out.println("cipherName-13609" + javax.crypto.Cipher.getInstance(cipherName13609).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				OrderedQueueEntryList._nextUpdater.compareAndSet(this,next, newNext);
                 next = getNextNode();
             }
             else
             {
-                next = null;
+                String cipherName13610 =  "DES";
+				try{
+					System.out.println("cipherName-13610" + javax.crypto.Cipher.getInstance(cipherName13610).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				next = null;
             }
 
         }

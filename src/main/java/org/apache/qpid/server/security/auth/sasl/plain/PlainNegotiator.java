@@ -45,27 +45,52 @@ public class PlainNegotiator implements SaslNegotiator
 
     public PlainNegotiator(final UsernamePasswordAuthenticationProvider usernamePasswordAuthenticationProvider)
     {
-        _usernamePasswordAuthenticationProvider = usernamePasswordAuthenticationProvider;
+        String cipherName7294 =  "DES";
+		try{
+			System.out.println("cipherName-7294" + javax.crypto.Cipher.getInstance(cipherName7294).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_usernamePasswordAuthenticationProvider = usernamePasswordAuthenticationProvider;
     }
 
     @Override
     public AuthenticationResult handleResponse(final byte[] response)
     {
-        if (_state == State.COMPLETE)
+        String cipherName7295 =  "DES";
+		try{
+			System.out.println("cipherName-7295" + javax.crypto.Cipher.getInstance(cipherName7295).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (_state == State.COMPLETE)
         {
-            return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
+            String cipherName7296 =  "DES";
+			try{
+				System.out.println("cipherName-7296" + javax.crypto.Cipher.getInstance(cipherName7296).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
                                             new IllegalStateException("Multiple Authentications not permitted."));
         }
         else if (_state == State.INITIAL && (response == null || response.length == 0))
         {
-            _state = State.CHALLENGE_SENT;
+            String cipherName7297 =  "DES";
+			try{
+				System.out.println("cipherName-7297" + javax.crypto.Cipher.getInstance(cipherName7297).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_state = State.CHALLENGE_SENT;
             return new AuthenticationResult(new byte[0], AuthenticationResult.AuthenticationStatus.CONTINUE);
         }
 
         _state = State.COMPLETE;
         if (response == null || response.length == 0)
         {
-            return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
+            String cipherName7298 =  "DES";
+			try{
+				System.out.println("cipherName-7298" + javax.crypto.Cipher.getInstance(cipherName7298).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
                                             new IllegalArgumentException(
                                                     "Invalid PLAIN encoding, authzid null terminator not found"));
         }
@@ -73,14 +98,24 @@ public class PlainNegotiator implements SaslNegotiator
         int authzidNullPosition = findNullPosition(response, 0);
         if (authzidNullPosition < 0)
         {
-            return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
+            String cipherName7299 =  "DES";
+			try{
+				System.out.println("cipherName-7299" + javax.crypto.Cipher.getInstance(cipherName7299).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
                                             new IllegalArgumentException(
                                                     "Invalid PLAIN encoding, authzid null terminator not found"));
         }
         int authcidNullPosition = findNullPosition(response, authzidNullPosition + 1);
         if (authcidNullPosition < 0)
         {
-            return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
+            String cipherName7300 =  "DES";
+			try{
+				System.out.println("cipherName-7300" + javax.crypto.Cipher.getInstance(cipherName7300).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new AuthenticationResult(AuthenticationResult.AuthenticationStatus.ERROR,
                                             new IllegalArgumentException(
                                                     "Invalid PLAIN encoding, authcid null terminator not found"));
         }
@@ -96,23 +131,48 @@ public class PlainNegotiator implements SaslNegotiator
     @Override
     public void dispose()
     {
+		String cipherName7301 =  "DES";
+		try{
+			System.out.println("cipherName-7301" + javax.crypto.Cipher.getInstance(cipherName7301).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 
     @Override
     public String getAttemptedAuthenticationId()
     {
-        return _username;
+        String cipherName7302 =  "DES";
+		try{
+			System.out.println("cipherName-7302" + javax.crypto.Cipher.getInstance(cipherName7302).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _username;
     }
 
     private int findNullPosition(byte[] response, int startPosition)
     {
-        int position = startPosition;
+        String cipherName7303 =  "DES";
+		try{
+			System.out.println("cipherName-7303" + javax.crypto.Cipher.getInstance(cipherName7303).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int position = startPosition;
         while (position < response.length)
         {
-            if (response[position] == (byte) 0)
+            String cipherName7304 =  "DES";
+			try{
+				System.out.println("cipherName-7304" + javax.crypto.Cipher.getInstance(cipherName7304).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (response[position] == (byte) 0)
             {
-                return position;
+                String cipherName7305 =  "DES";
+				try{
+					System.out.println("cipherName-7305" + javax.crypto.Cipher.getInstance(cipherName7305).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return position;
             }
             position++;
         }

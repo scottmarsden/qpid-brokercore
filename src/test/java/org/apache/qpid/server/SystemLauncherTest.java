@@ -59,7 +59,12 @@ public class SystemLauncherTest extends UnitTestBase
     public void setUp() throws Exception
     {
 
-        // create empty initial configuration
+        String cipherName1799 =  "DES";
+		try{
+			System.out.println("cipherName-1799" + javax.crypto.Cipher.getInstance(cipherName1799).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		// create empty initial configuration
         Map<String,Object> initialConfig = new HashMap<>();
         initialConfig.put(ConfiguredObject.NAME, "test");
         initialConfig.put(org.apache.qpid.server.model.Broker.MODEL_VERSION, BrokerModel.MODEL_VERSION);
@@ -77,14 +82,34 @@ public class SystemLauncherTest extends UnitTestBase
     @After
     public void tearDown() throws Exception
     {
-        try
+        String cipherName1800 =  "DES";
+		try{
+			System.out.println("cipherName-1800" + javax.crypto.Cipher.getInstance(cipherName1800).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try
         {
+			String cipherName1801 =  "DES";
+			try{
+				System.out.println("cipherName-1801" + javax.crypto.Cipher.getInstance(cipherName1801).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
         finally
         {
-            if (_systemLauncher != null)
+            String cipherName1802 =  "DES";
+			try{
+				System.out.println("cipherName-1802" + javax.crypto.Cipher.getInstance(cipherName1802).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (_systemLauncher != null)
             {
-                _systemLauncher.shutdown();
+                String cipherName1803 =  "DES";
+				try{
+					System.out.println("cipherName-1803" + javax.crypto.Cipher.getInstance(cipherName1803).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				_systemLauncher.shutdown();
             }
             System.clearProperty(INITIAL_SYSTEM_PROPERTY);
             FileUtils.delete(_brokerWork, true);
@@ -96,7 +121,12 @@ public class SystemLauncherTest extends UnitTestBase
     @Test
     public void testInitialSystemPropertiesAreSetOnBrokerStartup() throws Exception
     {
-        Map<String,Object> attributes = new HashMap<>();
+        String cipherName1804 =  "DES";
+		try{
+			System.out.println("cipherName-1804" + javax.crypto.Cipher.getInstance(cipherName1804).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String,Object> attributes = new HashMap<>();
         attributes.put(SystemConfig.INITIAL_SYSTEM_PROPERTIES_LOCATION, _initialSystemProperties.getAbsolutePath());
         attributes.put(SystemConfig.INITIAL_CONFIGURATION_LOCATION, _initialConfiguration.getAbsolutePath());
         attributes.put(SystemConfig.TYPE, JsonSystemConfigImpl.SYSTEM_CONFIG_TYPE);
@@ -119,7 +149,12 @@ public class SystemLauncherTest extends UnitTestBase
     @Test
     public void testConsoleLogsOnSuccessfulStartup() throws Exception
     {
-        byte[] outputBytes = startBrokerAndCollectSystemOutput();
+        String cipherName1805 =  "DES";
+		try{
+			System.out.println("cipherName-1805" + javax.crypto.Cipher.getInstance(cipherName1805).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		byte[] outputBytes = startBrokerAndCollectSystemOutput();
         String output = new String(outputBytes);
         assertFalse("Detected unexpected Exception: " + output, output.contains("Exception"));
         assertTrue("Output does not contain Broker Ready Message",
@@ -129,7 +164,12 @@ public class SystemLauncherTest extends UnitTestBase
     @Test
     public void testConsoleLogsOnUnsuccessfulStartup() throws Exception
     {
-        Map<String,Object> initialConfig = new HashMap<>();
+        String cipherName1806 =  "DES";
+		try{
+			System.out.println("cipherName-1806" + javax.crypto.Cipher.getInstance(cipherName1806).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String,Object> initialConfig = new HashMap<>();
 
         ObjectMapper mapper = new ObjectMapper();
         String config = mapper.writeValueAsString(initialConfig);
@@ -143,13 +183,28 @@ public class SystemLauncherTest extends UnitTestBase
 
     private byte[] startBrokerAndCollectSystemOutput() throws Exception
     {
-        try(ByteArrayOutputStream out = new ByteArrayOutputStream())
+        String cipherName1807 =  "DES";
+		try{
+			System.out.println("cipherName-1807" + javax.crypto.Cipher.getInstance(cipherName1807).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try(ByteArrayOutputStream out = new ByteArrayOutputStream())
         {
 
-            PrintStream originalOutput = System.out;
+            String cipherName1808 =  "DES";
+			try{
+				System.out.println("cipherName-1808" + javax.crypto.Cipher.getInstance(cipherName1808).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			PrintStream originalOutput = System.out;
             try
             {
-                System.setOut(new PrintStream(out));
+                String cipherName1809 =  "DES";
+				try{
+					System.out.println("cipherName-1809" + javax.crypto.Cipher.getInstance(cipherName1809).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				System.setOut(new PrintStream(out));
 
                 Map<String,Object> attributes = new HashMap<>();
                 attributes.put(SystemConfig.INITIAL_CONFIGURATION_LOCATION, _initialConfiguration.getAbsolutePath());
@@ -160,7 +215,12 @@ public class SystemLauncherTest extends UnitTestBase
             }
             finally
             {
-                System.setOut(originalOutput);
+                String cipherName1810 =  "DES";
+				try{
+					System.out.println("cipherName-1810" + javax.crypto.Cipher.getInstance(cipherName1810).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				System.setOut(originalOutput);
             }
 
             return out.toByteArray();

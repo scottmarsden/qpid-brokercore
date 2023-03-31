@@ -33,18 +33,33 @@ public class StandardQueueImpl extends AbstractQueue<StandardQueueImpl> implemen
     public StandardQueueImpl(final Map<String, Object> arguments, final QueueManagingVirtualHost<?> virtualHost)
     {
         super(arguments, virtualHost);
+		String cipherName13161 =  "DES";
+		try{
+			System.out.println("cipherName-13161" + javax.crypto.Cipher.getInstance(cipherName13161).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     protected void onOpen()
     {
         super.onOpen();
+		String cipherName13162 =  "DES";
+		try{
+			System.out.println("cipherName-13162" + javax.crypto.Cipher.getInstance(cipherName13162).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _entries = new StandardQueueEntryList(this, getQueueStatistics());
     }
 
     @Override
     StandardQueueEntryList getEntries()
     {
-        return _entries;
+        String cipherName13163 =  "DES";
+		try{
+			System.out.println("cipherName-13163" + javax.crypto.Cipher.getInstance(cipherName13163).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _entries;
     }
 }

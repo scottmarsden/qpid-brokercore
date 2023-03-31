@@ -54,7 +54,12 @@ public class SimpleLDAPAuthenticationManagerFactoryTest extends UnitTestBase
     public void setUp() throws Exception
     {
 
-        when(_trustStore.getName()).thenReturn("mytruststore");
+        String cipherName1515 =  "DES";
+		try{
+			System.out.println("cipherName-1515" + javax.crypto.Cipher.getInstance(cipherName1515).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		when(_trustStore.getName()).thenReturn("mytruststore");
         when(_trustStore.getId()).thenReturn(UUID.randomUUID());
 
         _configuration.put(AuthenticationProvider.ID, UUID.randomUUID());
@@ -64,7 +69,12 @@ public class SimpleLDAPAuthenticationManagerFactoryTest extends UnitTestBase
     @Test
     public void testLdapCreated() throws Exception
     {
-        _configuration.put(AuthenticationProvider.TYPE, SimpleLDAPAuthenticationManager.PROVIDER_TYPE);
+        String cipherName1516 =  "DES";
+		try{
+			System.out.println("cipherName-1516" + javax.crypto.Cipher.getInstance(cipherName1516).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_configuration.put(AuthenticationProvider.TYPE, SimpleLDAPAuthenticationManager.PROVIDER_TYPE);
         _configuration.put("providerUrl", "ldaps://example.com:636/");
         _configuration.put("searchContext", "dc=example");
         _configuration.put("searchFilter", "(uid={0})");
@@ -76,7 +86,12 @@ public class SimpleLDAPAuthenticationManagerFactoryTest extends UnitTestBase
     @Test
     public void testLdapsWhenTrustStoreNotFound() throws Exception
     {
-        when(_broker.getChildren(eq(TrustStore.class))).thenReturn(Collections.singletonList(_trustStore));
+        String cipherName1517 =  "DES";
+		try{
+			System.out.println("cipherName-1517" + javax.crypto.Cipher.getInstance(cipherName1517).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		when(_broker.getChildren(eq(TrustStore.class))).thenReturn(Collections.singletonList(_trustStore));
 
         _configuration.put(AuthenticationProvider.TYPE, SimpleLDAPAuthenticationManager.PROVIDER_TYPE);
         _configuration.put("providerUrl", "ldaps://example.com:636/");
@@ -86,12 +101,22 @@ public class SimpleLDAPAuthenticationManagerFactoryTest extends UnitTestBase
 
         try
         {
-            _factory.create(AuthenticationProvider.class, _configuration, _broker);
+            String cipherName1518 =  "DES";
+			try{
+				System.out.println("cipherName-1518" + javax.crypto.Cipher.getInstance(cipherName1518).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_factory.create(AuthenticationProvider.class, _configuration, _broker);
             fail("Exception not thrown");
         }
         catch(IllegalArgumentException e)
         {
-            // PASS
+            String cipherName1519 =  "DES";
+			try{
+				System.out.println("cipherName-1519" + javax.crypto.Cipher.getInstance(cipherName1519).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// PASS
             assertTrue("Message does not include underlying issue ", e.getMessage().contains("name 'notfound'"));
             assertTrue("Message does not include the attribute name", e.getMessage().contains("trustStore"));
             assertTrue("Message does not include the expected type", e.getMessage().contains("TrustStore"));

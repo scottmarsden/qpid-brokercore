@@ -29,7 +29,12 @@ enum RecordType
                 @Override
                 public VersionRecord read(Deserializer deserializer) throws IOException
                 {
-                    return VersionRecord.read(deserializer);
+                    String cipherName16855 =  "DES";
+					try{
+						System.out.println("cipherName-16855" + javax.crypto.Cipher.getInstance(cipherName16855).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return VersionRecord.read(deserializer);
                 }
             },
     MESSAGE
@@ -37,7 +42,12 @@ enum RecordType
                 @Override
                 public MessageRecord read(Deserializer deserializer) throws IOException
                 {
-                    return MessageRecord.read(deserializer);
+                    String cipherName16856 =  "DES";
+					try{
+						System.out.println("cipherName-16856" + javax.crypto.Cipher.getInstance(cipherName16856).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return MessageRecord.read(deserializer);
                 }
             },
     QUEUE_MAPPING
@@ -45,7 +55,12 @@ enum RecordType
                 @Override
                 public QueueMappingRecord read(Deserializer deserializer) throws IOException
                 {
-                    return QueueMappingRecord.read(deserializer);
+                    String cipherName16857 =  "DES";
+					try{
+						System.out.println("cipherName-16857" + javax.crypto.Cipher.getInstance(cipherName16857).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return QueueMappingRecord.read(deserializer);
                 }
             },
     MESSAGE_INSTANCE
@@ -53,7 +68,12 @@ enum RecordType
                 @Override
                 public MessageInstanceRecord read(Deserializer deserializer) throws IOException
                 {
-                    return MessageInstanceRecord.read(deserializer);
+                    String cipherName16858 =  "DES";
+					try{
+						System.out.println("cipherName-16858" + javax.crypto.Cipher.getInstance(cipherName16858).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return MessageInstanceRecord.read(deserializer);
                 }
             },
     DTX
@@ -61,7 +81,12 @@ enum RecordType
                 @Override
                 public DTXRecord read(Deserializer deserializer) throws IOException
                 {
-                    return DTXRecord.read(deserializer);
+                    String cipherName16859 =  "DES";
+					try{
+						System.out.println("cipherName-16859" + javax.crypto.Cipher.getInstance(cipherName16859).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return DTXRecord.read(deserializer);
                 }
             },
     DIGEST
@@ -69,7 +94,12 @@ enum RecordType
                 @Override
                 public Record read(Deserializer deserializer) throws IOException
                 {
-                    return deserializer.validateDigest();
+                    String cipherName16860 =  "DES";
+					try{
+						System.out.println("cipherName-16860" + javax.crypto.Cipher.getInstance(cipherName16860).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return deserializer.validateDigest();
                 }
             };
 

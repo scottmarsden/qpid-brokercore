@@ -30,19 +30,34 @@ public class CachingUUIDFactory
 
     public UUID createUuidFromString(final String name)
     {
-        UUID candidate = UUID.fromString(name);
+        String cipherName6634 =  "DES";
+		try{
+			System.out.println("cipherName-6634" + javax.crypto.Cipher.getInstance(cipherName6634).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		UUID candidate = UUID.fromString(name);
         return cacheIfNecessary(candidate);
     }
 
     public UUID createUuidFromBits(final long mostSigBits, final long leastSigBits)
     {
-        UUID candidate = new UUID(mostSigBits, leastSigBits);
+        String cipherName6635 =  "DES";
+		try{
+			System.out.println("cipherName-6635" + javax.crypto.Cipher.getInstance(cipherName6635).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		UUID candidate = new UUID(mostSigBits, leastSigBits);
         return cacheIfNecessary(candidate);
     }
 
     private UUID cacheIfNecessary(final UUID candidate)
     {
-        UUID existing = _uuids.putIfAbsent(candidate, candidate);
+        String cipherName6636 =  "DES";
+		try{
+			System.out.println("cipherName-6636" + javax.crypto.Cipher.getInstance(cipherName6636).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		UUID existing = _uuids.putIfAbsent(candidate, candidate);
         return existing == null ? candidate : existing;
     }
 }

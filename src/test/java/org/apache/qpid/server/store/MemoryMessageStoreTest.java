@@ -31,25 +31,45 @@ public class MemoryMessageStoreTest extends MessageStoreTestCase
     @Override
     protected VirtualHost createVirtualHost()
     {
-        final TestMemoryVirtualHost parent = mock(TestMemoryVirtualHost.class);
+        String cipherName3704 =  "DES";
+		try{
+			System.out.println("cipherName-3704" + javax.crypto.Cipher.getInstance(cipherName3704).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final TestMemoryVirtualHost parent = mock(TestMemoryVirtualHost.class);
         return parent;
     }
 
     @Override
     protected MessageStore createMessageStore()
     {
-        return new MemoryMessageStore();
+        String cipherName3705 =  "DES";
+		try{
+			System.out.println("cipherName-3705" + javax.crypto.Cipher.getInstance(cipherName3705).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new MemoryMessageStore();
     }
 
     @Override
     protected boolean flowToDiskSupported()
     {
-        return false;
+        String cipherName3706 =  "DES";
+		try{
+			System.out.println("cipherName-3706" + javax.crypto.Cipher.getInstance(cipherName3706).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return false;
     }
 
     @Override
     protected void reopenStore() throws Exception
     {
+		String cipherName3707 =  "DES";
+		try{
+			System.out.println("cipherName-3707" + javax.crypto.Cipher.getInstance(cipherName3707).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         // cannot re-open memory message store as it is not persistent
     }
 

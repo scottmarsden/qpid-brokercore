@@ -63,7 +63,12 @@ public final class InternalMessageHeader implements AMQMessageHeader, Serializab
                                  final String replyTo,
                                  final long arrivalTime)
     {
-        _headers = headers == null ? new LinkedHashMap<>() : new LinkedHashMap<>(headers);
+        String cipherName9158 =  "DES";
+		try{
+			System.out.println("cipherName-9158" + javax.crypto.Cipher.getInstance(cipherName9158).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_headers = headers == null ? new LinkedHashMap<>() : new LinkedHashMap<>(headers);
 
         _correlationId = correlationId;
         _expiration = expiration;
@@ -83,6 +88,11 @@ public final class InternalMessageHeader implements AMQMessageHeader, Serializab
     public InternalMessageHeader(final AMQMessageHeader header)
     {
         this(header, System.currentTimeMillis());
+		String cipherName9159 =  "DES";
+		try{
+			System.out.println("cipherName-9159" + javax.crypto.Cipher.getInstance(cipherName9159).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public InternalMessageHeader(final AMQMessageHeader header, long arrivalTime)
@@ -101,129 +111,244 @@ public final class InternalMessageHeader implements AMQMessageHeader, Serializab
              header.getType(),
              header.getReplyTo(),
              arrivalTime);
+		String cipherName9160 =  "DES";
+		try{
+			System.out.println("cipherName-9160" + javax.crypto.Cipher.getInstance(cipherName9160).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public String getCorrelationId()
     {
-        return _correlationId;
+        String cipherName9161 =  "DES";
+		try{
+			System.out.println("cipherName-9161" + javax.crypto.Cipher.getInstance(cipherName9161).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _correlationId;
     }
 
     @Override
     public long getExpiration()
     {
-        return _expiration;
+        String cipherName9162 =  "DES";
+		try{
+			System.out.println("cipherName-9162" + javax.crypto.Cipher.getInstance(cipherName9162).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _expiration;
     }
 
     @Override
     public String getUserId()
     {
-        return _userId;
+        String cipherName9163 =  "DES";
+		try{
+			System.out.println("cipherName-9163" + javax.crypto.Cipher.getInstance(cipherName9163).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _userId;
     }
 
     @Override
     public String getAppId()
     {
-        return _appId;
+        String cipherName9164 =  "DES";
+		try{
+			System.out.println("cipherName-9164" + javax.crypto.Cipher.getInstance(cipherName9164).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _appId;
     }
 
     @Override
     public String getGroupId()
     {
-        final Object jmsxGroupId = _headers.get("JMSXGroupID");
+        String cipherName9165 =  "DES";
+		try{
+			System.out.println("cipherName-9165" + javax.crypto.Cipher.getInstance(cipherName9165).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Object jmsxGroupId = _headers.get("JMSXGroupID");
         return jmsxGroupId == null ? null : String.valueOf(jmsxGroupId);
     }
 
     @Override
     public String getMessageId()
     {
-        return _messageId;
+        String cipherName9166 =  "DES";
+		try{
+			System.out.println("cipherName-9166" + javax.crypto.Cipher.getInstance(cipherName9166).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _messageId;
     }
 
     @Override
     public String getMimeType()
     {
-        return _mimeType;
+        String cipherName9167 =  "DES";
+		try{
+			System.out.println("cipherName-9167" + javax.crypto.Cipher.getInstance(cipherName9167).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _mimeType;
     }
 
     @Override
     public String getEncoding()
     {
-        return _encoding;
+        String cipherName9168 =  "DES";
+		try{
+			System.out.println("cipherName-9168" + javax.crypto.Cipher.getInstance(cipherName9168).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _encoding;
     }
 
     @Override
     public byte getPriority()
     {
-        return _priority;
+        String cipherName9169 =  "DES";
+		try{
+			System.out.println("cipherName-9169" + javax.crypto.Cipher.getInstance(cipherName9169).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _priority;
     }
 
     @Override
     public long getTimestamp()
     {
-        return _timestamp;
+        String cipherName9170 =  "DES";
+		try{
+			System.out.println("cipherName-9170" + javax.crypto.Cipher.getInstance(cipherName9170).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _timestamp;
     }
 
     @Override
     public long getNotValidBefore()
     {
-        return _notValidBefore;
+        String cipherName9171 =  "DES";
+		try{
+			System.out.println("cipherName-9171" + javax.crypto.Cipher.getInstance(cipherName9171).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _notValidBefore;
     }
 
     @Override
     public String getType()
     {
-        return _type;
+        String cipherName9172 =  "DES";
+		try{
+			System.out.println("cipherName-9172" + javax.crypto.Cipher.getInstance(cipherName9172).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _type;
     }
 
     @Override
     public String getReplyTo()
     {
-        return _replyTo;
+        String cipherName9173 =  "DES";
+		try{
+			System.out.println("cipherName-9173" + javax.crypto.Cipher.getInstance(cipherName9173).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _replyTo;
     }
 
     @Override
     public Object getHeader(final String name)
     {
-        return _headers.get(name);
+        String cipherName9174 =  "DES";
+		try{
+			System.out.println("cipherName-9174" + javax.crypto.Cipher.getInstance(cipherName9174).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _headers.get(name);
     }
 
     @Override
     public boolean containsHeaders(final Set<String> names)
     {
-        return _headers.keySet().containsAll(names);
+        String cipherName9175 =  "DES";
+		try{
+			System.out.println("cipherName-9175" + javax.crypto.Cipher.getInstance(cipherName9175).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _headers.keySet().containsAll(names);
     }
 
     @Override
     public boolean containsHeader(final String name)
     {
-        return _headers.keySet().contains(name);
+        String cipherName9176 =  "DES";
+		try{
+			System.out.println("cipherName-9176" + javax.crypto.Cipher.getInstance(cipherName9176).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _headers.keySet().contains(name);
     }
 
     @Override
     public Collection<String> getHeaderNames()
     {
-        return Collections.unmodifiableCollection(_headers.keySet());
+        String cipherName9177 =  "DES";
+		try{
+			System.out.println("cipherName-9177" + javax.crypto.Cipher.getInstance(cipherName9177).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Collections.unmodifiableCollection(_headers.keySet());
     }
 
     long getArrivalTime()
     {
-        return _arrivalTime;
+        String cipherName9178 =  "DES";
+		try{
+			System.out.println("cipherName-9178" + javax.crypto.Cipher.getInstance(cipherName9178).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _arrivalTime;
     }
 
     public Map<String,Object> getHeaderMap()
     {
-        return Collections.unmodifiableMap(new LinkedHashMap<>(_headers));
+        String cipherName9179 =  "DES";
+		try{
+			System.out.println("cipherName-9179" + javax.crypto.Cipher.getInstance(cipherName9179).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Collections.unmodifiableMap(new LinkedHashMap<>(_headers));
     }
 
     private static Map<String, Object> buildHeaders(final AMQMessageHeader header)
     {
-        Map<String, Object> map = new LinkedHashMap<>();
+        String cipherName9180 =  "DES";
+		try{
+			System.out.println("cipherName-9180" + javax.crypto.Cipher.getInstance(cipherName9180).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String, Object> map = new LinkedHashMap<>();
         for (String s : header.getHeaderNames())
         {
-            if (map.put(s, header.getHeader(s)) != null)
+            String cipherName9181 =  "DES";
+			try{
+				System.out.println("cipherName-9181" + javax.crypto.Cipher.getInstance(cipherName9181).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (map.put(s, header.getHeader(s)) != null)
             {
-                throw new IllegalStateException("Duplicate key");
+                String cipherName9182 =  "DES";
+				try{
+					System.out.println("cipherName-9182" + javax.crypto.Cipher.getInstance(cipherName9182).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalStateException("Duplicate key");
             }
         }
         return map;

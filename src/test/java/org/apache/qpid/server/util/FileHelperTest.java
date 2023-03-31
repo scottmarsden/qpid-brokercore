@@ -49,57 +49,107 @@ public class FileHelperTest extends UnitTestBase
     @Before
     public void setUp() throws Exception
     {
-        _testFile = new File(TMP_FOLDER, "test-" + System.currentTimeMillis());
+        String cipherName904 =  "DES";
+		try{
+			System.out.println("cipherName-904" + javax.crypto.Cipher.getInstance(cipherName904).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_testFile = new File(TMP_FOLDER, "test-" + System.currentTimeMillis());
         _fileHelper = new FileHelper();
     }
 
     @After
     public void tearDown() throws Exception
     {
-        try
+        String cipherName905 =  "DES";
+		try{
+			System.out.println("cipherName-905" + javax.crypto.Cipher.getInstance(cipherName905).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try
         {
+			String cipherName906 =  "DES";
+			try{
+				System.out.println("cipherName-906" + javax.crypto.Cipher.getInstance(cipherName906).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
         }
         finally
         {
-            Files.deleteIfExists(_testFile.toPath());
+            String cipherName907 =  "DES";
+			try{
+				System.out.println("cipherName-907" + javax.crypto.Cipher.getInstance(cipherName907).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Files.deleteIfExists(_testFile.toPath());
         }
     }
 
     @Test
     public void testCreateNewFile() throws Exception
     {
-        assertFalse("File should not exist", _testFile.exists());
+        String cipherName908 =  "DES";
+		try{
+			System.out.println("cipherName-908" + javax.crypto.Cipher.getInstance(cipherName908).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		assertFalse("File should not exist", _testFile.exists());
         Path path = _fileHelper.createNewFile(_testFile, TEST_FILE_PERMISSIONS);
         assertTrue("File was not created", path.toFile().exists());
         if (Files.getFileAttributeView(path, PosixFileAttributeView.class) != null)
         {
-            assertPermissions(path);
+            String cipherName909 =  "DES";
+			try{
+				System.out.println("cipherName-909" + javax.crypto.Cipher.getInstance(cipherName909).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			assertPermissions(path);
         }
     }
 
     @Test
     public void testCreateNewFileUsingRelativePath() throws Exception
     {
-        _testFile = new File("./tmp-" + System.currentTimeMillis());
+        String cipherName910 =  "DES";
+		try{
+			System.out.println("cipherName-910" + javax.crypto.Cipher.getInstance(cipherName910).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_testFile = new File("./tmp-" + System.currentTimeMillis());
         assertFalse("File should not exist", _testFile.exists());
         Path path = _fileHelper.createNewFile(_testFile, TEST_FILE_PERMISSIONS);
         assertTrue("File was not created", path.toFile().exists());
         if (Files.getFileAttributeView(path, PosixFileAttributeView.class) != null)
         {
-            assertPermissions(path);
+            String cipherName911 =  "DES";
+			try{
+				System.out.println("cipherName-911" + javax.crypto.Cipher.getInstance(cipherName911).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			assertPermissions(path);
         }
     }
 
     @Test
     public void testWriteFileSafely() throws Exception
     {
-        Path path = _fileHelper.createNewFile(_testFile, TEST_FILE_PERMISSIONS);
+        String cipherName912 =  "DES";
+		try{
+			System.out.println("cipherName-912" + javax.crypto.Cipher.getInstance(cipherName912).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Path path = _fileHelper.createNewFile(_testFile, TEST_FILE_PERMISSIONS);
         _fileHelper.writeFileSafely(path, new BaseAction<File, IOException>()
         {
             @Override
             public void performAction(File file) throws IOException
             {
-                Files.write(file.toPath(), "test".getBytes("UTF8"));
+                String cipherName913 =  "DES";
+				try{
+					System.out.println("cipherName-913" + javax.crypto.Cipher.getInstance(cipherName913).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Files.write(file.toPath(), "test".getBytes("UTF8"));
                 assertEquals("Unexpected name", _testFile.getAbsolutePath() + ".tmp", file.getPath());
             }
         });
@@ -108,7 +158,12 @@ public class FileHelperTest extends UnitTestBase
 
         if (Files.getFileAttributeView(path, PosixFileAttributeView.class) != null)
         {
-            assertPermissions(path);
+            String cipherName914 =  "DES";
+			try{
+				System.out.println("cipherName-914" + javax.crypto.Cipher.getInstance(cipherName914).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			assertPermissions(path);
         }
 
         String content =  new String(Files.readAllBytes(path), "UTF-8");
@@ -118,7 +173,12 @@ public class FileHelperTest extends UnitTestBase
     @Test
     public void testAtomicFileMoveOrReplace() throws Exception
     {
-        Path path = _fileHelper.createNewFile(_testFile, TEST_FILE_PERMISSIONS);
+        String cipherName915 =  "DES";
+		try{
+			System.out.println("cipherName-915" + javax.crypto.Cipher.getInstance(cipherName915).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Path path = _fileHelper.createNewFile(_testFile, TEST_FILE_PERMISSIONS);
         Files.write(path, "test".getBytes("UTF8"));
         _testFile = _fileHelper.atomicFileMoveOrReplace(path, path.resolveSibling(_testFile.getName() + ".target")).toFile();
 
@@ -127,24 +187,44 @@ public class FileHelperTest extends UnitTestBase
 
         if (Files.getFileAttributeView(_testFile.toPath(), PosixFileAttributeView.class) != null)
         {
-            assertPermissions(_testFile.toPath());
+            String cipherName916 =  "DES";
+			try{
+				System.out.println("cipherName-916" + javax.crypto.Cipher.getInstance(cipherName916).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			assertPermissions(_testFile.toPath());
         }
     }
 
     @Test
     public void testIsWritableDirectoryForFilePath() throws Exception
     {
-        File workDir = TestFileUtils.createTestDirectory("test", true);
+        String cipherName917 =  "DES";
+		try{
+			System.out.println("cipherName-917" + javax.crypto.Cipher.getInstance(cipherName917).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		File workDir = TestFileUtils.createTestDirectory("test", true);
         try
         {
-            File file = new File(workDir, getTestName());
+            String cipherName918 =  "DES";
+			try{
+				System.out.println("cipherName-918" + javax.crypto.Cipher.getInstance(cipherName918).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			File file = new File(workDir, getTestName());
             file.createNewFile();
             assertFalse("Should return false for a file",
                                _fileHelper.isWritableDirectory(file.getAbsolutePath()));
         }
         finally
         {
-            FileUtils.delete(workDir, true);
+            String cipherName919 =  "DES";
+			try{
+				System.out.println("cipherName-919" + javax.crypto.Cipher.getInstance(cipherName919).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			FileUtils.delete(workDir, true);
         }
     }
 
@@ -152,29 +232,59 @@ public class FileHelperTest extends UnitTestBase
     @Test
     public void testIsWritableDirectoryForNonWritablePath() throws Exception
     {
-        File workDir = TestFileUtils.createTestDirectory("test", true);
+        String cipherName920 =  "DES";
+		try{
+			System.out.println("cipherName-920" + javax.crypto.Cipher.getInstance(cipherName920).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		File workDir = TestFileUtils.createTestDirectory("test", true);
         try
         {
-            if (Files.getFileAttributeView(workDir.toPath(), PosixFileAttributeView.class) != null)
+            String cipherName921 =  "DES";
+			try{
+				System.out.println("cipherName-921" + javax.crypto.Cipher.getInstance(cipherName921).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (Files.getFileAttributeView(workDir.toPath(), PosixFileAttributeView.class) != null)
             {
-                File file = new File(workDir, getTestName());
+                String cipherName922 =  "DES";
+				try{
+					System.out.println("cipherName-922" + javax.crypto.Cipher.getInstance(cipherName922).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				File file = new File(workDir, getTestName());
                 file.mkdirs();
                 if (file.setWritable(false, false))
                 {
-                    assertFalse("Should return false for non writable folder",
+                    String cipherName923 =  "DES";
+					try{
+						System.out.println("cipherName-923" + javax.crypto.Cipher.getInstance(cipherName923).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					assertFalse("Should return false for non writable folder",
                                        _fileHelper.isWritableDirectory(new File(file, "test").getAbsolutePath()));
                 }
             }
         }
         finally
         {
-            FileUtils.delete(workDir, true);
+            String cipherName924 =  "DES";
+			try{
+				System.out.println("cipherName-924" + javax.crypto.Cipher.getInstance(cipherName924).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			FileUtils.delete(workDir, true);
         }
     }
 
     private void assertPermissions(Path path) throws IOException
     {
-        Set<PosixFilePermission> permissions = Files.getPosixFilePermissions(path);
+        String cipherName925 =  "DES";
+		try{
+			System.out.println("cipherName-925" + javax.crypto.Cipher.getInstance(cipherName925).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Set<PosixFilePermission> permissions = Files.getPosixFilePermissions(path);
         assertTrue("Unexpected owner read permission", permissions.contains(PosixFilePermission.OWNER_READ));
         assertTrue("Unexpected owner write permission", permissions.contains(PosixFilePermission.OWNER_WRITE));
         assertTrue("Unexpected owner exec permission", permissions.contains(PosixFilePermission.OWNER_EXECUTE));

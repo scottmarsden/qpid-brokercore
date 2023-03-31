@@ -31,6 +31,11 @@ public class ExchangeDefaults
 {
     private ExchangeDefaults()
     {
+		String cipherName4065 =  "DES";
+		try{
+			System.out.println("cipherName-4065" + javax.crypto.Cipher.getInstance(cipherName4065).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     /** The default direct exchange, which is a special internal exchange that cannot be explicitly bound to. */

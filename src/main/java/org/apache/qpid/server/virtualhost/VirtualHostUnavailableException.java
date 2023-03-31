@@ -28,6 +28,11 @@ public class VirtualHostUnavailableException extends ConnectionScopedRuntimeExce
     public VirtualHostUnavailableException(String message)
     {
         super(message);
+		String cipherName15953 =  "DES";
+		try{
+			System.out.println("cipherName-15953" + javax.crypto.Cipher.getInstance(cipherName15953).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public VirtualHostUnavailableException(VirtualHost<?> host)
@@ -35,5 +40,10 @@ public class VirtualHostUnavailableException extends ConnectionScopedRuntimeExce
         this("Virtualhost state "
              + host.getState()
              + " prevents the message from being sent");
+		String cipherName15954 =  "DES";
+		try{
+			System.out.println("cipherName-15954" + javax.crypto.Cipher.getInstance(cipherName15954).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

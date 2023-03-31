@@ -37,7 +37,12 @@ abstract class ConfiguredObjectInjectedAttributeOrStatistic<C extends Configured
                                                  final TypeValidator typeValidator)
     {
 
-        _name = name;
+        String cipherName10685 =  "DES";
+		try{
+			System.out.println("cipherName-10685" + javax.crypto.Cipher.getInstance(cipherName10685).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_name = name;
         _type = type;
         _genericType = genericType;
         _typeValidator = typeValidator;
@@ -48,25 +53,45 @@ abstract class ConfiguredObjectInjectedAttributeOrStatistic<C extends Configured
     @Override
     public final String getName()
     {
-        return _name;
+        String cipherName10686 =  "DES";
+		try{
+			System.out.println("cipherName-10686" + javax.crypto.Cipher.getInstance(cipherName10686).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _name;
     }
 
     @Override
     public final Class<T> getType()
     {
-        return _type;
+        String cipherName10687 =  "DES";
+		try{
+			System.out.println("cipherName-10687" + javax.crypto.Cipher.getInstance(cipherName10687).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _type;
     }
 
     @Override
     public final Type getGenericType()
     {
-        return _genericType;
+        String cipherName10688 =  "DES";
+		try{
+			System.out.println("cipherName-10688" + javax.crypto.Cipher.getInstance(cipherName10688).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _genericType;
     }
 
     @Override
     public final boolean appliesToConfiguredObjectType(final Class<? extends ConfiguredObject<?>> type)
     {
-        return _typeValidator.appliesToType(type);
+        String cipherName10689 =  "DES";
+		try{
+			System.out.println("cipherName-10689" + javax.crypto.Cipher.getInstance(cipherName10689).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _typeValidator.appliesToType(type);
     }
 
 }

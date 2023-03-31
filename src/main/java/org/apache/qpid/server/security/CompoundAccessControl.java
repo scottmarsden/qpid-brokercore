@@ -39,25 +39,50 @@ public class CompoundAccessControl implements AccessControl<CompoundSecurityToke
 
     public CompoundAccessControl(List<AccessControl<?>> underlying, Result defaultResult)
     {
-        setAccessControls(underlying);
+        String cipherName8250 =  "DES";
+		try{
+			System.out.println("cipherName-8250" + javax.crypto.Cipher.getInstance(cipherName8250).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setAccessControls(underlying);
         _defaultResult = defaultResult;
     }
 
     public void setAccessControls(final List<AccessControl<?>> underlying)
     {
-        _underlyingControls.set(new CopyOnWriteArrayList<>(underlying));
+        String cipherName8251 =  "DES";
+		try{
+			System.out.println("cipherName-8251" + javax.crypto.Cipher.getInstance(cipherName8251).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_underlyingControls.set(new CopyOnWriteArrayList<>(underlying));
     }
 
     @Override
     public Result getDefault()
     {
-        List<AccessControl<?>> underlying = _underlyingControls.get();
+        String cipherName8252 =  "DES";
+		try{
+			System.out.println("cipherName-8252" + javax.crypto.Cipher.getInstance(cipherName8252).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<AccessControl<?>> underlying = _underlyingControls.get();
         for(AccessControl<?> control : underlying)
         {
-            final Result result = control.getDefault();
+            String cipherName8253 =  "DES";
+			try{
+				System.out.println("cipherName-8253" + javax.crypto.Cipher.getInstance(cipherName8253).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final Result result = control.getDefault();
             if(result.isFinal())
             {
-                return result;
+                String cipherName8254 =  "DES";
+				try{
+					System.out.println("cipherName-8254" + javax.crypto.Cipher.getInstance(cipherName8254).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return result;
             }
         }
 
@@ -67,13 +92,23 @@ public class CompoundAccessControl implements AccessControl<CompoundSecurityToke
     @Override
     public CompoundSecurityToken newToken()
     {
-        return new CompoundSecurityToken(_underlyingControls.get(), Subject.getSubject(AccessController.getContext()));
+        String cipherName8255 =  "DES";
+		try{
+			System.out.println("cipherName-8255" + javax.crypto.Cipher.getInstance(cipherName8255).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new CompoundSecurityToken(_underlyingControls.get(), Subject.getSubject(AccessController.getContext()));
     }
 
     @Override
     public CompoundSecurityToken newToken(final Subject subject)
     {
-        return new CompoundSecurityToken(_underlyingControls.get(), subject);
+        String cipherName8256 =  "DES";
+		try{
+			System.out.println("cipherName-8256" + javax.crypto.Cipher.getInstance(cipherName8256).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new CompoundSecurityToken(_underlyingControls.get(), subject);
     }
 
     @Override
@@ -81,7 +116,12 @@ public class CompoundAccessControl implements AccessControl<CompoundSecurityToke
                             final Operation operation,
                             final PermissionedObject configuredObject)
     {
-        return authorise(token, operation, configuredObject, Collections.<String,Object>emptyMap());
+        String cipherName8257 =  "DES";
+		try{
+			System.out.println("cipherName-8257" + javax.crypto.Cipher.getInstance(cipherName8257).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return authorise(token, operation, configuredObject, Collections.<String,Object>emptyMap());
     }
 
     @Override
@@ -90,15 +130,30 @@ public class CompoundAccessControl implements AccessControl<CompoundSecurityToke
                             final PermissionedObject configuredObject,
                             final Map<String, Object> arguments)
     {
-        List<AccessControl<?>> underlying = _underlyingControls.get();
+        String cipherName8258 =  "DES";
+		try{
+			System.out.println("cipherName-8258" + javax.crypto.Cipher.getInstance(cipherName8258).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		List<AccessControl<?>> underlying = _underlyingControls.get();
         Map<AccessControl<?>, SecurityToken> compoundToken = token == null ? null : token.getCompoundToken(underlying);
         for(AccessControl control : underlying)
         {
-            SecurityToken underlyingToken = compoundToken == null ? null : compoundToken.get(control);
+            String cipherName8259 =  "DES";
+			try{
+				System.out.println("cipherName-8259" + javax.crypto.Cipher.getInstance(cipherName8259).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SecurityToken underlyingToken = compoundToken == null ? null : compoundToken.get(control);
             final Result result = control.authorise(underlyingToken, operation, configuredObject, arguments);
             if(result.isFinal())
             {
-                return result;
+                String cipherName8260 =  "DES";
+				try{
+					System.out.println("cipherName-8260" + javax.crypto.Cipher.getInstance(cipherName8260).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return result;
             }
         }
 

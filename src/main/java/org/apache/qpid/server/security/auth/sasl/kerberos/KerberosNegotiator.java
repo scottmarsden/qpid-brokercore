@@ -48,17 +48,32 @@ public class KerberosNegotiator extends AbstractSaslServerNegotiator implements 
 
     public KerberosNegotiator(final AuthenticationProvider<?> authenticationProvider, final String localFQDN)
     {
-        _authenticationProvider = authenticationProvider;
+        String cipherName7245 =  "DES";
+		try{
+			System.out.println("cipherName-7245" + javax.crypto.Cipher.getInstance(cipherName7245).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_authenticationProvider = authenticationProvider;
         SaslServer saslServer = null;
         SaslException exception = null;
         try
         {
-            saslServer = Sasl.createSaslServer(GSSAPI_MECHANISM, "AMQP", localFQDN,
+            String cipherName7246 =  "DES";
+			try{
+				System.out.println("cipherName-7246" + javax.crypto.Cipher.getInstance(cipherName7246).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			saslServer = Sasl.createSaslServer(GSSAPI_MECHANISM, "AMQP", localFQDN,
                                                null, new GssApiCallbackHandler());
         }
         catch (SaslException e)
         {
-            exception = e;
+            String cipherName7247 =  "DES";
+			try{
+				System.out.println("cipherName-7247" + javax.crypto.Cipher.getInstance(cipherName7247).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			exception = e;
             LOGGER.warn("Creation of SASL server for mechanism '{}' failed.", GSSAPI_MECHANISM, e);
         }
         _exception = exception;
@@ -68,25 +83,45 @@ public class KerberosNegotiator extends AbstractSaslServerNegotiator implements 
     @Override
     protected Exception getSaslServerCreationException()
     {
-        return _exception;
+        String cipherName7248 =  "DES";
+		try{
+			System.out.println("cipherName-7248" + javax.crypto.Cipher.getInstance(cipherName7248).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _exception;
     }
 
     @Override
     protected SaslServer getSaslServer()
     {
-        return _saslServer;
+        String cipherName7249 =  "DES";
+		try{
+			System.out.println("cipherName-7249" + javax.crypto.Cipher.getInstance(cipherName7249).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _saslServer;
     }
 
     @Override
     protected AuthenticationProvider<?> getAuthenticationProvider()
     {
-        return _authenticationProvider;
+        String cipherName7250 =  "DES";
+		try{
+			System.out.println("cipherName-7250" + javax.crypto.Cipher.getInstance(cipherName7250).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _authenticationProvider;
     }
 
     @Override
     public String getAttemptedAuthenticationId()
     {
-        return null;
+        String cipherName7251 =  "DES";
+		try{
+			System.out.println("cipherName-7251" + javax.crypto.Cipher.getInstance(cipherName7251).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return null;
     }
 
     private static class GssApiCallbackHandler implements CallbackHandler
@@ -94,15 +129,35 @@ public class KerberosNegotiator extends AbstractSaslServerNegotiator implements 
         @Override
         public void handle(Callback[] callbacks) throws IOException, UnsupportedCallbackException
         {
-            for(Callback callback : callbacks)
+            String cipherName7252 =  "DES";
+			try{
+				System.out.println("cipherName-7252" + javax.crypto.Cipher.getInstance(cipherName7252).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Callback callback : callbacks)
             {
-                if (callback instanceof AuthorizeCallback)
+                String cipherName7253 =  "DES";
+				try{
+					System.out.println("cipherName-7253" + javax.crypto.Cipher.getInstance(cipherName7253).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (callback instanceof AuthorizeCallback)
                 {
-                    ((AuthorizeCallback) callback).setAuthorized(true);
+                    String cipherName7254 =  "DES";
+					try{
+						System.out.println("cipherName-7254" + javax.crypto.Cipher.getInstance(cipherName7254).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					((AuthorizeCallback) callback).setAuthorized(true);
                 }
                 else
                 {
-                    throw new UnsupportedCallbackException(callback);
+                    String cipherName7255 =  "DES";
+					try{
+						System.out.println("cipherName-7255" + javax.crypto.Cipher.getInstance(cipherName7255).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw new UnsupportedCallbackException(callback);
                 }
             }
         }

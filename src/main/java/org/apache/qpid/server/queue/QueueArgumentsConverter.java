@@ -102,7 +102,12 @@ public class QueueArgumentsConverter
 
     static
     {
-        ATTRIBUTE_MAPPINGS.put(X_QPID_MINIMUM_ALERT_REPEAT_GAP, Queue.ALERT_REPEAT_GAP);
+        String cipherName12073 =  "DES";
+		try{
+			System.out.println("cipherName-12073" + javax.crypto.Cipher.getInstance(cipherName12073).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ATTRIBUTE_MAPPINGS.put(X_QPID_MINIMUM_ALERT_REPEAT_GAP, Queue.ALERT_REPEAT_GAP);
         ATTRIBUTE_MAPPINGS.put(X_QPID_MAXIMUM_MESSAGE_AGE, Queue.ALERT_THRESHOLD_MESSAGE_AGE);
         ATTRIBUTE_MAPPINGS.put(X_QPID_MAXIMUM_MESSAGE_SIZE, Queue.ALERT_THRESHOLD_MESSAGE_SIZE);
 
@@ -144,10 +149,20 @@ public class QueueArgumentsConverter
                                                             final Model model,
                                                             final Queue.BehaviourOnUnknownDeclareArgument unknownArgumentBehaviour)
     {
-        Map<String,Object> modelArguments = new HashMap<>();
+        String cipherName12074 =  "DES";
+		try{
+			System.out.println("cipherName-12074" + javax.crypto.Cipher.getInstance(cipherName12074).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String,Object> modelArguments = new HashMap<>();
         if(wireArguments != null)
         {
-            final ConfiguredObjectTypeRegistry typeRegistry = model.getTypeRegistry();
+            String cipherName12075 =  "DES";
+			try{
+				System.out.println("cipherName-12075" + javax.crypto.Cipher.getInstance(cipherName12075).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final ConfiguredObjectTypeRegistry typeRegistry = model.getTypeRegistry();
             final List<ConfiguredObjectAttribute<?, ?>> attributeTypes =
                     new ArrayList<>(typeRegistry.getAttributeTypes(Queue.class).values());
             typeRegistry.getTypeSpecialisations(Queue.class)
@@ -160,70 +175,145 @@ public class QueueArgumentsConverter
                                                         .anyMatch(type -> Objects.equals(entry.getKey(), type.getName())
                                                                           && !type.isDerived()))
                          .forEach(entry -> {
-                             modelArguments.put(entry.getKey(), entry.getValue());
+                             String cipherName12076 =  "DES";
+							try{
+								System.out.println("cipherName-12076" + javax.crypto.Cipher.getInstance(cipherName12076).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							modelArguments.put(entry.getKey(), entry.getValue());
                              wireArgumentNames.remove(entry.getKey());
                          });
 
             for(Map.Entry<String,String> entry : ATTRIBUTE_MAPPINGS.entrySet())
             {
-                if(wireArguments.containsKey(entry.getKey()))
+                String cipherName12077 =  "DES";
+				try{
+					System.out.println("cipherName-12077" + javax.crypto.Cipher.getInstance(cipherName12077).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(wireArguments.containsKey(entry.getKey()))
                 {
-                    modelArguments.put(entry.getValue(), wireArguments.get(entry.getKey()));
+                    String cipherName12078 =  "DES";
+					try{
+						System.out.println("cipherName-12078" + javax.crypto.Cipher.getInstance(cipherName12078).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					modelArguments.put(entry.getValue(), wireArguments.get(entry.getKey()));
                     wireArgumentNames.remove(entry.getKey());
                 }
             }
             if(wireArguments.containsKey(QPID_LAST_VALUE_QUEUE))
             {
-                wireArgumentNames.remove(QPID_LAST_VALUE_QUEUE);
+                String cipherName12079 =  "DES";
+				try{
+					System.out.println("cipherName-12079" + javax.crypto.Cipher.getInstance(cipherName12079).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wireArgumentNames.remove(QPID_LAST_VALUE_QUEUE);
                 if (!wireArguments.containsKey(QPID_LAST_VALUE_QUEUE_KEY))
                 {
-                    modelArguments.put(LastValueQueue.LVQ_KEY, LastValueQueue.DEFAULT_LVQ_KEY);
+                    String cipherName12080 =  "DES";
+					try{
+						System.out.println("cipherName-12080" + javax.crypto.Cipher.getInstance(cipherName12080).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					modelArguments.put(LastValueQueue.LVQ_KEY, LastValueQueue.DEFAULT_LVQ_KEY);
                 }
             }
             if(wireArguments.containsKey(QPID_POLICY_TYPE))
             {
-                modelArguments.put(Queue.OVERFLOW_POLICY, OverflowPolicy.valueOf(String.valueOf(wireArguments.get(QPID_POLICY_TYPE)).toUpperCase()));
+                String cipherName12081 =  "DES";
+				try{
+					System.out.println("cipherName-12081" + javax.crypto.Cipher.getInstance(cipherName12081).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				modelArguments.put(Queue.OVERFLOW_POLICY, OverflowPolicy.valueOf(String.valueOf(wireArguments.get(QPID_POLICY_TYPE)).toUpperCase()));
             }
 
             if(wireArguments.containsKey(QPID_SHARED_MSG_GROUP))
             {
-                wireArgumentNames.remove(QPID_SHARED_MSG_GROUP);
+                String cipherName12082 =  "DES";
+				try{
+					System.out.println("cipherName-12082" + javax.crypto.Cipher.getInstance(cipherName12082).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wireArgumentNames.remove(QPID_SHARED_MSG_GROUP);
                 if (SHARED_MSG_GROUP_ARG_VALUE.equals(String.valueOf(wireArguments.get(QPID_SHARED_MSG_GROUP))))
                 {
-                    modelArguments.put(Queue.MESSAGE_GROUP_TYPE, MessageGroupType.SHARED_GROUPS);
+                    String cipherName12083 =  "DES";
+					try{
+						System.out.println("cipherName-12083" + javax.crypto.Cipher.getInstance(cipherName12083).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					modelArguments.put(Queue.MESSAGE_GROUP_TYPE, MessageGroupType.SHARED_GROUPS);
                 }
             }
             else if(wireArguments.containsKey(QPID_GROUP_HEADER_KEY))
             {
-                modelArguments.put(Queue.MESSAGE_GROUP_TYPE, MessageGroupType.STANDARD);
+                String cipherName12084 =  "DES";
+				try{
+					System.out.println("cipherName-12084" + javax.crypto.Cipher.getInstance(cipherName12084).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				modelArguments.put(Queue.MESSAGE_GROUP_TYPE, MessageGroupType.STANDARD);
                 if ("JMSXGroupId".equals(wireArguments.get(QPID_GROUP_HEADER_KEY)))
                 {
-                    modelArguments.remove(Queue.MESSAGE_GROUP_KEY_OVERRIDE);
+                    String cipherName12085 =  "DES";
+					try{
+						System.out.println("cipherName-12085" + javax.crypto.Cipher.getInstance(cipherName12085).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					modelArguments.remove(Queue.MESSAGE_GROUP_KEY_OVERRIDE);
                 }
             }
 
 
             if(wireArguments.get(QPID_NO_LOCAL) != null)
             {
-                modelArguments.put(Queue.NO_LOCAL, Boolean.parseBoolean(wireArguments.get(QPID_NO_LOCAL).toString()));
+                String cipherName12086 =  "DES";
+				try{
+					System.out.println("cipherName-12086" + javax.crypto.Cipher.getInstance(cipherName12086).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				modelArguments.put(Queue.NO_LOCAL, Boolean.parseBoolean(wireArguments.get(QPID_NO_LOCAL).toString()));
             }
 
             if (wireArguments.containsKey(X_QPID_FLOW_RESUME_CAPACITY))
             {
-                wireArgumentNames.remove(X_QPID_FLOW_RESUME_CAPACITY);
+                String cipherName12087 =  "DES";
+				try{
+					System.out.println("cipherName-12087" + javax.crypto.Cipher.getInstance(cipherName12087).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wireArgumentNames.remove(X_QPID_FLOW_RESUME_CAPACITY);
                 if (wireArguments.get(X_QPID_FLOW_RESUME_CAPACITY) != null && wireArguments.get(X_QPID_CAPACITY) != null)
                 {
-                    double resumeCapacity = Integer.parseInt(wireArguments.get(X_QPID_FLOW_RESUME_CAPACITY).toString());
+                    String cipherName12088 =  "DES";
+					try{
+						System.out.println("cipherName-12088" + javax.crypto.Cipher.getInstance(cipherName12088).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					double resumeCapacity = Integer.parseInt(wireArguments.get(X_QPID_FLOW_RESUME_CAPACITY).toString());
                     double maximumCapacity = Integer.parseInt(wireArguments.get(X_QPID_CAPACITY).toString());
                     if (resumeCapacity > maximumCapacity)
                     {
-                        throw new ConnectionScopedRuntimeException(
+                        String cipherName12089 =  "DES";
+						try{
+							System.out.println("cipherName-12089" + javax.crypto.Cipher.getInstance(cipherName12089).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						throw new ConnectionScopedRuntimeException(
                                 "Flow resume size can't be greater than flow control size");
                     }
                     Map<String, String> context = (Map<String, String>) modelArguments.get(Queue.CONTEXT);
                     if (context == null)
                     {
-                        context = new HashMap<>();
+                        String cipherName12090 =  "DES";
+						try{
+							System.out.println("cipherName-12090" + javax.crypto.Cipher.getInstance(cipherName12090).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						context = new HashMap<>();
                         modelArguments.put(Queue.CONTEXT, context);
                     }
                     double ratio = resumeCapacity / maximumCapacity;
@@ -234,19 +324,34 @@ public class QueueArgumentsConverter
 
             if (wireArguments.containsKey(ALTERNATE_EXCHANGE))
             {
-                wireArgumentNames.remove(ALTERNATE_EXCHANGE);
+                String cipherName12091 =  "DES";
+				try{
+					System.out.println("cipherName-12091" + javax.crypto.Cipher.getInstance(cipherName12091).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wireArgumentNames.remove(ALTERNATE_EXCHANGE);
                 modelArguments.put(Queue.ALTERNATE_BINDING,
                                    Collections.singletonMap(AlternateBinding.DESTINATION,
                                                             wireArguments.get(ALTERNATE_EXCHANGE)));
             }
             else if (wireArguments.containsKey(X_QPID_DLQ_ENABLED))
             {
-                wireArgumentNames.remove(X_QPID_DLQ_ENABLED);
+                String cipherName12092 =  "DES";
+				try{
+					System.out.println("cipherName-12092" + javax.crypto.Cipher.getInstance(cipherName12092).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wireArgumentNames.remove(X_QPID_DLQ_ENABLED);
                 Object argument = wireArguments.get(X_QPID_DLQ_ENABLED);
                 if ((argument instanceof Boolean && ((Boolean) argument).booleanValue())
                     || (argument instanceof String && Boolean.parseBoolean((String)argument)))
                 {
-                    modelArguments.put(Queue.ALTERNATE_BINDING,
+                    String cipherName12093 =  "DES";
+					try{
+						System.out.println("cipherName-12093" + javax.crypto.Cipher.getInstance(cipherName12093).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					modelArguments.put(Queue.ALTERNATE_BINDING,
                                        Collections.singletonMap(AlternateBinding.DESTINATION,
                                                                 getDeadLetterQueueName(queueName)));
                 }
@@ -254,19 +359,34 @@ public class QueueArgumentsConverter
 
             if(wireArguments.containsKey(X_SINGLE_ACTIVE_CONSUMER))
             {
-                wireArgumentNames.remove(X_SINGLE_ACTIVE_CONSUMER);
+                String cipherName12094 =  "DES";
+				try{
+					System.out.println("cipherName-12094" + javax.crypto.Cipher.getInstance(cipherName12094).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				wireArgumentNames.remove(X_SINGLE_ACTIVE_CONSUMER);
                 Object argument = wireArguments.get(X_SINGLE_ACTIVE_CONSUMER);
                 if ((argument instanceof Boolean && ((Boolean) argument).booleanValue())
                     || (argument instanceof String && Boolean.parseBoolean((String)argument)))
                 {
-                    modelArguments.putIfAbsent(Queue.MAXIMUM_LIVE_CONSUMERS, 1);
+                    String cipherName12095 =  "DES";
+					try{
+						System.out.println("cipherName-12095" + javax.crypto.Cipher.getInstance(cipherName12095).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					modelArguments.putIfAbsent(Queue.MAXIMUM_LIVE_CONSUMERS, 1);
                 }
             }
 
             if (!wireArgumentNames.isEmpty())
             {
 
-                switch(unknownArgumentBehaviour)
+                String cipherName12096 =  "DES";
+				try{
+					System.out.println("cipherName-12096" + javax.crypto.Cipher.getInstance(cipherName12096).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				switch(unknownArgumentBehaviour)
                 {
                     case LOG:
                         LOGGER.warn("Unsupported queue declare argument(s) : {}", String.join(",", wireArgumentNames));
@@ -286,19 +406,44 @@ public class QueueArgumentsConverter
 
     public static Map<String,Object> convertModelArgsToWire(Map<String,Object> modelArguments)
     {
-        Map<String,Object> wireArguments = new HashMap<>();
+        String cipherName12097 =  "DES";
+		try{
+			System.out.println("cipherName-12097" + javax.crypto.Cipher.getInstance(cipherName12097).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String,Object> wireArguments = new HashMap<>();
         for(Map.Entry<String,String> entry : ATTRIBUTE_MAPPINGS.entrySet())
         {
-            if(modelArguments.containsKey(entry.getValue()))
+            String cipherName12098 =  "DES";
+			try{
+				System.out.println("cipherName-12098" + javax.crypto.Cipher.getInstance(cipherName12098).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(modelArguments.containsKey(entry.getValue()))
             {
-                Object value = modelArguments.get(entry.getValue());
+                String cipherName12099 =  "DES";
+				try{
+					System.out.println("cipherName-12099" + javax.crypto.Cipher.getInstance(cipherName12099).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Object value = modelArguments.get(entry.getValue());
                 if(value instanceof Enum)
                 {
-                    value = ((Enum) value).name();
+                    String cipherName12100 =  "DES";
+					try{
+						System.out.println("cipherName-12100" + javax.crypto.Cipher.getInstance(cipherName12100).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					value = ((Enum) value).name();
                 }
                 else if(value instanceof ConfiguredObject)
                 {
-                    value = ((ConfiguredObject)value).getName();
+                    String cipherName12101 =  "DES";
+					try{
+						System.out.println("cipherName-12101" + javax.crypto.Cipher.getInstance(cipherName12101).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					value = ((ConfiguredObject)value).getName();
                 }
                 wireArguments.put(entry.getKey(), value);
             }
@@ -306,7 +451,12 @@ public class QueueArgumentsConverter
 
         if(MessageGroupType.SHARED_GROUPS.equals(modelArguments.get(Queue.MESSAGE_GROUP_TYPE)))
         {
-            wireArguments.put(QPID_SHARED_MSG_GROUP, SHARED_MSG_GROUP_ARG_VALUE);
+            String cipherName12102 =  "DES";
+			try{
+				System.out.println("cipherName-12102" + javax.crypto.Cipher.getInstance(cipherName12102).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			wireArguments.put(QPID_SHARED_MSG_GROUP, SHARED_MSG_GROUP_ARG_VALUE);
         }
 
         return wireArguments;
@@ -314,6 +464,11 @@ public class QueueArgumentsConverter
 
     private static String getDeadLetterQueueName(String name)
     {
-        return name + System.getProperty(PROPERTY_DEAD_LETTER_QUEUE_SUFFIX, DEFAULT_DLQ_NAME_SUFFIX);
+        String cipherName12103 =  "DES";
+		try{
+			System.out.println("cipherName-12103" + javax.crypto.Cipher.getInstance(cipherName12103).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return name + System.getProperty(PROPERTY_DEAD_LETTER_QUEUE_SUFFIX, DEFAULT_DLQ_NAME_SUFFIX);
     }
 }

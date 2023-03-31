@@ -38,24 +38,44 @@ public class LastValueQueueImpl extends AbstractQueue<LastValueQueueImpl> implem
     public LastValueQueueImpl(Map<String, Object> attributes, QueueManagingVirtualHost<?> virtualHost)
     {
         super(attributes, virtualHost);
+		String cipherName13157 =  "DES";
+		try{
+			System.out.println("cipherName-13157" + javax.crypto.Cipher.getInstance(cipherName13157).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     protected void onOpen()
     {
         super.onOpen();
+		String cipherName13158 =  "DES";
+		try{
+			System.out.println("cipherName-13158" + javax.crypto.Cipher.getInstance(cipherName13158).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _entries = new LastValueQueueList(this, getQueueStatistics());
     }
 
     @Override
     LastValueQueueList getEntries()
     {
-        return _entries;
+        String cipherName13159 =  "DES";
+		try{
+			System.out.println("cipherName-13159" + javax.crypto.Cipher.getInstance(cipherName13159).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _entries;
     }
 
     @Override
     public String getLvqKey()
     {
-        return _lvqKey;
+        String cipherName13160 =  "DES";
+		try{
+			System.out.println("cipherName-13160" + javax.crypto.Cipher.getInstance(cipherName13160).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _lvqKey;
     }
 }

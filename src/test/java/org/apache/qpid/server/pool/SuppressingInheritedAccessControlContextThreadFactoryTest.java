@@ -45,7 +45,12 @@ public class SuppressingInheritedAccessControlContextThreadFactoryTest extends U
     @Test
     public void testAccessControlContextIsNotInheritedByThread() throws Exception
     {
-        final String principalName = getTestName();
+        String cipherName3160 =  "DES";
+		try{
+			System.out.println("cipherName-3160" + javax.crypto.Cipher.getInstance(cipherName3160).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String principalName = getTestName();
         final CountDownLatch latch = new CountDownLatch(1);
 
         final AtomicReference<AccessControlContext> threadAccessControlContextCapturer = new AtomicReference<>();
@@ -56,13 +61,23 @@ public class SuppressingInheritedAccessControlContextThreadFactoryTest extends U
             @Override
             public String getName()
             {
-                return principalName;
+                String cipherName3161 =  "DES";
+				try{
+					System.out.println("cipherName-3161" + javax.crypto.Cipher.getInstance(cipherName3161).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return principalName;
             }
 
             @Override
             public String toString()
             {
-                return "Principal{" + getName() + "}";
+                String cipherName3162 =  "DES";
+				try{
+					System.out.println("cipherName-3162" + javax.crypto.Cipher.getInstance(cipherName3162).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return "Principal{" + getName() + "}";
             }
         });
 
@@ -73,7 +88,12 @@ public class SuppressingInheritedAccessControlContextThreadFactoryTest extends U
             @Override
             public Void run()
             {
-                callerAccessControlContextCapturer.set(AccessController.getContext());
+                String cipherName3163 =  "DES";
+				try{
+					System.out.println("cipherName-3163" + javax.crypto.Cipher.getInstance(cipherName3163).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				callerAccessControlContextCapturer.set(AccessController.getContext());
                 SuppressingInheritedAccessControlContextThreadFactory factory = new SuppressingInheritedAccessControlContextThreadFactory(null,
                                                                                                                                           null);
                 factory.newThread(new Runnable()
@@ -82,7 +102,12 @@ public class SuppressingInheritedAccessControlContextThreadFactoryTest extends U
                     @Override
                     public void run()
                     {
-                        threadAccessControlContextCapturer.set(AccessController.getContext());
+                        String cipherName3164 =  "DES";
+						try{
+							System.out.println("cipherName-3164" + javax.crypto.Cipher.getInstance(cipherName3164).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						threadAccessControlContextCapturer.set(AccessController.getContext());
                         latch.countDown();
                     }
 

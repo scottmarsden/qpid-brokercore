@@ -37,27 +37,52 @@ public class JmsMapMessageToMap implements MimeContentToObjectConverter<Map>
     @Override
     public String getType()
     {
-        return getMimeType();
+        String cipherName8699 =  "DES";
+		try{
+			System.out.println("cipherName-8699" + javax.crypto.Cipher.getInstance(cipherName8699).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getMimeType();
     }
 
     @Override
     public Class<Map> getObjectClass()
     {
-        return Map.class;
+        String cipherName8700 =  "DES";
+		try{
+			System.out.println("cipherName-8700" + javax.crypto.Cipher.getInstance(cipherName8700).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Map.class;
     }
 
     @Override
     public String getMimeType()
     {
-        return "jms/map-message";
+        String cipherName8701 =  "DES";
+		try{
+			System.out.println("cipherName-8701" + javax.crypto.Cipher.getInstance(cipherName8701).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return "jms/map-message";
     }
 
     @Override
     public Map toObject(final byte[] data)
     {
-        if (data == null || data.length == 0)
+        String cipherName8702 =  "DES";
+		try{
+			System.out.println("cipherName-8702" + javax.crypto.Cipher.getInstance(cipherName8702).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (data == null || data.length == 0)
         {
-            return Collections.emptyMap();
+            String cipherName8703 =  "DES";
+			try{
+				System.out.println("cipherName-8703" + javax.crypto.Cipher.getInstance(cipherName8703).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Collections.emptyMap();
         }
 
         TypedBytesContentReader reader = new TypedBytesContentReader(ByteBuffer.wrap(data));
@@ -66,16 +91,31 @@ public class JmsMapMessageToMap implements MimeContentToObjectConverter<Map>
         final int entries = reader.readIntImpl();
         for (int i = 0; i < entries; i++)
         {
-            try
+            String cipherName8704 =  "DES";
+			try{
+				System.out.println("cipherName-8704" + javax.crypto.Cipher.getInstance(cipherName8704).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try
             {
-                String propName = reader.readStringImpl();
+                String cipherName8705 =  "DES";
+				try{
+					System.out.println("cipherName-8705" + javax.crypto.Cipher.getInstance(cipherName8705).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String propName = reader.readStringImpl();
                 Object value = reader.readObject();
 
                 map.put(propName, value);
             }
             catch (EOFException | TypedBytesFormatException e)
             {
-                throw new IllegalArgumentException(e);
+                String cipherName8706 =  "DES";
+				try{
+					System.out.println("cipherName-8706" + javax.crypto.Cipher.getInstance(cipherName8706).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalArgumentException(e);
             }
         }
 

@@ -31,12 +31,22 @@ public class ConnectionPrincipalStatisticsCheckingTask extends HouseKeepingTask
                                                      final ConnectionPrincipalStatisticsRegistry connectionPrincipalStatisticsRegistry)
     {
         super(TASK_NAME, virtualHost, controlContext);
+		String cipherName15856 =  "DES";
+		try{
+			System.out.println("cipherName-15856" + javax.crypto.Cipher.getInstance(cipherName15856).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _connectionPrincipalStatisticsRegistry = connectionPrincipalStatisticsRegistry;
     }
 
     @Override
     public void execute()
     {
-        _connectionPrincipalStatisticsRegistry.reevaluateConnectionStatistics();
+        String cipherName15857 =  "DES";
+		try{
+			System.out.println("cipherName-15857" + javax.crypto.Cipher.getInstance(cipherName15857).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_connectionPrincipalStatisticsRegistry.reevaluateConnectionStatistics();
     }
 }

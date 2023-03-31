@@ -63,7 +63,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
     @Override
     public ListenableFuture<Void> recover(QueueManagingVirtualHost<?> virtualHost)
     {
-        EventLogger eventLogger = virtualHost.getEventLogger();
+        String cipherName16026 =  "DES";
+		try{
+			System.out.println("cipherName-16026" + javax.crypto.Cipher.getInstance(cipherName16026).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		EventLogger eventLogger = virtualHost.getEventLogger();
         MessageStore store = virtualHost.getMessageStore();
         MessageStore.MessageStoreReader storeReader = store.newMessageStoreReader();
         MessageStoreLogSubject logSubject = new MessageStoreLogSubject(virtualHost.getName(), store.getClass().getSimpleName());
@@ -81,7 +86,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
         eventLogger.message(logSubject, TransactionLogMessages.RECOVERY_START(null, false));
         try
         {
-            storeReader.visitMessageInstances(new MessageInstanceVisitor(virtualHost,
+            String cipherName16027 =  "DES";
+			try{
+				System.out.println("cipherName-16027" + javax.crypto.Cipher.getInstance(cipherName16027).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			storeReader.visitMessageInstances(new MessageInstanceVisitor(virtualHost,
                                                                          store,
                                                                          queueRecoveries,
                                                                          recoveredMessages,
@@ -91,18 +101,43 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
         }
         finally
         {
-            if (!unknownQueuesWithMessages.isEmpty())
+            String cipherName16028 =  "DES";
+			try{
+				System.out.println("cipherName-16028" + javax.crypto.Cipher.getInstance(cipherName16028).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!unknownQueuesWithMessages.isEmpty())
             {
-                unknownQueuesWithMessages.forEach((queueId, count) -> {
-                    LOGGER.info("Discarded {} entry(s) associated with queue id '{}' as a queue with this "
+                String cipherName16029 =  "DES";
+				try{
+					System.out.println("cipherName-16029" + javax.crypto.Cipher.getInstance(cipherName16029).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				unknownQueuesWithMessages.forEach((queueId, count) -> {
+                    String cipherName16030 =  "DES";
+					try{
+						System.out.println("cipherName-16030" + javax.crypto.Cipher.getInstance(cipherName16030).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					LOGGER.info("Discarded {} entry(s) associated with queue id '{}' as a queue with this "
                                  + "id does not appear in the configuration.",
                                  count, queueId);
                 });
             }
             if (!queuesWithUnknownMessages.isEmpty())
             {
-                queuesWithUnknownMessages.forEach((queue, count) -> {
-                    LOGGER.info("Discarded {} entry(s) associated with queue '{}' as the referenced message "
+                String cipherName16031 =  "DES";
+				try{
+					System.out.println("cipherName-16031" + javax.crypto.Cipher.getInstance(cipherName16031).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				queuesWithUnknownMessages.forEach((queue, count) -> {
+                    String cipherName16032 =  "DES";
+					try{
+						System.out.println("cipherName-16032" + javax.crypto.Cipher.getInstance(cipherName16032).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					LOGGER.info("Discarded {} entry(s) associated with queue '{}' as the referenced message "
                                  + "does not exist.",
                                  count, queue.getName());
                 });
@@ -111,7 +146,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
 
         for(Map.Entry<Queue<?>, Integer> entry : queueRecoveries.entrySet())
         {
-            Queue<?> queue = entry.getKey();
+            String cipherName16033 =  "DES";
+			try{
+				System.out.println("cipherName-16033" + javax.crypto.Cipher.getInstance(cipherName16033).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Queue<?> queue = entry.getKey();
             Integer deliveredCount = entry.getValue();
             eventLogger.message(logSubject, TransactionLogMessages.RECOVERED(deliveredCount, queue.getName()));
             eventLogger.message(logSubject, TransactionLogMessages.RECOVERY_COMPLETE(queue.getName(), true));
@@ -120,9 +160,19 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
 
         for (Queue<?> q : virtualHost.getChildren(Queue.class))
         {
-            if (!queueRecoveries.containsKey(q))
+            String cipherName16034 =  "DES";
+			try{
+				System.out.println("cipherName-16034" + javax.crypto.Cipher.getInstance(cipherName16034).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (!queueRecoveries.containsKey(q))
             {
-                q.completeRecovery();
+                String cipherName16035 =  "DES";
+				try{
+					System.out.println("cipherName-16035" + javax.crypto.Cipher.getInstance(cipherName16035).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				q.completeRecovery();
             }
         }
 
@@ -132,13 +182,23 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
 
         for(StoredMessage<?> m : unusedMessages.values())
         {
-            LOGGER.debug("Message id '{}' is orphaned, removing", m.getMessageNumber());
+            String cipherName16036 =  "DES";
+			try{
+				System.out.println("cipherName-16036" + javax.crypto.Cipher.getInstance(cipherName16036).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			LOGGER.debug("Message id '{}' is orphaned, removing", m.getMessageNumber());
             m.remove();
         }
 
         if (unusedMessages.size() > 0)
         {
-            LOGGER.info("Discarded {} orphaned message(s).", unusedMessages.size());
+            String cipherName16037 =  "DES";
+			try{
+				System.out.println("cipherName-16037" + javax.crypto.Cipher.getInstance(cipherName16037).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			LOGGER.info("Discarded {} orphaned message(s).", unusedMessages.size());
         }
 
         eventLogger.message(logSubject, TransactionLogMessages.RECOVERY_COMPLETE(null, false));
@@ -153,6 +213,11 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
     @Override
     public void cancel()
     {
+		String cipherName16038 =  "DES";
+		try{
+			System.out.println("cipherName-16038" + javax.crypto.Cipher.getInstance(cipherName16038).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         // No-op
     }
 
@@ -165,14 +230,24 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
         MessageVisitor(final Map<Long, ServerMessage<?>> recoveredMessages,
                        final Map<Long, StoredMessage<?>> unusedMessages)
         {
-            _recoveredMessages = recoveredMessages;
+            String cipherName16039 =  "DES";
+			try{
+				System.out.println("cipherName-16039" + javax.crypto.Cipher.getInstance(cipherName16039).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_recoveredMessages = recoveredMessages;
             _unusedMessages = unusedMessages;
         }
 
         @Override
         public boolean handle(StoredMessage<?> message)
         {
-            StorableMessageMetaData metaData = message.getMetaData();
+            String cipherName16040 =  "DES";
+			try{
+				System.out.println("cipherName-16040" + javax.crypto.Cipher.getInstance(cipherName16040).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			StorableMessageMetaData metaData = message.getMetaData();
 
             @SuppressWarnings("rawtypes")
             MessageMetaDataType type = metaData.getType();
@@ -206,7 +281,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                                        final Map<UUID, Integer> unknownQueuesWithMessages,
                                        final Map<Queue<?>, Integer> queuesWithUnknownMessages)
         {
-            _virtualHost = virtualHost;
+            String cipherName16041 =  "DES";
+			try{
+				System.out.println("cipherName-16041" + javax.crypto.Cipher.getInstance(cipherName16041).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_virtualHost = virtualHost;
             _store = store;
             _queueRecoveries = queueRecoveries;
             _recoveredMessages = recoveredMessages;
@@ -218,19 +298,34 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
         @Override
         public boolean handle(final MessageEnqueueRecord record)
         {
-            final UUID queueId = record.getQueueId();
+            String cipherName16042 =  "DES";
+			try{
+				System.out.println("cipherName-16042" + javax.crypto.Cipher.getInstance(cipherName16042).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final UUID queueId = record.getQueueId();
             long messageId = record.getMessageNumber();
             Queue<?> queue = _virtualHost.getAttainedQueue(queueId);
             boolean dequeueMessageInstance = true;
             if(queue != null)
             {
-                String queueName = queue.getName();
+                String cipherName16043 =  "DES";
+				try{
+					System.out.println("cipherName-16043" + javax.crypto.Cipher.getInstance(cipherName16043).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String queueName = queue.getName();
                 ServerMessage<?> message = _recoveredMessages.get(messageId);
                 _unusedMessages.remove(messageId);
 
                 if (message != null)
                 {
-                    LOGGER.debug("Delivering message id '{}' to queue '{}'", message.getMessageNumber(), queueName);
+                    String cipherName16044 =  "DES";
+					try{
+						System.out.println("cipherName-16044" + javax.crypto.Cipher.getInstance(cipherName16044).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					LOGGER.debug("Delivering message id '{}' to queue '{}'", message.getMessageNumber(), queueName);
 
                     _queueRecoveries.merge(queue, 1, (old, unused) -> old + 1);
 
@@ -240,7 +335,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                 }
                 else
                 {
-                    LOGGER.debug("Message id '{}' referenced in log as enqueued in queue '{}' is unknown, entry will be discarded",
+                    String cipherName16045 =  "DES";
+					try{
+						System.out.println("cipherName-16045" + javax.crypto.Cipher.getInstance(cipherName16045).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					LOGGER.debug("Message id '{}' referenced in log as enqueued in queue '{}' is unknown, entry will be discarded",
                             messageId, queueName);
 
                     _queuesWithUnknownMessages.merge(queue, 1, (old, unused) -> old + 1);
@@ -249,7 +349,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
             }
             else
             {
-                LOGGER.debug(
+                String cipherName16046 =  "DES";
+				try{
+					System.out.println("cipherName-16046" + javax.crypto.Cipher.getInstance(cipherName16046).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				LOGGER.debug(
                         "Message id '{}' in log references queue with id '{}' which is not in the configuration, entry will be discarded",
                         messageId, queueId);
                 _unknownQueuesWithMessages.merge(queueId, 1, (old, unused) -> old + 1);
@@ -257,7 +362,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
 
             if (dequeueMessageInstance)
             {
-                Transaction txn = _store.newTransaction();
+                String cipherName16047 =  "DES";
+				try{
+					System.out.println("cipherName-16047" + javax.crypto.Cipher.getInstance(cipherName16047).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				Transaction txn = _store.newTransaction();
                 txn.dequeueMessage(record);
                 txn.commitTranAsync((Void) null);
             }
@@ -282,7 +392,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                                               final Map<Long, ServerMessage<?>> recoveredMessages,
                                               final Map<Long, StoredMessage<?>> unusedMessages)
         {
-            _virtualHost = virtualHost;
+            String cipherName16048 =  "DES";
+			try{
+				System.out.println("cipherName-16048" + javax.crypto.Cipher.getInstance(cipherName16048).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_virtualHost = virtualHost;
             _eventLogger = eventLogger;
             _logSubject = logSubject;
             _recoveredMessages = recoveredMessages;
@@ -294,26 +409,51 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                               final Transaction.EnqueueRecord[] enqueues,
                               final Transaction.DequeueRecord[] dequeues)
         {
-            Xid id = new Xid(storedXid.getFormat(), storedXid.getGlobalId(), storedXid.getBranchId());
+            String cipherName16049 =  "DES";
+			try{
+				System.out.println("cipherName-16049" + javax.crypto.Cipher.getInstance(cipherName16049).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Xid id = new Xid(storedXid.getFormat(), storedXid.getGlobalId(), storedXid.getBranchId());
             DtxRegistry dtxRegistry = _virtualHost.getDtxRegistry();
             DtxBranch branch = dtxRegistry.getBranch(id);
             if(branch == null)
             {
-                branch = new DtxBranch(storedXid, dtxRegistry);
+                String cipherName16050 =  "DES";
+				try{
+					System.out.println("cipherName-16050" + javax.crypto.Cipher.getInstance(cipherName16050).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				branch = new DtxBranch(storedXid, dtxRegistry);
                 dtxRegistry.registerBranch(branch);
             }
             for(EnqueueRecord record : enqueues)
             {
-                final Queue<?> queue = _virtualHost.getAttainedQueue(record.getResource().getId());
+                String cipherName16051 =  "DES";
+				try{
+					System.out.println("cipherName-16051" + javax.crypto.Cipher.getInstance(cipherName16051).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				final Queue<?> queue = _virtualHost.getAttainedQueue(record.getResource().getId());
                 if(queue != null)
                 {
-                    final long messageId = record.getMessage().getMessageNumber();
+                    String cipherName16052 =  "DES";
+					try{
+						System.out.println("cipherName-16052" + javax.crypto.Cipher.getInstance(cipherName16052).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					final long messageId = record.getMessage().getMessageNumber();
                     final ServerMessage<?> message = _recoveredMessages.get(messageId);
                     _unusedMessages.remove(messageId);
 
                     if(message != null)
                     {
-                        final MessageReference<?> ref = message.newReference();
+                        String cipherName16053 =  "DES";
+						try{
+							System.out.println("cipherName-16053" + javax.crypto.Cipher.getInstance(cipherName16053).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						final MessageReference<?> ref = message.newReference();
                         final MessageEnqueueRecord[] records = new MessageEnqueueRecord[1];
 
                         branch.enqueue(queue, message, new Action<MessageEnqueueRecord>()
@@ -321,7 +461,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                             @Override
                             public void performAction(final MessageEnqueueRecord record)
                             {
-                                records[0] = record;
+                                String cipherName16054 =  "DES";
+								try{
+									System.out.println("cipherName-16054" + javax.crypto.Cipher.getInstance(cipherName16054).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								records[0] = record;
                             }
                         });
                         branch.addPostTransactionAction(new ServerTransaction.Action()
@@ -329,21 +474,36 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                             @Override
                             public void postCommit()
                             {
-                                queue.enqueue(message, null, records[0]);
+                                String cipherName16055 =  "DES";
+								try{
+									System.out.println("cipherName-16055" + javax.crypto.Cipher.getInstance(cipherName16055).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								queue.enqueue(message, null, records[0]);
                                 ref.release();
                             }
 
                             @Override
                             public void onRollback()
                             {
-                                ref.release();
+                                String cipherName16056 =  "DES";
+								try{
+									System.out.println("cipherName-16056" + javax.crypto.Cipher.getInstance(cipherName16056).getAlgorithm());
+								}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+								}
+								ref.release();
                             }
                         });
 
                     }
                     else
                     {
-                        StringBuilder xidString = xidAsString(id);
+                        String cipherName16057 =  "DES";
+						try{
+							System.out.println("cipherName-16057" + javax.crypto.Cipher.getInstance(cipherName16057).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						StringBuilder xidString = xidAsString(id);
                         _eventLogger.message(_logSubject,
                                           TransactionLogMessages.XA_INCOMPLETE_MESSAGE(xidString.toString(),
                                                                                        Long.toString(messageId)));
@@ -351,7 +511,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                 }
                 else
                 {
-                    StringBuilder xidString = xidAsString(id);
+                    String cipherName16058 =  "DES";
+					try{
+						System.out.println("cipherName-16058" + javax.crypto.Cipher.getInstance(cipherName16058).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					StringBuilder xidString = xidAsString(id);
                     _eventLogger.message(_logSubject,
                                       TransactionLogMessages.XA_INCOMPLETE_QUEUE(xidString.toString(),
                                                                                  record.getResource().getId().toString()));
@@ -360,20 +525,40 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
             }
             for(Transaction.DequeueRecord record : dequeues)
             {
-                final Queue<?> queue = _virtualHost.getAttainedQueue(record.getEnqueueRecord().getQueueId());
+                String cipherName16059 =  "DES";
+				try{
+					System.out.println("cipherName-16059" + javax.crypto.Cipher.getInstance(cipherName16059).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				final Queue<?> queue = _virtualHost.getAttainedQueue(record.getEnqueueRecord().getQueueId());
                 if(queue != null)
                 {
-                    final long messageId = record.getEnqueueRecord().getMessageNumber();
+                    String cipherName16060 =  "DES";
+					try{
+						System.out.println("cipherName-16060" + javax.crypto.Cipher.getInstance(cipherName16060).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					final long messageId = record.getEnqueueRecord().getMessageNumber();
                     final ServerMessage<?> message = _recoveredMessages.get(messageId);
                     _unusedMessages.remove(messageId);
 
                     if(message != null)
                     {
-                        final QueueEntry entry = queue.getMessageOnTheQueue(messageId);
+                        String cipherName16061 =  "DES";
+						try{
+							System.out.println("cipherName-16061" + javax.crypto.Cipher.getInstance(cipherName16061).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						final QueueEntry entry = queue.getMessageOnTheQueue(messageId);
 
                         if (entry.acquire())
                         {
-                            branch.dequeue(entry.getEnqueueRecord());
+                            String cipherName16062 =  "DES";
+							try{
+								System.out.println("cipherName-16062" + javax.crypto.Cipher.getInstance(cipherName16062).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							branch.dequeue(entry.getEnqueueRecord());
 
                             branch.addPostTransactionAction(new ServerTransaction.Action()
                             {
@@ -381,19 +566,34 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                                 @Override
                                 public void postCommit()
                                 {
-                                    entry.delete();
+                                    String cipherName16063 =  "DES";
+									try{
+										System.out.println("cipherName-16063" + javax.crypto.Cipher.getInstance(cipherName16063).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									entry.delete();
                                 }
 
                                 @Override
                                 public void onRollback()
                                 {
-                                    entry.release();
+                                    String cipherName16064 =  "DES";
+									try{
+										System.out.println("cipherName-16064" + javax.crypto.Cipher.getInstance(cipherName16064).getAlgorithm());
+									}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+									}
+									entry.release();
                                 }
                             });
                         }
                         else
                         {
-                            // Should never happen - dtx recovery is always synchronous and occurs before
+                            String cipherName16065 =  "DES";
+							try{
+								System.out.println("cipherName-16065" + javax.crypto.Cipher.getInstance(cipherName16065).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							// Should never happen - dtx recovery is always synchronous and occurs before
                             // any other message actors are allowed to act on the virtualhost.
                             throw new ServerScopedRuntimeException(
                                     "Distributed transaction dequeue handler failed to acquire " + entry +
@@ -403,7 +603,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                     }
                     else
                     {
-                        StringBuilder xidString = xidAsString(id);
+                        String cipherName16066 =  "DES";
+						try{
+							System.out.println("cipherName-16066" + javax.crypto.Cipher.getInstance(cipherName16066).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						StringBuilder xidString = xidAsString(id);
                         _eventLogger.message(_logSubject,
                                           TransactionLogMessages.XA_INCOMPLETE_MESSAGE(xidString.toString(),
                                                                                        Long.toString(messageId)));
@@ -413,7 +618,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
                 }
                 else
                 {
-                    StringBuilder xidString = xidAsString(id);
+                    String cipherName16067 =  "DES";
+					try{
+						System.out.println("cipherName-16067" + javax.crypto.Cipher.getInstance(cipherName16067).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					StringBuilder xidString = xidAsString(id);
                     _eventLogger.message(_logSubject,
                                       TransactionLogMessages.XA_INCOMPLETE_QUEUE(xidString.toString(),
                                                                                  record.getEnqueueRecord().getQueueId().toString()));
@@ -428,7 +638,12 @@ public class SynchronousMessageStoreRecoverer implements MessageStoreRecoverer
 
         private StringBuilder xidAsString(Xid id)
         {
-            return new StringBuilder("(")
+            String cipherName16068 =  "DES";
+			try{
+				System.out.println("cipherName-16068" + javax.crypto.Cipher.getInstance(cipherName16068).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new StringBuilder("(")
                         .append(id.getFormat())
                         .append(',')
                         .append(Functions.str(id.getGlobalId()))

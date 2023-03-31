@@ -28,37 +28,72 @@ public class LoggingMessageLogger extends AbstractMessageLogger
     public LoggingMessageLogger()
     {
         super();
+		String cipherName15835 =  "DES";
+		try{
+			System.out.println("cipherName-15835" + javax.crypto.Cipher.getInstance(cipherName15835).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public LoggingMessageLogger(boolean statusUpdatesEnabled)
     {
         super(statusUpdatesEnabled);
+		String cipherName15836 =  "DES";
+		try{
+			System.out.println("cipherName-15836" + javax.crypto.Cipher.getInstance(cipherName15836).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public boolean isMessageEnabled(String logHierarchy)
     {
-        if(isEnabled())
+        String cipherName15837 =  "DES";
+		try{
+			System.out.println("cipherName-15837" + javax.crypto.Cipher.getInstance(cipherName15837).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isEnabled())
         {
-            Logger logger = LoggerFactory.getLogger(logHierarchy);
+            String cipherName15838 =  "DES";
+			try{
+				System.out.println("cipherName-15838" + javax.crypto.Cipher.getInstance(cipherName15838).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Logger logger = LoggerFactory.getLogger(logHierarchy);
             return logger.isInfoEnabled();
         }
         else
         {
-            return false;
+            String cipherName15839 =  "DES";
+			try{
+				System.out.println("cipherName-15839" + javax.crypto.Cipher.getInstance(cipherName15839).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return false;
         }
     }
 
     @Override
     void rawMessage(String message, String logHierarchy)
     {
-        rawMessage(message, null, logHierarchy);
+        String cipherName15840 =  "DES";
+		try{
+			System.out.println("cipherName-15840" + javax.crypto.Cipher.getInstance(cipherName15840).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		rawMessage(message, null, logHierarchy);
     }
 
     @Override
     void rawMessage(String message, Throwable throwable, String logHierarchy)
     {
-        Logger logger = LoggerFactory.getLogger(logHierarchy);
+        String cipherName15841 =  "DES";
+		try{
+			System.out.println("cipherName-15841" + javax.crypto.Cipher.getInstance(cipherName15841).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Logger logger = LoggerFactory.getLogger(logHierarchy);
         logger.info(message, throwable);
     }
 }

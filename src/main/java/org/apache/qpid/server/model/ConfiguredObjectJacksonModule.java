@@ -46,25 +46,50 @@ public class ConfiguredObjectJacksonModule extends SimpleModule
 
     static
     {
-        for(Method method : Object.class.getMethods())
+        String cipherName10978 =  "DES";
+		try{
+			System.out.println("cipherName-10978" + javax.crypto.Cipher.getInstance(cipherName10978).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(Method method : Object.class.getMethods())
         {
-            OBJECT_METHOD_NAMES.add(method.getName());
+            String cipherName10979 =  "DES";
+			try{
+				System.out.println("cipherName-10979" + javax.crypto.Cipher.getInstance(cipherName10979).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			OBJECT_METHOD_NAMES.add(method.getName());
         }
     }
 
     private  ConfiguredObjectJacksonModule(final boolean forPersistence)
     {
         super("ConfiguredObjectSerializer", new Version(1,0,0,null, "org.apache.qpid", "broker-core"));
+		String cipherName10980 =  "DES";
+		try{
+			System.out.println("cipherName-10980" + javax.crypto.Cipher.getInstance(cipherName10980).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         for(final ConfiguredObjectCustomSerialization.Converter converter :
                 ConfiguredObjectCustomSerialization.getConverters(forPersistence))
         {
-            addSerializer(converter.getConversionClass(), new JsonSerializer()
+            String cipherName10981 =  "DES";
+			try{
+				System.out.println("cipherName-10981" + javax.crypto.Cipher.getInstance(cipherName10981).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			addSerializer(converter.getConversionClass(), new JsonSerializer()
             {
                 @Override
                 public void serialize(final Object value, final JsonGenerator gen, final SerializerProvider serializers)
                         throws IOException, JsonProcessingException
                 {
-                    gen.writeObject(converter.convert(value));
+                    String cipherName10982 =  "DES";
+					try{
+						System.out.println("cipherName-10982" + javax.crypto.Cipher.getInstance(cipherName10982).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					gen.writeObject(converter.convert(value));
                 }
             });
         }
@@ -73,7 +98,12 @@ public class ConfiguredObjectJacksonModule extends SimpleModule
 
     public static ObjectMapper newObjectMapper(final boolean forPersistence)
     {
-        final ObjectMapper objectMapper = new ObjectMapper();
+        String cipherName10983 =  "DES";
+		try{
+			System.out.println("cipherName-10983" + javax.crypto.Cipher.getInstance(cipherName10983).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(forPersistence ? PERSISTENCE_INSTANCE : INSTANCE);
         return objectMapper;
     }

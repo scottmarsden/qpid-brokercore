@@ -83,7 +83,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Before
     public void setUp() throws Exception
     {
-        _rootId = UUID.randomUUID();
+        String cipherName72 =  "DES";
+		try{
+			System.out.println("cipherName-72" + javax.crypto.Cipher.getInstance(cipherName72).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_rootId = UUID.randomUUID();
         _portEntryId = UUID.randomUUID();
         _store = mock(DurableConfigurationStore.class);
         _taskExecutor = new CurrentThreadTaskExecutor();
@@ -112,7 +117,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
                     @Override
                     public Object answer(final InvocationOnMock invocation) throws Throwable
                     {
-                        ConfiguredObjectRecordHandler recoverer = recovererArgumentCaptor.getValue();
+                        String cipherName73 =  "DES";
+						try{
+							System.out.println("cipherName-73" + javax.crypto.Cipher.getInstance(cipherName73).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						ConfiguredObjectRecordHandler recoverer = recovererArgumentCaptor.getValue();
                         recoverer.handle(_root);
                         recoverer.handle(_portEntry);
                         return false;
@@ -128,7 +138,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
 
     private ManagementModeStoreHandler createManagementModeStoreHandler()
     {
-        _systemConfig.close();
+        String cipherName74 =  "DES";
+		try{
+			System.out.println("cipherName-74" + javax.crypto.Cipher.getInstance(cipherName74).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfig.close();
         Map<String, Object> attributes = new HashMap<>(_systemConfigAttributes);
         attributes.put(ConfiguredObject.DESIRED_STATE, State.QUIESCED);
         attributes.remove(ConfiguredObject.TYPE);
@@ -140,25 +155,45 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
             @Override
             protected void onOpen()
             {
+				String cipherName75 =  "DES";
+				try{
+					System.out.println("cipherName-75" + javax.crypto.Cipher.getInstance(cipherName75).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
             }
 
             @Override
             protected DurableConfigurationStore createStoreObject()
             {
-                return _store;
+                String cipherName76 =  "DES";
+				try{
+					System.out.println("cipherName-76" + javax.crypto.Cipher.getInstance(cipherName76).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return _store;
             }
 
             @Override
             protected ListenableFuture<Void> onClose()
             {
-                return Futures.immediateFuture(null);
+                String cipherName77 =  "DES";
+				try{
+					System.out.println("cipherName-77" + javax.crypto.Cipher.getInstance(cipherName77).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return Futures.immediateFuture(null);
             }
 
             @Override
             @StateTransition(currentState = State.UNINITIALIZED, desiredState = State.QUIESCED)
             protected ListenableFuture<Void> startQuiesced()
             {
-                return Futures.immediateFuture(null);
+                String cipherName78 =  "DES";
+				try{
+					System.out.println("cipherName-78" + javax.crypto.Cipher.getInstance(cipherName78).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return Futures.immediateFuture(null);
             }
         };
         _systemConfig.open();
@@ -168,20 +203,35 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @After
     public void tearDown() throws Exception
     {
-        _taskExecutor.stop();
+        String cipherName79 =  "DES";
+		try{
+			System.out.println("cipherName-79" + javax.crypto.Cipher.getInstance(cipherName79).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_taskExecutor.stop();
         _systemConfig.close();
     }
 
     private Collection<ConfiguredObjectRecord> openAndGetRecords()
     {
-        final Collection<ConfiguredObjectRecord> records = new ArrayList<>();
+        String cipherName80 =  "DES";
+		try{
+			System.out.println("cipherName-80" + javax.crypto.Cipher.getInstance(cipherName80).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Collection<ConfiguredObjectRecord> records = new ArrayList<>();
         _handler.openConfigurationStore(new ConfiguredObjectRecordHandler()
         {
 
             @Override
             public void handle(final ConfiguredObjectRecord record)
             {
-                records.add(record);
+                String cipherName81 =  "DES";
+				try{
+					System.out.println("cipherName-81" + javax.crypto.Cipher.getInstance(cipherName81).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				records.add(record);
             }
 
         });
@@ -190,11 +240,26 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
 
     private ConfiguredObjectRecord getRootEntry(Collection<ConfiguredObjectRecord> records)
     {
-        for(ConfiguredObjectRecord record : records)
+        String cipherName82 =  "DES";
+		try{
+			System.out.println("cipherName-82" + javax.crypto.Cipher.getInstance(cipherName82).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(ConfiguredObjectRecord record : records)
         {
-            if (record.getType().equals(Broker.class.getSimpleName()))
+            String cipherName83 =  "DES";
+			try{
+				System.out.println("cipherName-83" + javax.crypto.Cipher.getInstance(cipherName83).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (record.getType().equals(Broker.class.getSimpleName()))
             {
-                return record;
+                String cipherName84 =  "DES";
+				try{
+					System.out.println("cipherName-84" + javax.crypto.Cipher.getInstance(cipherName84).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return record;
             }
         }
         return null;
@@ -202,11 +267,26 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
 
     private ConfiguredObjectRecord getEntry(Collection<ConfiguredObjectRecord> records, UUID id)
     {
-        for(ConfiguredObjectRecord record : records)
+        String cipherName85 =  "DES";
+		try{
+			System.out.println("cipherName-85" + javax.crypto.Cipher.getInstance(cipherName85).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(ConfiguredObjectRecord record : records)
         {
-            if (record.getId().equals(id))
+            String cipherName86 =  "DES";
+			try{
+				System.out.println("cipherName-86" + javax.crypto.Cipher.getInstance(cipherName86).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (record.getId().equals(id))
             {
-                return record;
+                String cipherName87 =  "DES";
+				try{
+					System.out.println("cipherName-87" + javax.crypto.Cipher.getInstance(cipherName87).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return record;
             }
         }
         return null;
@@ -214,18 +294,43 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
 
     private Collection<UUID> getChildrenIds(Collection<ConfiguredObjectRecord> records, ConfiguredObjectRecord parent)
     {
-        Collection<UUID> childIds = new HashSet<>();
+        String cipherName88 =  "DES";
+		try{
+			System.out.println("cipherName-88" + javax.crypto.Cipher.getInstance(cipherName88).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Collection<UUID> childIds = new HashSet<>();
 
         for(ConfiguredObjectRecord record : records)
         {
 
-            if (record.getParents() != null)
+            String cipherName89 =  "DES";
+			try{
+				System.out.println("cipherName-89" + javax.crypto.Cipher.getInstance(cipherName89).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (record.getParents() != null)
             {
-                for (UUID parentId : record.getParents().values())
+                String cipherName90 =  "DES";
+				try{
+					System.out.println("cipherName-90" + javax.crypto.Cipher.getInstance(cipherName90).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				for (UUID parentId : record.getParents().values())
                 {
-                    if (parentId.equals(parent.getId()))
+                    String cipherName91 =  "DES";
+					try{
+						System.out.println("cipherName-91" + javax.crypto.Cipher.getInstance(cipherName91).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if (parentId.equals(parent.getId()))
                     {
-                        childIds.add(record.getId());
+                        String cipherName92 =  "DES";
+						try{
+							System.out.println("cipherName-92" + javax.crypto.Cipher.getInstance(cipherName92).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						childIds.add(record.getId());
                     }
                 }
 
@@ -238,7 +343,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testGetRootEntryWithEmptyOptions()
     {
-        Collection<ConfiguredObjectRecord> records = openAndGetRecords();
+        String cipherName93 =  "DES";
+		try{
+			System.out.println("cipherName-93" + javax.crypto.Cipher.getInstance(cipherName93).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Collection<ConfiguredObjectRecord> records = openAndGetRecords();
         ConfiguredObjectRecord root = getRootEntry(records);
         assertEquals("Unexpected root id", _rootId, root.getId());
         assertEquals("Unexpected children", Collections.singleton(_portEntryId), getChildrenIds(records, root));
@@ -247,7 +357,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testGetRootEntryWithHttpPortOverriden()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,9090);
+        String cipherName94 =  "DES";
+		try{
+			System.out.println("cipherName-94" + javax.crypto.Cipher.getInstance(cipherName94).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,9090);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
         Collection<ConfiguredObjectRecord> records = openAndGetRecords();
@@ -262,7 +377,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testGetRootEntryWithManagementPortsOverriden()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
+        String cipherName95 =  "DES";
+		try{
+			System.out.println("cipherName-95" + javax.crypto.Cipher.getInstance(cipherName95).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
         Collection<ConfiguredObjectRecord> records = openAndGetRecords();
@@ -277,7 +397,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testGetEntryByRootId()
     {
-        Collection<ConfiguredObjectRecord> records = openAndGetRecords();
+        String cipherName96 =  "DES";
+		try{
+			System.out.println("cipherName-96" + javax.crypto.Cipher.getInstance(cipherName96).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Collection<ConfiguredObjectRecord> records = openAndGetRecords();
 
         ConfiguredObjectRecord root = getEntry(records, _rootId);
         assertEquals("Unexpected root id", _rootId, root.getId());
@@ -287,7 +412,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testGetEntryByPortId()
     {
-        Collection<ConfiguredObjectRecord> records = openAndGetRecords();
+        String cipherName97 =  "DES";
+		try{
+			System.out.println("cipherName-97" + javax.crypto.Cipher.getInstance(cipherName97).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Collection<ConfiguredObjectRecord> records = openAndGetRecords();
 
         ConfiguredObjectRecord portEntry = getEntry(records, _portEntryId);
         assertEquals("Unexpected entry id", _portEntryId, portEntry.getId());
@@ -298,7 +428,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testGetEntryByCLIHttpPortId()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,9090);
+        String cipherName98 =  "DES";
+		try{
+			System.out.println("cipherName-98" + javax.crypto.Cipher.getInstance(cipherName98).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,9090);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
 
@@ -312,7 +447,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testHttpPortEntryIsQuiesced()
     {
-        Map<String, Object> attributes = new HashMap<String, Object>();
+        String cipherName99 =  "DES";
+		try{
+			System.out.println("cipherName-99" + javax.crypto.Cipher.getInstance(cipherName99).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String, Object> attributes = new HashMap<String, Object>();
         attributes.put(Port.PROTOCOLS, Collections.singleton(Protocol.HTTP));
         when(_portEntry.getAttributes()).thenReturn(attributes);
         _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,9090);
@@ -328,18 +468,33 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testVirtualHostEntryIsNotQuiescedByDefault()
     {
-        virtualHostEntryQuiescedStatusTestImpl(false);
+        String cipherName100 =  "DES";
+		try{
+			System.out.println("cipherName-100" + javax.crypto.Cipher.getInstance(cipherName100).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		virtualHostEntryQuiescedStatusTestImpl(false);
     }
 
     @Test
     public void testVirtualHostEntryIsQuiescedWhenRequested()
     {
-        virtualHostEntryQuiescedStatusTestImpl(true);
+        String cipherName101 =  "DES";
+		try{
+			System.out.println("cipherName-101" + javax.crypto.Cipher.getInstance(cipherName101).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		virtualHostEntryQuiescedStatusTestImpl(true);
     }
 
     private void virtualHostEntryQuiescedStatusTestImpl(boolean mmQuiesceVhosts)
     {
-        UUID virtualHostNodeId = UUID.randomUUID();
+        String cipherName102 =  "DES";
+		try{
+			System.out.println("cipherName-102" + javax.crypto.Cipher.getInstance(cipherName102).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		UUID virtualHostNodeId = UUID.randomUUID();
         Map<String, Object> attributes = new HashMap<String, Object>();
         attributes.put(VirtualHostNode.TYPE, "JSON");
 
@@ -351,7 +506,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
                     @Override
                     public Object answer(final InvocationOnMock invocation) throws Throwable
                     {
-                        ConfiguredObjectRecordHandler recoverer = recovererArgumentCaptor.getValue();
+                        String cipherName103 =  "DES";
+						try{
+							System.out.println("cipherName-103" + javax.crypto.Cipher.getInstance(cipherName103).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						ConfiguredObjectRecordHandler recoverer = recovererArgumentCaptor.getValue();
                         recoverer.handle(_root);
                         recoverer.handle(_portEntry);
                         recoverer.handle(virtualHostNodeRecord);
@@ -363,7 +523,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
         State expectedState = mmQuiesceVhosts ? State.QUIESCED : null;
         if(mmQuiesceVhosts)
         {
-            _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_QUIESCE_VIRTUAL_HOSTS, mmQuiesceVhosts);
+            String cipherName104 =  "DES";
+			try{
+				System.out.println("cipherName-104" + javax.crypto.Cipher.getInstance(cipherName104).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_QUIESCE_VIRTUAL_HOSTS, mmQuiesceVhosts);
         }
 
         _handler = createManagementModeStoreHandler();
@@ -383,7 +548,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
                                     UUID optionsPort,
                                     Protocol protocol)
     {
-        assertEquals("Unexpected entry id", optionsPort, portEntry.getId());
+        String cipherName105 =  "DES";
+		try{
+			System.out.println("cipherName-105" + javax.crypto.Cipher.getInstance(cipherName105).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		assertEquals("Unexpected entry id", optionsPort, portEntry.getId());
         assertTrue("Unexpected children", getChildrenIds(records, portEntry).isEmpty());
         Map<String, Object> attributes = portEntry.getAttributes();
         assertEquals("Unexpected name", "MANAGEMENT-MODE-PORT-" + protocol.name(), attributes.get(Port.NAME));
@@ -394,7 +564,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testSavePort()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
+        String cipherName106 =  "DES";
+		try{
+			System.out.println("cipherName-106" + javax.crypto.Cipher.getInstance(cipherName106).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
         Collection<ConfiguredObjectRecord> records = openAndGetRecords();
@@ -411,7 +586,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testSaveRoot()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
+        String cipherName107 =  "DES";
+		try{
+			System.out.println("cipherName-107" + javax.crypto.Cipher.getInstance(cipherName107).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
         Collection<ConfiguredObjectRecord> records = openAndGetRecords();
@@ -428,7 +608,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testSaveCLIHttpPort()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
+        String cipherName108 =  "DES";
+		try{
+			System.out.println("cipherName-108" + javax.crypto.Cipher.getInstance(cipherName108).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
         Collection<ConfiguredObjectRecord> records = openAndGetRecords();
@@ -442,11 +627,21 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
                                                                                              getRootEntry(records).getId()));
         try
         {
-            _handler.update(false, configurationEntry);
+            String cipherName109 =  "DES";
+			try{
+				System.out.println("cipherName-109" + javax.crypto.Cipher.getInstance(cipherName109).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_handler.update(false, configurationEntry);
             fail("Exception should be thrown on trying to save CLI port");
         }
         catch (IllegalConfigurationException e)
         {
+			String cipherName110 =  "DES";
+			try{
+				System.out.println("cipherName-110" + javax.crypto.Cipher.getInstance(cipherName110).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // pass
         }
     }
@@ -454,7 +649,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testRemove()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
+        String cipherName111 =  "DES";
+		try{
+			System.out.println("cipherName-111" + javax.crypto.Cipher.getInstance(cipherName111).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
         Collection<ConfiguredObjectRecord> records = openAndGetRecords();
@@ -464,25 +664,45 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
             @Override
             public UUID getId()
             {
-                return _portEntryId;
+                String cipherName112 =  "DES";
+				try{
+					System.out.println("cipherName-112" + javax.crypto.Cipher.getInstance(cipherName112).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return _portEntryId;
             }
 
             @Override
             public String getType()
             {
-                return Port.class.getSimpleName();
+                String cipherName113 =  "DES";
+				try{
+					System.out.println("cipherName-113" + javax.crypto.Cipher.getInstance(cipherName113).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return Port.class.getSimpleName();
             }
 
             @Override
             public Map<String, Object> getAttributes()
             {
-                return Collections.emptyMap();
+                String cipherName114 =  "DES";
+				try{
+					System.out.println("cipherName-114" + javax.crypto.Cipher.getInstance(cipherName114).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return Collections.emptyMap();
             }
 
             @Override
             public Map<String, UUID> getParents()
             {
-                return null;
+                String cipherName115 =  "DES";
+				try{
+					System.out.println("cipherName-115" + javax.crypto.Cipher.getInstance(cipherName115).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return null;
             }
         };
         _handler.remove(record);
@@ -492,7 +712,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     @Test
     public void testRemoveCLIPort()
     {
-        _systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
+        String cipherName116 =  "DES";
+		try{
+			System.out.println("cipherName-116" + javax.crypto.Cipher.getInstance(cipherName116).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_systemConfigAttributes.put(SystemConfig.MANAGEMENT_MODE_HTTP_PORT_OVERRIDE,1000);
         _handler = createManagementModeStoreHandler();
         _handler.init(_systemConfig);
         Collection<ConfiguredObjectRecord> records = openAndGetRecords();
@@ -502,11 +727,21 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
         when(record.getId()).thenReturn(portId);
         try
         {
-            _handler.remove(record);
+            String cipherName117 =  "DES";
+			try{
+				System.out.println("cipherName-117" + javax.crypto.Cipher.getInstance(cipherName117).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_handler.remove(record);
             fail("Exception should be thrown on trying to remove CLI port");
         }
         catch (IllegalConfigurationException e)
         {
+			String cipherName118 =  "DES";
+			try{
+				System.out.println("cipherName-118" + javax.crypto.Cipher.getInstance(cipherName118).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // pass
         }
     }
@@ -514,7 +749,12 @@ public class ManagementModeStoreHandlerTest extends UnitTestBase
     private UUID getOptionsPortId(Collection<ConfiguredObjectRecord> records)
     {
 
-        ConfiguredObjectRecord root = getRootEntry(records);
+        String cipherName119 =  "DES";
+		try{
+			System.out.println("cipherName-119" + javax.crypto.Cipher.getInstance(cipherName119).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		ConfiguredObjectRecord root = getRootEntry(records);
         assertEquals("Unexpected root id", _rootId, root.getId());
         Collection<UUID> childrenIds = getChildrenIds(records, root);
 

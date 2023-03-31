@@ -39,7 +39,12 @@ public class QueueFactory<X extends Queue<X>>  implements ConfiguredObjectTypeFa
     @Override
     public Class<? super X> getCategoryClass()
     {
-        return Queue.class;
+        String cipherName12118 =  "DES";
+		try{
+			System.out.println("cipherName-12118" + javax.crypto.Cipher.getInstance(cipherName12118).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Queue.class;
     }
 
     @Override
@@ -47,7 +52,12 @@ public class QueueFactory<X extends Queue<X>>  implements ConfiguredObjectTypeFa
                     final Map<String, Object> attributes,
                     final ConfiguredObject<?> parent)
     {
-        return getQueueFactory(factory, attributes).create(factory, attributes, parent);
+        String cipherName12119 =  "DES";
+		try{
+			System.out.println("cipherName-12119" + javax.crypto.Cipher.getInstance(cipherName12119).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getQueueFactory(factory, attributes).create(factory, attributes, parent);
     }
 
     @Override
@@ -55,7 +65,12 @@ public class QueueFactory<X extends Queue<X>>  implements ConfiguredObjectTypeFa
                                            final Map<String, Object> attributes,
                                            final ConfiguredObject<?> parent)
     {
-        return getQueueFactory(factory, attributes).createAsync(factory, attributes, parent);
+        String cipherName12120 =  "DES";
+		try{
+			System.out.println("cipherName-12120" + javax.crypto.Cipher.getInstance(cipherName12120).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getQueueFactory(factory, attributes).createAsync(factory, attributes, parent);
     }
 
     @Override
@@ -63,36 +78,76 @@ public class QueueFactory<X extends Queue<X>>  implements ConfiguredObjectTypeFa
                                                  final ConfiguredObjectRecord record,
                                                  final ConfiguredObject<?> parent)
     {
-        return getQueueFactory(factory, record.getAttributes()).recover(factory, record, parent);
+        String cipherName12121 =  "DES";
+		try{
+			System.out.println("cipherName-12121" + javax.crypto.Cipher.getInstance(cipherName12121).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getQueueFactory(factory, record.getAttributes()).recover(factory, record, parent);
     }
 
     private ConfiguredObjectTypeFactory<X> getQueueFactory(final ConfiguredObjectFactory factory,
                                                            Map<String, Object> attributes)
     {
 
-        String type;
+        String cipherName12122 =  "DES";
+		try{
+			System.out.println("cipherName-12122" + javax.crypto.Cipher.getInstance(cipherName12122).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String type;
 
         if(attributes.containsKey(Port.TYPE))
         {
-            type = (String) attributes.get(Port.TYPE);
+            String cipherName12123 =  "DES";
+			try{
+				System.out.println("cipherName-12123" + javax.crypto.Cipher.getInstance(cipherName12123).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			type = (String) attributes.get(Port.TYPE);
         }
         else
         {
-            if(attributes.containsKey(PriorityQueue.PRIORITIES))
+            String cipherName12124 =  "DES";
+			try{
+				System.out.println("cipherName-12124" + javax.crypto.Cipher.getInstance(cipherName12124).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(attributes.containsKey(PriorityQueue.PRIORITIES))
             {
-                type = "priority";
+                String cipherName12125 =  "DES";
+				try{
+					System.out.println("cipherName-12125" + javax.crypto.Cipher.getInstance(cipherName12125).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				type = "priority";
             }
             else if(attributes.containsKey(SortedQueue.SORT_KEY))
             {
-                type = "sorted";
+                String cipherName12126 =  "DES";
+				try{
+					System.out.println("cipherName-12126" + javax.crypto.Cipher.getInstance(cipherName12126).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				type = "sorted";
             }
             else if(attributes.containsKey(LastValueQueue.LVQ_KEY))
             {
-                type = "lvq";
+                String cipherName12127 =  "DES";
+				try{
+					System.out.println("cipherName-12127" + javax.crypto.Cipher.getInstance(cipherName12127).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				type = "lvq";
             }
             else
             {
-                type = "standard";
+                String cipherName12128 =  "DES";
+				try{
+					System.out.println("cipherName-12128" + javax.crypto.Cipher.getInstance(cipherName12128).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				type = "standard";
             }
         }
 
@@ -102,6 +157,11 @@ public class QueueFactory<X extends Queue<X>>  implements ConfiguredObjectTypeFa
     @Override
     public String getType()
     {
-        return null;
+        String cipherName12129 =  "DES";
+		try{
+			System.out.println("cipherName-12129" + javax.crypto.Cipher.getInstance(cipherName12129).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return null;
     }
 }

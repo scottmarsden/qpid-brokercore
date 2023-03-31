@@ -27,15 +27,30 @@ public class DtxNotSupportedException extends ConnectionScopedRuntimeException
     public DtxNotSupportedException(final String message)
     {
         super(message);
+		String cipherName5908 =  "DES";
+		try{
+			System.out.println("cipherName-5908" + javax.crypto.Cipher.getInstance(cipherName5908).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public DtxNotSupportedException(final String message, final Throwable cause)
     {
         super(message, cause);
+		String cipherName5909 =  "DES";
+		try{
+			System.out.println("cipherName-5909" + javax.crypto.Cipher.getInstance(cipherName5909).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public DtxNotSupportedException(final Throwable cause)
     {
         super(cause);
+		String cipherName5910 =  "DES";
+		try{
+			System.out.println("cipherName-5910" + javax.crypto.Cipher.getInstance(cipherName5910).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

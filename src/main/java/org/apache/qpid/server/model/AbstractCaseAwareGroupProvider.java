@@ -31,10 +31,20 @@ public abstract class AbstractCaseAwareGroupProvider<X extends AbstractCaseAware
     protected AbstractCaseAwareGroupProvider(Container<?> container, Map<String, Object> attributes)
     {
         super(container, attributes);
+		String cipherName11985 =  "DES";
+		try{
+			System.out.println("cipherName-11985" + javax.crypto.Cipher.getInstance(cipherName11985).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     public boolean isCaseSensitive()
     {
-        return _caseSensitive;
+        String cipherName11986 =  "DES";
+		try{
+			System.out.println("cipherName-11986" + javax.crypto.Cipher.getInstance(cipherName11986).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _caseSensitive;
     }
 }

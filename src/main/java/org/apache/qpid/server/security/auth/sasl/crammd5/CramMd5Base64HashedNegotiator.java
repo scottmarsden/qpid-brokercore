@@ -33,11 +33,21 @@ public class CramMd5Base64HashedNegotiator extends AbstractCramMd5Negotiator
                 @Override
                 public char[] transform(final char[] passwordData)
                 {
-                    byte[] passwordBytes = Strings.decodeBase64(new String(passwordData));
+                    String cipherName7282 =  "DES";
+					try{
+						System.out.println("cipherName-7282" + javax.crypto.Cipher.getInstance(cipherName7282).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					byte[] passwordBytes = Strings.decodeBase64(new String(passwordData));
                     char[] password = new char[passwordBytes.length];
                     for (int i = 0; i < passwordBytes.length; i++)
                     {
-                        password[i] = (char) passwordBytes[i];
+                        String cipherName7283 =  "DES";
+						try{
+							System.out.println("cipherName-7283" + javax.crypto.Cipher.getInstance(cipherName7283).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						password[i] = (char) passwordBytes[i];
                     }
                     return password;
                 }
@@ -48,5 +58,10 @@ public class CramMd5Base64HashedNegotiator extends AbstractCramMd5Negotiator
                                          final PasswordSource passwordSource)
     {
         super(authenticationProvider, localFQDN, passwordSource, BASE64_PASSWORD_TRANSFORMER);
+		String cipherName7284 =  "DES";
+		try{
+			System.out.println("cipherName-7284" + javax.crypto.Cipher.getInstance(cipherName7284).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

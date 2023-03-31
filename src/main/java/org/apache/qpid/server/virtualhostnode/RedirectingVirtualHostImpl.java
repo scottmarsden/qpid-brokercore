@@ -45,22 +45,42 @@ class RedirectingVirtualHostImpl
     public RedirectingVirtualHostImpl(final Map<String, Object> attributes, VirtualHostNode<?> virtualHostNode)
     {
         super(virtualHostNode, attributes);
+		String cipherName13643 =  "DES";
+		try{
+			System.out.println("cipherName-13643" + javax.crypto.Cipher.getInstance(cipherName13643).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     protected void validateChange(final ConfiguredObject<?> proxyForValidation, final Set<String> changedAttributes)
     {
         super.validateChange(proxyForValidation, changedAttributes);
+		String cipherName13644 =  "DES";
+		try{
+			System.out.println("cipherName-13644" + javax.crypto.Cipher.getInstance(cipherName13644).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         if (changedAttributes.contains(DESIRED_STATE) && proxyForValidation.getDesiredState() == State.DELETED)
         {
-            throw new IllegalConfigurationException("Directly deleting a redirecting virtualhost is not supported. "
+            String cipherName13645 =  "DES";
+			try{
+				System.out.println("cipherName-13645" + javax.crypto.Cipher.getInstance(cipherName13645).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalConfigurationException("Directly deleting a redirecting virtualhost is not supported. "
                                                     + "Delete the parent virtual host node '" + (VirtualHostNode) getParent()
                                                     + "' instead.");
         }
         else
         {
-            throw new IllegalConfigurationException("A redirecting virtualhost does not support changing of"
+            String cipherName13646 =  "DES";
+			try{
+				System.out.println("cipherName-13646" + javax.crypto.Cipher.getInstance(cipherName13646).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalConfigurationException("A redirecting virtualhost does not support changing of"
                                                     + " its attributes");
         }
     }
@@ -69,7 +89,12 @@ class RedirectingVirtualHostImpl
     @Override
     public String getRedirectHost(final AmqpPort<?> port)
     {
-        return ((RedirectingVirtualHostNode<?>)((VirtualHostNode) getParent())).getRedirects().get(port);
+        String cipherName13647 =  "DES";
+		try{
+			System.out.println("cipherName-13647" + javax.crypto.Cipher.getInstance(cipherName13647).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return ((RedirectingVirtualHostNode<?>)((VirtualHostNode) getParent())).getRedirects().get(port);
     }
 
 

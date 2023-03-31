@@ -38,14 +38,29 @@ public class DefaultVirtualHostAliasImpl
     protected DefaultVirtualHostAliasImpl(final Map<String, Object> attributes, final Port port)
     {
         super(attributes, port);
+		String cipherName8913 =  "DES";
+		try{
+			System.out.println("cipherName-8913" + javax.crypto.Cipher.getInstance(cipherName8913).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     public NamedAddressSpace getAddressSpace(final String name)
     {
-        if(name == null || name.trim().equals(""))
+        String cipherName8914 =  "DES";
+		try{
+			System.out.println("cipherName-8914" + javax.crypto.Cipher.getInstance(cipherName8914).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(name == null || name.trim().equals(""))
         {
-            Broker<?> broker = getAncestor(Broker.class);
+            String cipherName8915 =  "DES";
+			try{
+				System.out.println("cipherName-8915" + javax.crypto.Cipher.getInstance(cipherName8915).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Broker<?> broker = getAncestor(Broker.class);
             VirtualHostNode defaultVirtualHostNode = broker.findDefautVirtualHostNode();
             return defaultVirtualHostNode == null ? null : defaultVirtualHostNode.getVirtualHost();
         }

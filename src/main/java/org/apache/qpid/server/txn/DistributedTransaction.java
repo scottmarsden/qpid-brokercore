@@ -42,7 +42,12 @@ public class DistributedTransaction implements ServerTransaction
 
     public DistributedTransaction(AMQPSession<?,?> session, DtxRegistry dtxRegistry)
     {
-        _session = session;
+        String cipherName6270 =  "DES";
+		try{
+			System.out.println("cipherName-6270" + javax.crypto.Cipher.getInstance(cipherName6270).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_session = session;
         _dtxRegistry = dtxRegistry;
         _autoCommitTransaction = new AutoCommitTransaction(dtxRegistry.getMessageStore());
     }
@@ -50,39 +55,79 @@ public class DistributedTransaction implements ServerTransaction
     @Override
     public long getTransactionStartTime()
     {
-        return 0;
+        String cipherName6271 =  "DES";
+		try{
+			System.out.println("cipherName-6271" + javax.crypto.Cipher.getInstance(cipherName6271).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return 0;
     }
 
     @Override
     public long getTransactionUpdateTime()
     {
-        return 0;
+        String cipherName6272 =  "DES";
+		try{
+			System.out.println("cipherName-6272" + javax.crypto.Cipher.getInstance(cipherName6272).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return 0;
     }
 
     @Override
     public void addPostTransactionAction(Action postTransactionAction)
     {
-        if(_branch != null)
+        String cipherName6273 =  "DES";
+		try{
+			System.out.println("cipherName-6273" + javax.crypto.Cipher.getInstance(cipherName6273).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(_branch != null)
         {
-            _branch.addPostTransactionAction(postTransactionAction);
+            String cipherName6274 =  "DES";
+			try{
+				System.out.println("cipherName-6274" + javax.crypto.Cipher.getInstance(cipherName6274).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_branch.addPostTransactionAction(postTransactionAction);
         }
         else
         {
-            _autoCommitTransaction.addPostTransactionAction(postTransactionAction);
+            String cipherName6275 =  "DES";
+			try{
+				System.out.println("cipherName-6275" + javax.crypto.Cipher.getInstance(cipherName6275).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_autoCommitTransaction.addPostTransactionAction(postTransactionAction);
         }
     }
 
     @Override
     public void dequeue(MessageEnqueueRecord record, Action postTransactionAction)
     {
-        if(_branch != null)
+        String cipherName6276 =  "DES";
+		try{
+			System.out.println("cipherName-6276" + javax.crypto.Cipher.getInstance(cipherName6276).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(_branch != null)
         {
-            _branch.dequeue(record);
+            String cipherName6277 =  "DES";
+			try{
+				System.out.println("cipherName-6277" + javax.crypto.Cipher.getInstance(cipherName6277).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_branch.dequeue(record);
             _branch.addPostTransactionAction(postTransactionAction);
         }
         else
         {
-            _autoCommitTransaction.dequeue(record, postTransactionAction);
+            String cipherName6278 =  "DES";
+			try{
+				System.out.println("cipherName-6278" + javax.crypto.Cipher.getInstance(cipherName6278).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_autoCommitTransaction.dequeue(record, postTransactionAction);
         }
     }
 
@@ -90,32 +135,67 @@ public class DistributedTransaction implements ServerTransaction
     @Override
     public void dequeue(Collection<MessageInstance> messages, Action postTransactionAction)
     {
-        if(_branch != null)
+        String cipherName6279 =  "DES";
+		try{
+			System.out.println("cipherName-6279" + javax.crypto.Cipher.getInstance(cipherName6279).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(_branch != null)
         {
-            for(MessageInstance entry : messages)
+            String cipherName6280 =  "DES";
+			try{
+				System.out.println("cipherName-6280" + javax.crypto.Cipher.getInstance(cipherName6280).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(MessageInstance entry : messages)
             {
-                _branch.dequeue(entry.getEnqueueRecord());
+                String cipherName6281 =  "DES";
+				try{
+					System.out.println("cipherName-6281" + javax.crypto.Cipher.getInstance(cipherName6281).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				_branch.dequeue(entry.getEnqueueRecord());
             }
             _branch.addPostTransactionAction(postTransactionAction);
         }
         else
         {
-            _autoCommitTransaction.dequeue(messages, postTransactionAction);
+            String cipherName6282 =  "DES";
+			try{
+				System.out.println("cipherName-6282" + javax.crypto.Cipher.getInstance(cipherName6282).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_autoCommitTransaction.dequeue(messages, postTransactionAction);
         }
     }
 
     @Override
     public void enqueue(TransactionLogResource queue, EnqueueableMessage message, final EnqueueAction postTransactionAction)
     {
-        if(_branch != null)
+        String cipherName6283 =  "DES";
+		try{
+			System.out.println("cipherName-6283" + javax.crypto.Cipher.getInstance(cipherName6283).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(_branch != null)
         {
-            final MessageEnqueueRecord[] enqueueRecords = new MessageEnqueueRecord[1];
+            String cipherName6284 =  "DES";
+			try{
+				System.out.println("cipherName-6284" + javax.crypto.Cipher.getInstance(cipherName6284).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final MessageEnqueueRecord[] enqueueRecords = new MessageEnqueueRecord[1];
                 _branch.enqueue(queue, message, new org.apache.qpid.server.util.Action<MessageEnqueueRecord>()
                 {
                     @Override
                     public void performAction(final MessageEnqueueRecord record)
                     {
-                        enqueueRecords[0] = record;
+                        String cipherName6285 =  "DES";
+						try{
+							System.out.println("cipherName-6285" + javax.crypto.Cipher.getInstance(cipherName6285).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						enqueueRecords[0] = record;
                     }
                 });
             addPostTransactionAction(new Action()
@@ -123,19 +203,34 @@ public class DistributedTransaction implements ServerTransaction
                 @Override
                 public void postCommit()
                 {
-                    postTransactionAction.postCommit(enqueueRecords);
+                    String cipherName6286 =  "DES";
+					try{
+						System.out.println("cipherName-6286" + javax.crypto.Cipher.getInstance(cipherName6286).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					postTransactionAction.postCommit(enqueueRecords);
                 }
 
                 @Override
                 public void onRollback()
                 {
-                    postTransactionAction.onRollback();
+                    String cipherName6287 =  "DES";
+					try{
+						System.out.println("cipherName-6287" + javax.crypto.Cipher.getInstance(cipherName6287).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					postTransactionAction.onRollback();
                 }
             });
         }
         else
         {
-            _autoCommitTransaction.enqueue(queue, message, postTransactionAction);
+            String cipherName6288 =  "DES";
+			try{
+				System.out.println("cipherName-6288" + javax.crypto.Cipher.getInstance(cipherName6288).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_autoCommitTransaction.enqueue(queue, message, postTransactionAction);
         }
     }
 
@@ -143,19 +238,39 @@ public class DistributedTransaction implements ServerTransaction
     public void enqueue(Collection<? extends BaseQueue> queues, EnqueueableMessage message,
                         final EnqueueAction postTransactionAction)
     {
-        if(_branch != null)
+        String cipherName6289 =  "DES";
+		try{
+			System.out.println("cipherName-6289" + javax.crypto.Cipher.getInstance(cipherName6289).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(_branch != null)
         {
-            final MessageEnqueueRecord[] enqueueRecords = new MessageEnqueueRecord[queues.size()];
+            String cipherName6290 =  "DES";
+			try{
+				System.out.println("cipherName-6290" + javax.crypto.Cipher.getInstance(cipherName6290).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final MessageEnqueueRecord[] enqueueRecords = new MessageEnqueueRecord[queues.size()];
             int i = 0;
             for(BaseQueue queue : queues)
             {
-                final int pos = i;
+                String cipherName6291 =  "DES";
+				try{
+					System.out.println("cipherName-6291" + javax.crypto.Cipher.getInstance(cipherName6291).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				final int pos = i;
                 _branch.enqueue(queue, message, new org.apache.qpid.server.util.Action<MessageEnqueueRecord>()
                 {
                     @Override
                     public void performAction(final MessageEnqueueRecord record)
                     {
-                        enqueueRecords[pos] = record;
+                        String cipherName6292 =  "DES";
+						try{
+							System.out.println("cipherName-6292" + javax.crypto.Cipher.getInstance(cipherName6292).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						enqueueRecords[pos] = record;
                     }
                 });
                 i++;
@@ -165,86 +280,171 @@ public class DistributedTransaction implements ServerTransaction
                 @Override
                 public void postCommit()
                 {
-                    postTransactionAction.postCommit(enqueueRecords);
+                    String cipherName6293 =  "DES";
+					try{
+						System.out.println("cipherName-6293" + javax.crypto.Cipher.getInstance(cipherName6293).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					postTransactionAction.postCommit(enqueueRecords);
                 }
 
                 @Override
                 public void onRollback()
                 {
-                    postTransactionAction.onRollback();
+                    String cipherName6294 =  "DES";
+					try{
+						System.out.println("cipherName-6294" + javax.crypto.Cipher.getInstance(cipherName6294).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					postTransactionAction.onRollback();
                 }
             });
         }
         else
         {
-            _autoCommitTransaction.enqueue(queues, message, postTransactionAction);
+            String cipherName6295 =  "DES";
+			try{
+				System.out.println("cipherName-6295" + javax.crypto.Cipher.getInstance(cipherName6295).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_autoCommitTransaction.enqueue(queues, message, postTransactionAction);
         }
     }
 
     @Override
     public void commit()
     {
-        throw new IllegalStateException("Cannot call tx.commit() on a distributed transaction");
+        String cipherName6296 =  "DES";
+		try{
+			System.out.println("cipherName-6296" + javax.crypto.Cipher.getInstance(cipherName6296).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new IllegalStateException("Cannot call tx.commit() on a distributed transaction");
     }
 
     @Override
     public void commit(Runnable immediatePostTransactionAction)
     {
-        throw new IllegalStateException("Cannot call tx.commit() on a distributed transaction");
+        String cipherName6297 =  "DES";
+		try{
+			System.out.println("cipherName-6297" + javax.crypto.Cipher.getInstance(cipherName6297).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new IllegalStateException("Cannot call tx.commit() on a distributed transaction");
     }
 
     @Override
     public void rollback()
     {
-        throw new IllegalStateException("Cannot call tx.rollback() on a distributed transaction");
+        String cipherName6298 =  "DES";
+		try{
+			System.out.println("cipherName-6298" + javax.crypto.Cipher.getInstance(cipherName6298).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		throw new IllegalStateException("Cannot call tx.rollback() on a distributed transaction");
     }
 
     @Override
     public boolean isTransactional()
     {
-        return _branch != null;
+        String cipherName6299 =  "DES";
+		try{
+			System.out.println("cipherName-6299" + javax.crypto.Cipher.getInstance(cipherName6299).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _branch != null;
     }
     
     public void start(Xid id, boolean join, boolean resume)
             throws UnknownDtxBranchException, AlreadyKnownDtxException, JoinAndResumeDtxException
     {
-        if(join && resume)
+        String cipherName6300 =  "DES";
+		try{
+			System.out.println("cipherName-6300" + javax.crypto.Cipher.getInstance(cipherName6300).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(join && resume)
         {
-            throw new JoinAndResumeDtxException(id);
+            String cipherName6301 =  "DES";
+			try{
+				System.out.println("cipherName-6301" + javax.crypto.Cipher.getInstance(cipherName6301).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new JoinAndResumeDtxException(id);
         }
 
         DtxBranch branch = _dtxRegistry.getBranch(id);
 
         if(branch == null)
         {
-            if(join || resume)
+            String cipherName6302 =  "DES";
+			try{
+				System.out.println("cipherName-6302" + javax.crypto.Cipher.getInstance(cipherName6302).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(join || resume)
             {
-                throw new UnknownDtxBranchException(id);
+                String cipherName6303 =  "DES";
+				try{
+					System.out.println("cipherName-6303" + javax.crypto.Cipher.getInstance(cipherName6303).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new UnknownDtxBranchException(id);
             }
             branch = new DtxBranch(id, _dtxRegistry);
             if(_dtxRegistry.registerBranch(branch))
             {
-                _branch = branch;
+                String cipherName6304 =  "DES";
+				try{
+					System.out.println("cipherName-6304" + javax.crypto.Cipher.getInstance(cipherName6304).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				_branch = branch;
                 branch.associateSession(_session);
             }
             else
             {
-                throw new AlreadyKnownDtxException(id);
+                String cipherName6305 =  "DES";
+				try{
+					System.out.println("cipherName-6305" + javax.crypto.Cipher.getInstance(cipherName6305).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new AlreadyKnownDtxException(id);
             }
         }
         else
         {
-            if(join)
+            String cipherName6306 =  "DES";
+			try{
+				System.out.println("cipherName-6306" + javax.crypto.Cipher.getInstance(cipherName6306).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(join)
             {
-                branch.associateSession(_session);
+                String cipherName6307 =  "DES";
+				try{
+					System.out.println("cipherName-6307" + javax.crypto.Cipher.getInstance(cipherName6307).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				branch.associateSession(_session);
             }
             else if(resume)
             {
-                branch.resumeSession(_session);
+                String cipherName6308 =  "DES";
+				try{
+					System.out.println("cipherName-6308" + javax.crypto.Cipher.getInstance(cipherName6308).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				branch.resumeSession(_session);
             }
             else
             {
-                throw new AlreadyKnownDtxException(id);
+                String cipherName6309 =  "DES";
+				try{
+					System.out.println("cipherName-6309" + javax.crypto.Cipher.getInstance(cipherName6309).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new AlreadyKnownDtxException(id);
             }
             _branch = branch;
         }
@@ -253,11 +453,21 @@ public class DistributedTransaction implements ServerTransaction
     public void end(Xid id, boolean fail, boolean suspend)
             throws UnknownDtxBranchException, NotAssociatedDtxException, SuspendAndFailDtxException, TimeoutDtxException
     {
-        DtxBranch branch = _dtxRegistry.getBranch(id);
+        String cipherName6310 =  "DES";
+		try{
+			System.out.println("cipherName-6310" + javax.crypto.Cipher.getInstance(cipherName6310).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		DtxBranch branch = _dtxRegistry.getBranch(id);
 
         if(suspend && fail)
         {
-            branch.disassociateSession(_session);
+            String cipherName6311 =  "DES";
+			try{
+				System.out.println("cipherName-6311" + javax.crypto.Cipher.getInstance(cipherName6311).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			branch.disassociateSession(_session);
             _branch = null;
             throw new SuspendAndFailDtxException(id);
         }
@@ -265,29 +475,64 @@ public class DistributedTransaction implements ServerTransaction
 
         if(branch == null)
         {
-            throw new UnknownDtxBranchException(id);
+            String cipherName6312 =  "DES";
+			try{
+				System.out.println("cipherName-6312" + javax.crypto.Cipher.getInstance(cipherName6312).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new UnknownDtxBranchException(id);
         }
         else
         {
-            if(!branch.isAssociated(_session))
+            String cipherName6313 =  "DES";
+			try{
+				System.out.println("cipherName-6313" + javax.crypto.Cipher.getInstance(cipherName6313).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(!branch.isAssociated(_session))
             {
-                throw new NotAssociatedDtxException(id);
+                String cipherName6314 =  "DES";
+				try{
+					System.out.println("cipherName-6314" + javax.crypto.Cipher.getInstance(cipherName6314).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new NotAssociatedDtxException(id);
             }
             if(branch.expired() || branch.getState() == DtxBranch.State.TIMEDOUT)
             {
-                branch.disassociateSession(_session);
+                String cipherName6315 =  "DES";
+				try{
+					System.out.println("cipherName-6315" + javax.crypto.Cipher.getInstance(cipherName6315).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				branch.disassociateSession(_session);
                 throw new TimeoutDtxException(id);
             }
 
             if(suspend)
             {
-                branch.suspendSession(_session);
+                String cipherName6316 =  "DES";
+				try{
+					System.out.println("cipherName-6316" + javax.crypto.Cipher.getInstance(cipherName6316).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				branch.suspendSession(_session);
             }
             else
             {
-                if(fail)
+                String cipherName6317 =  "DES";
+				try{
+					System.out.println("cipherName-6317" + javax.crypto.Cipher.getInstance(cipherName6317).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(fail)
                 {
-                    branch.setState(DtxBranch.State.ROLLBACK_ONLY);
+                    String cipherName6318 =  "DES";
+					try{
+						System.out.println("cipherName-6318" + javax.crypto.Cipher.getInstance(cipherName6318).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					branch.setState(DtxBranch.State.ROLLBACK_ONLY);
                 }
                 branch.disassociateSession(_session);
             }

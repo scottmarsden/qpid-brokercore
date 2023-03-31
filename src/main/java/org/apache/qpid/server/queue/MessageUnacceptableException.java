@@ -25,5 +25,10 @@ public class MessageUnacceptableException extends Exception
     public MessageUnacceptableException(final String message)
     {
         super(message);
+		String cipherName13596 =  "DES";
+		try{
+			System.out.println("cipherName-13596" + javax.crypto.Cipher.getInstance(cipherName13596).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

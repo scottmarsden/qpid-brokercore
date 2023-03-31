@@ -64,7 +64,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testAttributePersistence()
     {
-        final String objectName = "testNonPersistAttributes";
+        String cipherName2333 =  "DES";
+		try{
+			System.out.println("cipherName-2333" + javax.crypto.Cipher.getInstance(cipherName2333).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "testNonPersistAttributes";
         TestSingleton object =
                 _model.getObjectFactory().create(TestSingleton.class,
                                                 Collections.<String, Object>singletonMap(ConfiguredObject.NAME,
@@ -107,7 +112,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testDefaultedAttributeValue()
     {
-        final String objectName = "myName";
+        String cipherName2334 =  "DES";
+		try{
+			System.out.println("cipherName-2334" + javax.crypto.Cipher.getInstance(cipherName2334).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = Collections.<String, Object>singletonMap(TestSingleton.NAME, objectName);
 
@@ -121,7 +131,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testOverriddenDefaultedAttributeValue()
     {
-        final String objectName = "myName";
+        String cipherName2335 =  "DES";
+		try{
+			System.out.println("cipherName-2335" + javax.crypto.Cipher.getInstance(cipherName2335).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -137,7 +152,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testOverriddenDefaultedAttributeValueRevertedToDefault()
     {
-        final String objectName = "myName";
+        String cipherName2336 =  "DES";
+		try{
+			System.out.println("cipherName-2336" + javax.crypto.Cipher.getInstance(cipherName2336).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -157,7 +177,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testDefaultInitialization()
     {
-        TestSingleton object =
+        String cipherName2337 =  "DES";
+		try{
+			System.out.println("cipherName-2337" + javax.crypto.Cipher.getInstance(cipherName2337).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		TestSingleton object =
                 _model.getObjectFactory().create(TestSingleton.class,
                                                  Collections.<String, Object>singletonMap(ConfiguredObject.NAME,
                                                                                           "testDefaultInitialization"), null);
@@ -203,7 +228,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testEnumAttributeValueFromString()
     {
-        final String objectName = "myName";
+        String cipherName2338 =  "DES";
+		try{
+			System.out.println("cipherName-2338" + javax.crypto.Cipher.getInstance(cipherName2338).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -219,7 +249,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testEnumAttributeValueFromEnum()
     {
-        final String objectName = "myName";
+        String cipherName2339 =  "DES";
+		try{
+			System.out.println("cipherName-2339" + javax.crypto.Cipher.getInstance(cipherName2339).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -235,7 +270,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testIntegerAttributeValueFromString()
     {
-        final String objectName = "myName";
+        String cipherName2340 =  "DES";
+		try{
+			System.out.println("cipherName-2340" + javax.crypto.Cipher.getInstance(cipherName2340).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -251,7 +291,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testIntegerAttributeValueFromInteger()
     {
-        final String objectName = "myName";
+        String cipherName2341 =  "DES";
+		try{
+			System.out.println("cipherName-2341" + javax.crypto.Cipher.getInstance(cipherName2341).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -267,7 +312,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testIntegerAttributeValueFromDouble()
     {
-        final String objectName = "myName";
+        String cipherName2342 =  "DES";
+		try{
+			System.out.println("cipherName-2342" + javax.crypto.Cipher.getInstance(cipherName2342).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -283,7 +333,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testDateAttributeFromMillis()
     {
-        final String objectName = "myName";
+        String cipherName2343 =  "DES";
+		try{
+			System.out.println("cipherName-2343" + javax.crypto.Cipher.getInstance(cipherName2343).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
         long now = System.currentTimeMillis();
 
         Map<String, Object> attributes = new HashMap<>();
@@ -300,7 +355,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testDateAttributeFromIso8601()
     {
-        final String objectName = "myName";
+        String cipherName2344 =  "DES";
+		try{
+			System.out.println("cipherName-2344" + javax.crypto.Cipher.getInstance(cipherName2344).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
         String date = "1970-01-01";
 
         Map<String, Object> attributes = new HashMap<>();
@@ -317,7 +377,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testStringAttributeValueFromContextVariableProvidedBySystemProperty()
     {
-        String sysPropertyName = "testStringAttributeValueFromContextVariableProvidedBySystemProperty";
+        String cipherName2345 =  "DES";
+		try{
+			System.out.println("cipherName-2345" + javax.crypto.Cipher.getInstance(cipherName2345).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String sysPropertyName = "testStringAttributeValueFromContextVariableProvidedBySystemProperty";
         String contextToken = "${" + sysPropertyName + "}";
 
         System.setProperty(sysPropertyName, "myValue");
@@ -355,7 +420,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testMapAttributeValueFromContextVariableProvidedBySystemProperty()
     {
-        String sysPropertyName = "testMapAttributeValueFromContextVariableProvidedBySystemProperty";
+        String cipherName2346 =  "DES";
+		try{
+			System.out.println("cipherName-2346" + javax.crypto.Cipher.getInstance(cipherName2346).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String sysPropertyName = "testMapAttributeValueFromContextVariableProvidedBySystemProperty";
         String contextToken = "${" + sysPropertyName + "}";
 
         Map<String,String> expectedMap = new HashMap<>();
@@ -383,7 +453,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testStringAttributeValueFromContextVariableProvidedObjectsContext()
     {
-        String contextToken = "${myReplacement}";
+        String cipherName2347 =  "DES";
+		try{
+			System.out.println("cipherName-2347" + javax.crypto.Cipher.getInstance(cipherName2347).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String contextToken = "${myReplacement}";
 
         final String objectName = "myName";
 
@@ -405,7 +480,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testInvalidIntegerAttributeValueFromContextVariable()
     {
-        final Map<String, Object> attributes = new HashMap<>();
+        String cipherName2348 =  "DES";
+		try{
+			System.out.println("cipherName-2348" + javax.crypto.Cipher.getInstance(cipherName2348).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Map<String, Object> attributes = new HashMap<>();
 
         attributes.put(TestSingleton.NAME, "myName");
         attributes.put(TestSingleton.TYPE, TestSingletonImpl.TEST_SINGLETON_TYPE);
@@ -414,13 +494,23 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            _model.getObjectFactory().create(TestSingleton.class,
+            String cipherName2349 =  "DES";
+			try{
+				System.out.println("cipherName-2349" + javax.crypto.Cipher.getInstance(cipherName2349).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_model.getObjectFactory().create(TestSingleton.class,
                                                                     attributes, null);
             fail("creation of child object should have failed due to invalid value");
         }
         catch (IllegalArgumentException e)
         {
-            // PASS
+            String cipherName2350 =  "DES";
+			try{
+				System.out.println("cipherName-2350" + javax.crypto.Cipher.getInstance(cipherName2350).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			// PASS
             String message = e.getMessage();
             assertTrue("Message does not contain the attribute name", message.contains("intValue"));
             assertTrue("Message does not contain the non-interpolated value", message.contains("contextVal"));
@@ -431,18 +521,33 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testCreateEnforcesAttributeValidValues() throws Exception
     {
-        final String objectName = getTestName();
+        String cipherName2351 =  "DES";
+		try{
+			System.out.println("cipherName-2351" + javax.crypto.Cipher.getInstance(cipherName2351).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = getTestName();
         Map<String, Object> illegalCreateAttributes = new HashMap<>();
         illegalCreateAttributes.put(ConfiguredObject.NAME, objectName);
         illegalCreateAttributes.put(TestSingleton.VALID_VALUE, "illegal");
 
         try
         {
-            _model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
+            String cipherName2352 =  "DES";
+			try{
+				System.out.println("cipherName-2352" + javax.crypto.Cipher.getInstance(cipherName2352).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
             fail("Exception not thrown");
         }
         catch (IllegalConfigurationException ice)
         {
+			String cipherName2353 =  "DES";
+			try{
+				System.out.println("cipherName-2353" + javax.crypto.Cipher.getInstance(cipherName2353).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -457,18 +562,33 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testCreateEnforcesAttributeValidValuePattern() throws Exception
     {
-        final String objectName = getTestName();
+        String cipherName2354 =  "DES";
+		try{
+			System.out.println("cipherName-2354" + javax.crypto.Cipher.getInstance(cipherName2354).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = getTestName();
         Map<String, Object> illegalCreateAttributes = new HashMap<>();
         illegalCreateAttributes.put(ConfiguredObject.NAME, objectName);
         illegalCreateAttributes.put(TestSingleton.VALUE_WITH_PATTERN, "illegal");
 
         try
         {
-            _model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
+            String cipherName2355 =  "DES";
+			try{
+				System.out.println("cipherName-2355" + javax.crypto.Cipher.getInstance(cipherName2355).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
             fail("Exception not thrown");
         }
         catch (IllegalConfigurationException ice)
         {
+			String cipherName2356 =  "DES";
+			try{
+				System.out.println("cipherName-2356" + javax.crypto.Cipher.getInstance(cipherName2356).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -478,11 +598,21 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            _model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
+            String cipherName2357 =  "DES";
+			try{
+				System.out.println("cipherName-2357" + javax.crypto.Cipher.getInstance(cipherName2357).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
             fail("Exception not thrown");
         }
         catch (IllegalConfigurationException ice)
         {
+			String cipherName2358 =  "DES";
+			try{
+				System.out.println("cipherName-2358" + javax.crypto.Cipher.getInstance(cipherName2358).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -500,7 +630,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testChangeEnforcesAttributeValidValues() throws Exception
     {
-        final String objectName = getTestName();
+        String cipherName2359 =  "DES";
+		try{
+			System.out.println("cipherName-2359" + javax.crypto.Cipher.getInstance(cipherName2359).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = getTestName();
         Map<String, Object> legalCreateAttributes = new HashMap<>();
         legalCreateAttributes.put(ConfiguredObject.NAME, objectName);
         legalCreateAttributes.put(TestSingleton.VALID_VALUE, TestSingleton.VALID_VALUE1);
@@ -513,11 +648,21 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.VALID_VALUE, "illegal"));
+            String cipherName2360 =  "DES";
+			try{
+				System.out.println("cipherName-2360" + javax.crypto.Cipher.getInstance(cipherName2360).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.VALID_VALUE, "illegal"));
             fail("Exception not thrown");
         }
         catch (IllegalConfigurationException iae)
         {
+			String cipherName2361 =  "DES";
+			try{
+				System.out.println("cipherName-2361" + javax.crypto.Cipher.getInstance(cipherName2361).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -530,7 +675,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testCreateEnforcesAttributeValidValuesWithSets() throws Exception
     {
-        final String objectName = getTestName();
+        String cipherName2362 =  "DES";
+		try{
+			System.out.println("cipherName-2362" + javax.crypto.Cipher.getInstance(cipherName2362).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = getTestName();
         final Map<String, Object> name = Collections.singletonMap(ConfiguredObject.NAME, (Object)objectName);
 
         Map<String, Object> illegalCreateAttributes = new HashMap<>(name);
@@ -538,16 +688,31 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            _model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
+            String cipherName2363 =  "DES";
+			try{
+				System.out.println("cipherName-2363" + javax.crypto.Cipher.getInstance(cipherName2363).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_model.getObjectFactory().create(TestSingleton.class, illegalCreateAttributes, null);
             fail("Exception not thrown");
         }
         catch (IllegalConfigurationException ice)
         {
+			String cipherName2364 =  "DES";
+			try{
+				System.out.println("cipherName-2364" + javax.crypto.Cipher.getInstance(cipherName2364).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
         {
-            Map<String, Object> legalCreateAttributesEnums = new HashMap<>(name);
+            String cipherName2365 =  "DES";
+			try{
+				System.out.println("cipherName-2365" + javax.crypto.Cipher.getInstance(cipherName2365).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Map<String, Object> legalCreateAttributesEnums = new HashMap<>(name);
             legalCreateAttributesEnums.put(TestSingleton.ENUMSET_VALUES,
                                            Arrays.asList(TestEnum.TEST_ENUM2, TestEnum.TEST_ENUM3));
 
@@ -556,7 +721,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
         }
 
         {
-            Map<String, Object> legalCreateAttributesStrings = new HashMap<>(name);
+            String cipherName2366 =  "DES";
+			try{
+				System.out.println("cipherName-2366" + javax.crypto.Cipher.getInstance(cipherName2366).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Map<String, Object> legalCreateAttributesStrings = new HashMap<>(name);
             legalCreateAttributesStrings.put(TestSingleton.ENUMSET_VALUES,
                                              Arrays.asList(TestEnum.TEST_ENUM2.name(), TestEnum.TEST_ENUM3.name()));
 
@@ -570,7 +740,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testChangeEnforcesAttributeValidValuePatterns() throws Exception
     {
-        final String objectName = getTestName();
+        String cipherName2367 =  "DES";
+		try{
+			System.out.println("cipherName-2367" + javax.crypto.Cipher.getInstance(cipherName2367).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = getTestName();
         Map<String, Object> legalCreateAttributes = new HashMap<>();
         legalCreateAttributes.put(ConfiguredObject.NAME, objectName);
         legalCreateAttributes.put(TestSingleton.VALUE_WITH_PATTERN, "foozzzzzbar");
@@ -588,22 +763,42 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.VALUE_WITH_PATTERN, "foobaz"));
+            String cipherName2368 =  "DES";
+			try{
+				System.out.println("cipherName-2368" + javax.crypto.Cipher.getInstance(cipherName2368).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.VALUE_WITH_PATTERN, "foobaz"));
             fail("Exception not thrown");
         }
         catch (IllegalConfigurationException iae)
         {
+			String cipherName2369 =  "DES";
+			try{
+				System.out.println("cipherName-2369" + javax.crypto.Cipher.getInstance(cipherName2369).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.LIST_VALUE_WITH_PATTERN, Arrays.asList("1.1.1.1", "1")));
+            String cipherName2370 =  "DES";
+			try{
+				System.out.println("cipherName-2370" + javax.crypto.Cipher.getInstance(cipherName2370).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.LIST_VALUE_WITH_PATTERN, Arrays.asList("1.1.1.1", "1")));
             fail("Exception not thrown");
         }
         catch (IllegalConfigurationException iae)
         {
+			String cipherName2371 =  "DES";
+			try{
+				System.out.println("cipherName-2371" + javax.crypto.Cipher.getInstance(cipherName2371).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -623,7 +818,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testDefaultContextIsInContextKeys()
     {
-        final String objectName = "myName";
+        String cipherName2372 =  "DES";
+		try{
+			System.out.println("cipherName-2372" + javax.crypto.Cipher.getInstance(cipherName2372).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfiguredObject.NAME, objectName);
@@ -644,7 +844,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testDefaultContextVariableWhichRefersToThis()
     {
-        final String objectName = "myName";
+        String cipherName2373 =  "DES";
+		try{
+			System.out.println("cipherName-2373" + javax.crypto.Cipher.getInstance(cipherName2373).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfiguredObject.NAME, objectName);
@@ -663,7 +868,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testDerivedAttributeValue()
     {
-        final String objectName = "myName";
+        String cipherName2374 =  "DES";
+		try{
+			System.out.println("cipherName-2374" + javax.crypto.Cipher.getInstance(cipherName2374).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfiguredObject.NAME, objectName);
@@ -681,7 +891,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testSecureValueRetrieval()
     {
-        final String objectName = "myName";
+        String cipherName2375 =  "DES";
+		try{
+			System.out.println("cipherName-2375" + javax.crypto.Cipher.getInstance(cipherName2375).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
         final String secret = "secret";
 
         Map<String, Object> attributes = new HashMap<>();
@@ -702,7 +917,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                          @Override
                          public Object run()
                          {
-                             assertEquals(secret, object.getAttribute(TestSingleton.SECURE_VALUE));
+                             String cipherName2376 =  "DES";
+							try{
+								System.out.println("cipherName-2376" + javax.crypto.Cipher.getInstance(cipherName2376).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							assertEquals(secret, object.getAttribute(TestSingleton.SECURE_VALUE));
                              assertEquals(secret, object.getSecureValue());
                              return null;
                          }
@@ -712,7 +932,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testImmutableAttribute()
     {
-        final String originalValue = "myvalue";
+        String cipherName2377 =  "DES";
+		try{
+			System.out.println("cipherName-2377" + javax.crypto.Cipher.getInstance(cipherName2377).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String originalValue = "myvalue";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfiguredObject.NAME, "myName");
@@ -728,22 +953,42 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.IMMUTABLE_VALUE, "newvalue"));
+            String cipherName2378 =  "DES";
+			try{
+				System.out.println("cipherName-2378" + javax.crypto.Cipher.getInstance(cipherName2378).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.IMMUTABLE_VALUE, "newvalue"));
             fail("Exception not thrown");
         }
         catch(IllegalConfigurationException e)
         {
+			String cipherName2379 =  "DES";
+			try{
+				System.out.println("cipherName-2379" + javax.crypto.Cipher.getInstance(cipherName2379).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
         assertEquals(originalValue, object.getImmutableValue());
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.IMMUTABLE_VALUE, null));
+            String cipherName2380 =  "DES";
+			try{
+				System.out.println("cipherName-2380" + javax.crypto.Cipher.getInstance(cipherName2380).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.IMMUTABLE_VALUE, null));
             fail("Exception not thrown");
         }
         catch(IllegalConfigurationException e)
         {
+			String cipherName2381 =  "DES";
+			try{
+				System.out.println("cipherName-2381" + javax.crypto.Cipher.getInstance(cipherName2381).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -753,7 +998,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testImmutableAttributeNullValue()
     {
-        Map<String, Object> attributes = new HashMap<>();
+        String cipherName2382 =  "DES";
+		try{
+			System.out.println("cipherName-2382" + javax.crypto.Cipher.getInstance(cipherName2382).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfiguredObject.NAME, "myName");
         attributes.put(TestSingleton.IMMUTABLE_VALUE, null);
 
@@ -767,11 +1017,21 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.IMMUTABLE_VALUE, "newvalue"));
+            String cipherName2383 =  "DES";
+			try{
+				System.out.println("cipherName-2383" + javax.crypto.Cipher.getInstance(cipherName2383).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.IMMUTABLE_VALUE, "newvalue"));
             fail("Exception not thrown");
         }
         catch(IllegalConfigurationException e)
         {
+			String cipherName2384 =  "DES";
+			try{
+				System.out.println("cipherName-2384" + javax.crypto.Cipher.getInstance(cipherName2384).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
         assertNull("Immutable value unexpectedly changed", object.getImmutableValue());
@@ -781,7 +1041,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testIdAndTypeAreImmutableAttribute()
     {
-        Map<String, Object> attributes = new HashMap<>();
+        String cipherName2385 =  "DES";
+		try{
+			System.out.println("cipherName-2385" + javax.crypto.Cipher.getInstance(cipherName2385).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfiguredObject.NAME, "myName");
 
         final TestSingleton object = _model.getObjectFactory().create(TestSingleton.class,
@@ -791,11 +1056,21 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.ID, UUID.randomUUID()));
+            String cipherName2386 =  "DES";
+			try{
+				System.out.println("cipherName-2386" + javax.crypto.Cipher.getInstance(cipherName2386).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.ID, UUID.randomUUID()));
             fail("Exception not thrown");
         }
         catch(IllegalConfigurationException e)
         {
+			String cipherName2387 =  "DES";
+			try{
+				System.out.println("cipherName-2387" + javax.crypto.Cipher.getInstance(cipherName2387).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -803,11 +1078,21 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
         try
         {
-            object.setAttributes(Collections.singletonMap(TestSingleton.TYPE, "newtype"));
+            String cipherName2388 =  "DES";
+			try{
+				System.out.println("cipherName-2388" + javax.crypto.Cipher.getInstance(cipherName2388).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			object.setAttributes(Collections.singletonMap(TestSingleton.TYPE, "newtype"));
             fail("Exception not thrown");
         }
         catch(IllegalConfigurationException e)
         {
+			String cipherName2389 =  "DES";
+			try{
+				System.out.println("cipherName-2389" + javax.crypto.Cipher.getInstance(cipherName2389).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
             // PASS
         }
 
@@ -817,7 +1102,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testSetAttributesFiresListener()
     {
-        final String objectName = "listenerFiring";
+        String cipherName2390 =  "DES";
+		try{
+			System.out.println("cipherName-2390" + javax.crypto.Cipher.getInstance(cipherName2390).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "listenerFiring";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(ConfiguredObject.NAME, objectName);
@@ -836,7 +1126,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                                      final Object oldAttributeValue,
                                      final Object newAttributeValue)
             {
-                listenerCount.incrementAndGet();
+                String cipherName2391 =  "DES";
+				try{
+					System.out.println("cipherName-2391" + javax.crypto.Cipher.getInstance(cipherName2391).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				listenerCount.incrementAndGet();
                 String delta = String.valueOf(oldAttributeValue) + "=>" + String.valueOf(newAttributeValue);
                 updates.put(attributeName, delta);
             }
@@ -873,7 +1168,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testSetAttributesInterpolateValues()
     {
-        setTestSystemProperty("foo1", "myValue1");
+        String cipherName2392 =  "DES";
+		try{
+			System.out.println("cipherName-2392" + javax.crypto.Cipher.getInstance(cipherName2392).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setTestSystemProperty("foo1", "myValue1");
         setTestSystemProperty("foo2", "myValue2");
         setTestSystemProperty("foo3", null);
 
@@ -893,7 +1193,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                                      final Object oldAttributeValue,
                                      final Object newAttributeValue)
             {
-                listenerCount.incrementAndGet();
+                String cipherName2393 =  "DES";
+				try{
+					System.out.println("cipherName-2393" + javax.crypto.Cipher.getInstance(cipherName2393).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				listenerCount.incrementAndGet();
             }
         });
 
@@ -921,7 +1226,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testCreateAndLastUpdateDate() throws Exception
     {
-        final String objectName = "myName";
+        String cipherName2394 =  "DES";
+		try{
+			System.out.println("cipherName-2394" + javax.crypto.Cipher.getInstance(cipherName2394).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
         final Date now = new Date();
 
         Map<String, Object> attributes = new HashMap<>();
@@ -944,7 +1254,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testStatistics() throws Exception
     {
-        final String objectName = "myName";
+        String cipherName2395 =  "DES";
+		try{
+			System.out.println("cipherName-2395" + javax.crypto.Cipher.getInstance(cipherName2395).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -960,7 +1275,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testAuditInformation() throws Exception
     {
-        final String creatingUser = "creatingUser";
+        String cipherName2396 =  "DES";
+		try{
+			System.out.println("cipherName-2396" + javax.crypto.Cipher.getInstance(cipherName2396).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String creatingUser = "creatingUser";
         final String updatingUser = "updatingUser";
         final Subject creatorSubject = createTestAuthenticatedSubject(creatingUser);
         final Subject updaterSubject = createTestAuthenticatedSubject(updatingUser);
@@ -977,7 +1297,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                          @Override
                          public TestSingleton run()
                          {
-                             return _model.getObjectFactory().create(TestSingleton.class,
+                             String cipherName2397 =  "DES";
+							try{
+								System.out.println("cipherName-2397" + javax.crypto.Cipher.getInstance(cipherName2397).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							return _model.getObjectFactory().create(TestSingleton.class,
                                                                     attributes, null);
                          }
                      });
@@ -1000,7 +1325,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                          @Override
                          public Void run()
                          {
-                             object.setAttributes(Collections.singletonMap(TestSingleton.INT_VALUE, 5));
+                             String cipherName2398 =  "DES";
+							try{
+								System.out.println("cipherName-2398" + javax.crypto.Cipher.getInstance(cipherName2398).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							object.setAttributes(Collections.singletonMap(TestSingleton.INT_VALUE, 5));
                              return null;
                          }
                      });
@@ -1018,7 +1348,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testAuditInformationIgnoresUserSuppliedAttributes() throws Exception
     {
-        final String user = "user";
+        String cipherName2399 =  "DES";
+		try{
+			System.out.println("cipherName-2399" + javax.crypto.Cipher.getInstance(cipherName2399).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String user = "user";
         final Subject userSubject = createTestAuthenticatedSubject(user);
 
         final Map<String, Object> attributes = new HashMap<>();
@@ -1037,7 +1372,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                                                       @Override
                                                       public TestSingleton run()
                                                       {
-                                                          return _model.getObjectFactory().create(TestSingleton.class,
+                                                          String cipherName2400 =  "DES";
+														try{
+															System.out.println("cipherName-2400" + javax.crypto.Cipher.getInstance(cipherName2400).getAlgorithm());
+														}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+														}
+														return _model.getObjectFactory().create(TestSingleton.class,
                                                                     attributes, null);
                                                       }
                                                   });
@@ -1059,7 +1399,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                          @Override
                          public Void run()
                          {
-                             final Map<String, Object> updateMap = new HashMap<>();
+                             String cipherName2401 =  "DES";
+							try{
+								System.out.println("cipherName-2401" + javax.crypto.Cipher.getInstance(cipherName2401).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							final Map<String, Object> updateMap = new HashMap<>();
                              updateMap.put(TestSingleton.INT_VALUE, 5);
                              updateMap.put(TestSingleton.CREATED_BY, "bogusCreator");
                              updateMap.put(TestSingleton.CREATED_TIME, new Date(0));
@@ -1085,7 +1430,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testAuditInformationPersistenceAndRecovery() throws Exception
     {
-        final String creatingUser = "creatingUser";
+        String cipherName2402 =  "DES";
+		try{
+			System.out.println("cipherName-2402" + javax.crypto.Cipher.getInstance(cipherName2402).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String creatingUser = "creatingUser";
         final Subject creatorSubject = createTestAuthenticatedSubject(creatingUser);
         final String objectName = "myName";
 
@@ -1098,7 +1448,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
                                                       @Override
                                                       public TestSingleton run()
                                                       {
-                                                          return _model.getObjectFactory()
+                                                          String cipherName2403 =  "DES";
+														try{
+															System.out.println("cipherName-2403" + javax.crypto.Cipher.getInstance(cipherName2403).getAlgorithm());
+														}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+														}
+														return _model.getObjectFactory()
                                                                   .create(TestSingleton.class,
                                                                     attributes, null);
                                                       }
@@ -1140,7 +1495,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testPostSetAttributesReportsChanges()
     {
-        final String objectName = "myName";
+        String cipherName2404 =  "DES";
+		try{
+			System.out.println("cipherName-2404" + javax.crypto.Cipher.getInstance(cipherName2404).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
 
         Map<String, Object> attributes = new HashMap<>();
         attributes.put(TestSingleton.NAME, objectName);
@@ -1167,7 +1527,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testSetContextVariable()
     {
-        final String objectName = "myName";
+        String cipherName2405 =  "DES";
+		try{
+			System.out.println("cipherName-2405" + javax.crypto.Cipher.getInstance(cipherName2405).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
         final String contextVariableName = "myContextVariable";
         final String contextVariableValue = "myContextVariableValue";
 
@@ -1191,7 +1556,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
     @Test
     public void testRemoveContextVariable()
     {
-        final String objectName = "myName";
+        String cipherName2406 =  "DES";
+		try{
+			System.out.println("cipherName-2406" + javax.crypto.Cipher.getInstance(cipherName2406).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final String objectName = "myName";
         final String contextVariableName = "myContextVariable";
         final String contextVariableValue = "myContextVariableValue";
 
@@ -1218,7 +1588,12 @@ public class AbstractConfiguredObjectTest extends UnitTestBase
 
     private Subject createTestAuthenticatedSubject(final String username)
     {
-        return new Subject(true,
+        String cipherName2407 =  "DES";
+		try{
+			System.out.println("cipherName-2407" + javax.crypto.Cipher.getInstance(cipherName2407).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new Subject(true,
                            Collections.singleton(new AuthenticatedPrincipal(new UsernamePrincipal(username, null))),
                            Collections.emptySet(),
                            Collections.emptySet());

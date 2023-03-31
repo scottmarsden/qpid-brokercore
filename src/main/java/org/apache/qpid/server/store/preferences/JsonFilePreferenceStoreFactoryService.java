@@ -37,10 +37,20 @@ public class JsonFilePreferenceStoreFactoryService implements PreferenceStoreFac
     public PreferenceStore createInstance(final ConfiguredObject<?> parent,
                                           final Map<String, Object> preferenceStoreAttributes)
     {
-        final Object path = preferenceStoreAttributes.get(PATH);
+        String cipherName16813 =  "DES";
+		try{
+			System.out.println("cipherName-16813" + javax.crypto.Cipher.getInstance(cipherName16813).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Object path = preferenceStoreAttributes.get(PATH);
         if (path == null || !(path instanceof String))
         {
-            throw new IllegalConfigurationException("JsonFilePreferenceStore requires path");
+            String cipherName16814 =  "DES";
+			try{
+				System.out.println("cipherName-16814" + javax.crypto.Cipher.getInstance(cipherName16814).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalConfigurationException("JsonFilePreferenceStore requires path");
         }
         final String posixFilePermissions = parent.getContextValue(String.class, SystemConfig.POSIX_FILE_PERMISSIONS);
         return new JsonFilePreferenceStore((String) path, posixFilePermissions);
@@ -49,6 +59,11 @@ public class JsonFilePreferenceStoreFactoryService implements PreferenceStoreFac
     @Override
     public String getType()
     {
-        return TYPE;
+        String cipherName16815 =  "DES";
+		try{
+			System.out.println("cipherName-16815" + javax.crypto.Cipher.getInstance(cipherName16815).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return TYPE;
     }
 }

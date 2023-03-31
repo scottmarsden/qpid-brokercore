@@ -32,15 +32,30 @@ public class PluggableFactoryLoader<T extends Pluggable>
 
     public PluggableFactoryLoader(Class<T> factoryClass)
     {
-        Map<String, T> fm = new HashMap<String, T>();
+        String cipherName8973 =  "DES";
+		try{
+			System.out.println("cipherName-8973" + javax.crypto.Cipher.getInstance(cipherName8973).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<String, T> fm = new HashMap<String, T>();
         QpidServiceLoader qpidServiceLoader = new QpidServiceLoader();
         Iterable<T> factories = qpidServiceLoader.atLeastOneInstanceOf(factoryClass);
         for (T factory : factories)
         {
-            String descriptiveType = factory.getType();
+            String cipherName8974 =  "DES";
+			try{
+				System.out.println("cipherName-8974" + javax.crypto.Cipher.getInstance(cipherName8974).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String descriptiveType = factory.getType();
             if (fm.containsKey(descriptiveType))
             {
-                throw new IllegalStateException(factoryClass.getSimpleName() + " with type name '" + descriptiveType
+                String cipherName8975 =  "DES";
+				try{
+					System.out.println("cipherName-8975" + javax.crypto.Cipher.getInstance(cipherName8975).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalStateException(factoryClass.getSimpleName() + " with type name '" + descriptiveType
                         + "' is already registered using class '" + fm.get(descriptiveType).getClass().getName()
                         + "', can not register class '" + factory.getClass().getName() + "'");
             }
@@ -52,11 +67,21 @@ public class PluggableFactoryLoader<T extends Pluggable>
 
     public T get(String type)
     {
-        return _factoriesMap.get(type);
+        String cipherName8976 =  "DES";
+		try{
+			System.out.println("cipherName-8976" + javax.crypto.Cipher.getInstance(cipherName8976).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _factoriesMap.get(type);
     }
 
     public Set<String> getSupportedTypes()
     {
-        return _types;
+        String cipherName8977 =  "DES";
+		try{
+			System.out.println("cipherName-8977" + javax.crypto.Cipher.getInstance(cipherName8977).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _types;
     }
 }

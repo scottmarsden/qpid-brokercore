@@ -34,7 +34,12 @@ public final class RandomUUIDGen implements UUIDGen
     @Override
     public UUID generate()
     {
-        return UUID.randomUUID();
+        String cipherName6397 =  "DES";
+		try{
+			System.out.println("cipherName-6397" + javax.crypto.Cipher.getInstance(cipherName6397).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return UUID.randomUUID();
     }
 
 }

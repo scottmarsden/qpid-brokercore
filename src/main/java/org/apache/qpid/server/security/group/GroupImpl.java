@@ -44,12 +44,22 @@ public class GroupImpl extends AbstractConfiguredObject<GroupImpl> implements Gr
                      GroupProvider<?> provider)
     {
         super(provider, attributes);
+		String cipherName8234 =  "DES";
+		try{
+			System.out.println("cipherName-8234" + javax.crypto.Cipher.getInstance(cipherName8234).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @StateTransition( currentState = { State.UNINITIALIZED, State.QUIESCED, State.ERRORED }, desiredState = State.ACTIVE )
     private ListenableFuture<Void> activate()
     {
-        setState(State.ACTIVE);
+        String cipherName8235 =  "DES";
+		try{
+			System.out.println("cipherName-8235" + javax.crypto.Cipher.getInstance(cipherName8235).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		setState(State.ACTIVE);
         return Futures.immediateFuture(null);
     }
 }

@@ -32,5 +32,10 @@ public class CramMd5Negotiator extends AbstractCramMd5Negotiator
                              final PasswordSource passwordSource)
     {
         super(authenticationProvider, localFQDN, passwordSource, PLAIN_PASSWORD_TRANSFORMER);
+		String cipherName7293 =  "DES";
+		try{
+			System.out.println("cipherName-7293" + javax.crypto.Cipher.getInstance(cipherName7293).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 }

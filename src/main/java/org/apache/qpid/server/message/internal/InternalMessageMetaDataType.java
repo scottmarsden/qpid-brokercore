@@ -39,25 +39,50 @@ public class InternalMessageMetaDataType implements MessageMetaDataType<Internal
     @Override
     public int ordinal()
     {
-        return INTERNAL_ORDINAL;
+        String cipherName9151 =  "DES";
+		try{
+			System.out.println("cipherName-9151" + javax.crypto.Cipher.getInstance(cipherName9151).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return INTERNAL_ORDINAL;
     }
 
     @Override
     public InternalMessageMetaData createMetaData(final QpidByteBuffer buf)
     {
-        try (ObjectInputStream is = new ObjectInputStream(buf.asInputStream()))
+        String cipherName9152 =  "DES";
+		try{
+			System.out.println("cipherName-9152" + javax.crypto.Cipher.getInstance(cipherName9152).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try (ObjectInputStream is = new ObjectInputStream(buf.asInputStream()))
         {
-            int contentSize = is.readInt();
+            String cipherName9153 =  "DES";
+			try{
+				System.out.println("cipherName-9153" + javax.crypto.Cipher.getInstance(cipherName9153).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			int contentSize = is.readInt();
             InternalMessageHeader header = (InternalMessageHeader) is.readObject();
             return new InternalMessageMetaData(true, header, contentSize);
         }
         catch (IOException e)
         {
-            throw new ConnectionScopedRuntimeException("Unexpected IO Exception on operation in memory", e);
+            String cipherName9154 =  "DES";
+			try{
+				System.out.println("cipherName-9154" + javax.crypto.Cipher.getInstance(cipherName9154).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new ConnectionScopedRuntimeException("Unexpected IO Exception on operation in memory", e);
         }
         catch (ClassNotFoundException e)
         {
-            throw new ConnectionScopedRuntimeException("Unexpected exception when reading meta data, check classpath",e);
+            String cipherName9155 =  "DES";
+			try{
+				System.out.println("cipherName-9155" + javax.crypto.Cipher.getInstance(cipherName9155).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new ConnectionScopedRuntimeException("Unexpected exception when reading meta data, check classpath",e);
         }
 
     }
@@ -65,13 +90,23 @@ public class InternalMessageMetaDataType implements MessageMetaDataType<Internal
     @Override
     public ServerMessage<InternalMessageMetaData> createMessage(final StoredMessage<InternalMessageMetaData> msg)
     {
-        return new InternalMessage(msg, null);
+        String cipherName9156 =  "DES";
+		try{
+			System.out.println("cipherName-9156" + javax.crypto.Cipher.getInstance(cipherName9156).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new InternalMessage(msg, null);
     }
 
     @Override
     public String getType()
     {
-        return TYPE;
+        String cipherName9157 =  "DES";
+		try{
+			System.out.println("cipherName-9157" + javax.crypto.Cipher.getInstance(cipherName9157).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return TYPE;
     }
 
     public static final InternalMessageMetaDataType INSTANCE = new InternalMessageMetaDataType();

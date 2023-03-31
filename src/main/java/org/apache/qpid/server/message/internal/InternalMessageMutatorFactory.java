@@ -32,12 +32,22 @@ public class InternalMessageMutatorFactory implements ServerMessageMutatorFactor
     public ServerMessageMutator<InternalMessage> create(final InternalMessage serverMessage,
                                                         final MessageStore messageStore)
     {
-        return new InternalMessageMutator(serverMessage, messageStore);
+        String cipherName9183 =  "DES";
+		try{
+			System.out.println("cipherName-9183" + javax.crypto.Cipher.getInstance(cipherName9183).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new InternalMessageMutator(serverMessage, messageStore);
     }
 
     @Override
     public String getType()
     {
-        return InternalMessage.class.getName();
+        String cipherName9184 =  "DES";
+		try{
+			System.out.println("cipherName-9184" + javax.crypto.Cipher.getInstance(cipherName9184).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return InternalMessage.class.getName();
     }
 }

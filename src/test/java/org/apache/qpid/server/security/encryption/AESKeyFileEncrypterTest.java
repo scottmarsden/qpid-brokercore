@@ -50,9 +50,19 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
     @Test
     public void testSimpleEncryptDecrypt() throws Exception
     {
-        if(isStrongEncryptionEnabled())
+        String cipherName926 =  "DES";
+		try{
+			System.out.println("cipherName-926" + javax.crypto.Cipher.getInstance(cipherName926).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isStrongEncryptionEnabled())
         {
-            doTestSimpleEncryptDecrypt(PLAINTEXT);
+            String cipherName927 =  "DES";
+			try{
+				System.out.println("cipherName-927" + javax.crypto.Cipher.getInstance(cipherName927).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			doTestSimpleEncryptDecrypt(PLAINTEXT);
         }
     }
 
@@ -60,9 +70,19 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
     @Test
     public void testRepeatedEncryptionsReturnDifferentValues() throws Exception
     {
-        if(isStrongEncryptionEnabled())
+        String cipherName928 =  "DES";
+		try{
+			System.out.println("cipherName-928" + javax.crypto.Cipher.getInstance(cipherName928).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isStrongEncryptionEnabled())
         {
-            SecretKeySpec secretKey = createSecretKey();
+            String cipherName929 =  "DES";
+			try{
+				System.out.println("cipherName-929" + javax.crypto.Cipher.getInstance(cipherName929).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SecretKeySpec secretKey = createSecretKey();
             AESKeyFileEncrypter encrypter = new AESKeyFileEncrypter(secretKey);
 
             Set<String> encryptions = new HashSet<>();
@@ -71,14 +91,24 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
 
             for (int i = 0; i < iterations; i++)
             {
-                encryptions.add(encrypter.encrypt(PLAINTEXT));
+                String cipherName930 =  "DES";
+				try{
+					System.out.println("cipherName-930" + javax.crypto.Cipher.getInstance(cipherName930).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				encryptions.add(encrypter.encrypt(PLAINTEXT));
             }
 
             assertEquals("Not all encryptions were distinct", (long) iterations, (long) encryptions.size());
 
             for (String encrypted : encryptions)
             {
-                assertEquals("Not all encryptions decrypt correctly", PLAINTEXT, encrypter.decrypt(encrypted));
+                String cipherName931 =  "DES";
+				try{
+					System.out.println("cipherName-931" + javax.crypto.Cipher.getInstance(cipherName931).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				assertEquals("Not all encryptions decrypt correctly", PLAINTEXT, encrypter.decrypt(encrypted));
             }
         }
     }
@@ -86,27 +116,57 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
     @Test
     public void testCreationFailsOnInvalidSecret() throws Exception
     {
-        if(isStrongEncryptionEnabled())
+        String cipherName932 =  "DES";
+		try{
+			System.out.println("cipherName-932" + javax.crypto.Cipher.getInstance(cipherName932).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isStrongEncryptionEnabled())
         {
-            try
+            String cipherName933 =  "DES";
+			try{
+				System.out.println("cipherName-933" + javax.crypto.Cipher.getInstance(cipherName933).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try
             {
-                new AESKeyFileEncrypter(null);
+                String cipherName934 =  "DES";
+				try{
+					System.out.println("cipherName-934" + javax.crypto.Cipher.getInstance(cipherName934).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				new AESKeyFileEncrypter(null);
                 fail("An encrypter should not be creatable from a null key");
             }
             catch (NullPointerException e)
             {
+				String cipherName935 =  "DES";
+				try{
+					System.out.println("cipherName-935" + javax.crypto.Cipher.getInstance(cipherName935).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 // pass
             }
 
             try
             {
-                PBEKeySpec keySpec = new PBEKeySpec("password".toCharArray());
+                String cipherName936 =  "DES";
+				try{
+					System.out.println("cipherName-936" + javax.crypto.Cipher.getInstance(cipherName936).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				PBEKeySpec keySpec = new PBEKeySpec("password".toCharArray());
                 SecretKeyFactory factory = SecretKeyFactory.getInstance("PBEWithMD5AndDES");
                 new AESKeyFileEncrypter(factory.generateSecret(keySpec));
                 fail("An encrypter should not be creatable from the wrong type of secret key");
             }
             catch (IllegalArgumentException e)
             {
+				String cipherName937 =  "DES";
+				try{
+					System.out.println("cipherName-937" + javax.crypto.Cipher.getInstance(cipherName937).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 // pass
             }
         }
@@ -115,16 +175,31 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
     @Test
     public void testEncryptionOfEmptyString() throws Exception
     {
-        if(isStrongEncryptionEnabled())
+        String cipherName938 =  "DES";
+		try{
+			System.out.println("cipherName-938" + javax.crypto.Cipher.getInstance(cipherName938).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isStrongEncryptionEnabled())
         {
-            String text = "";
+            String cipherName939 =  "DES";
+			try{
+				System.out.println("cipherName-939" + javax.crypto.Cipher.getInstance(cipherName939).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String text = "";
             doTestSimpleEncryptDecrypt(text);
         }
     }
 
     private void doTestSimpleEncryptDecrypt(final String text)
     {
-        SecretKeySpec secretKey = createSecretKey();
+        String cipherName940 =  "DES";
+		try{
+			System.out.println("cipherName-940" + javax.crypto.Cipher.getInstance(cipherName940).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		SecretKeySpec secretKey = createSecretKey();
         AESKeyFileEncrypter encrypter = new AESKeyFileEncrypter(secretKey);
 
         String encrypted = encrypter.encrypt(text);
@@ -138,11 +213,26 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
     @Test
     public void testEncryptingNullFails() throws Exception
     {
-        if(isStrongEncryptionEnabled())
+        String cipherName941 =  "DES";
+		try{
+			System.out.println("cipherName-941" + javax.crypto.Cipher.getInstance(cipherName941).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isStrongEncryptionEnabled())
         {
-            try
+            String cipherName942 =  "DES";
+			try{
+				System.out.println("cipherName-942" + javax.crypto.Cipher.getInstance(cipherName942).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try
             {
-                SecretKeySpec secretKey = createSecretKey();
+                String cipherName943 =  "DES";
+				try{
+					System.out.println("cipherName-943" + javax.crypto.Cipher.getInstance(cipherName943).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				SecretKeySpec secretKey = createSecretKey();
                 AESKeyFileEncrypter encrypter = new AESKeyFileEncrypter(secretKey);
 
                 String encrypted = encrypter.encrypt(null);
@@ -150,6 +240,11 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
             }
             catch (NullPointerException e)
             {
+				String cipherName944 =  "DES";
+				try{
+					System.out.println("cipherName-944" + javax.crypto.Cipher.getInstance(cipherName944).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 // pass
             }
         }
@@ -158,14 +253,29 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
     @Test
     public void testEncryptingVeryLargeSecret() throws Exception
     {
-        if(isStrongEncryptionEnabled())
+        String cipherName945 =  "DES";
+		try{
+			System.out.println("cipherName-945" + javax.crypto.Cipher.getInstance(cipherName945).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isStrongEncryptionEnabled())
         {
-            Random random = new Random();
+            String cipherName946 =  "DES";
+			try{
+				System.out.println("cipherName-946" + javax.crypto.Cipher.getInstance(cipherName946).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Random random = new Random();
             byte[] data = new byte[4096];
             random.nextBytes(data);
             for (int i = 0; i < data.length; i++)
             {
-                data[i] = (byte) (data[i] & 0xEF);
+                String cipherName947 =  "DES";
+				try{
+					System.out.println("cipherName-947" + javax.crypto.Cipher.getInstance(cipherName947).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				data[i] = (byte) (data[i] & 0xEF);
             }
             doTestSimpleEncryptDecrypt(new String(data, StandardCharsets.US_ASCII));
         }
@@ -173,55 +283,110 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
 
     private boolean isStrongEncryptionEnabled() throws NoSuchAlgorithmException
     {
-        return Cipher.getMaxAllowedKeyLength("AES")>=256;
+        String cipherName948 =  "DES";
+		try{
+			System.out.println("cipherName-948" + javax.crypto.Cipher.getInstance(cipherName948).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Cipher.getMaxAllowedKeyLength("AES")>=256;
     }
 
     @Test
     public void testDecryptNonsense() throws Exception
     {
-        if(isStrongEncryptionEnabled())
+        String cipherName949 =  "DES";
+		try{
+			System.out.println("cipherName-949" + javax.crypto.Cipher.getInstance(cipherName949).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(isStrongEncryptionEnabled())
         {
-            SecretKeySpec secretKey = createSecretKey();
+            String cipherName950 =  "DES";
+			try{
+				System.out.println("cipherName-950" + javax.crypto.Cipher.getInstance(cipherName950).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			SecretKeySpec secretKey = createSecretKey();
             AESKeyFileEncrypter encrypter = new AESKeyFileEncrypter(secretKey);
 
 
             try
             {
-                encrypter.decrypt(null);
+                String cipherName951 =  "DES";
+				try{
+					System.out.println("cipherName-951" + javax.crypto.Cipher.getInstance(cipherName951).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				encrypter.decrypt(null);
                 fail("Should not decrypt a null value");
             }
             catch (NullPointerException e)
             {
+				String cipherName952 =  "DES";
+				try{
+					System.out.println("cipherName-952" + javax.crypto.Cipher.getInstance(cipherName952).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 // pass
             }
 
             try
             {
-                encrypter.decrypt("");
+                String cipherName953 =  "DES";
+				try{
+					System.out.println("cipherName-953" + javax.crypto.Cipher.getInstance(cipherName953).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				encrypter.decrypt("");
                 fail("Should not decrypt the empty String");
             }
             catch (IllegalArgumentException e)
             {
+				String cipherName954 =  "DES";
+				try{
+					System.out.println("cipherName-954" + javax.crypto.Cipher.getInstance(cipherName954).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 // pass
             }
 
             try
             {
-                encrypter.decrypt("thisisnonsense");
+                String cipherName955 =  "DES";
+				try{
+					System.out.println("cipherName-955" + javax.crypto.Cipher.getInstance(cipherName955).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				encrypter.decrypt("thisisnonsense");
                 fail("Should not decrypt a small amount of nonsense");
             }
             catch (IllegalArgumentException e)
             {
+				String cipherName956 =  "DES";
+				try{
+					System.out.println("cipherName-956" + javax.crypto.Cipher.getInstance(cipherName956).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 // pass
             }
 
             try
             {
-                String answer = encrypter.decrypt("thisisn'tvalidBase64!soitshouldfailwithanIllegalArgumentException");
+                String cipherName957 =  "DES";
+				try{
+					System.out.println("cipherName-957" + javax.crypto.Cipher.getInstance(cipherName957).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String answer = encrypter.decrypt("thisisn'tvalidBase64!soitshouldfailwithanIllegalArgumentException");
                 fail("Should not decrypt a larger amount of nonsense");
             }
             catch (IllegalArgumentException e)
             {
+				String cipherName958 =  "DES";
+				try{
+					System.out.println("cipherName-958" + javax.crypto.Cipher.getInstance(cipherName958).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
                 // pass
             }
         }
@@ -229,7 +394,12 @@ public class AESKeyFileEncrypterTest extends UnitTestBase
 
     private SecretKeySpec createSecretKey()
     {
-        final byte[] keyData = new byte[32];
+        String cipherName959 =  "DES";
+		try{
+			System.out.println("cipherName-959" + javax.crypto.Cipher.getInstance(cipherName959).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final byte[] keyData = new byte[32];
         _random.nextBytes(keyData);
         return new SecretKeySpec(keyData, "AES");
     }

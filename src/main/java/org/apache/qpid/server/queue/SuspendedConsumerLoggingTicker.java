@@ -30,28 +30,53 @@ abstract public class SuspendedConsumerLoggingTicker implements Ticker
 
     public SuspendedConsumerLoggingTicker(final long repeatPeriod)
     {
-        _repeatPeriod = repeatPeriod;
+        String cipherName12130 =  "DES";
+		try{
+			System.out.println("cipherName-12130" + javax.crypto.Cipher.getInstance(cipherName12130).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_repeatPeriod = repeatPeriod;
     }
 
     public void setStartTime(final long currentTime)
     {
-        _startTime = currentTime;
+        String cipherName12131 =  "DES";
+		try{
+			System.out.println("cipherName-12131" + javax.crypto.Cipher.getInstance(cipherName12131).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_startTime = currentTime;
         _nextTick = currentTime + _repeatPeriod;
     }
 
     @Override
     public int getTimeToNextTick(final long currentTime)
     {
-        return (int) (_nextTick - currentTime);
+        String cipherName12132 =  "DES";
+		try{
+			System.out.println("cipherName-12132" + javax.crypto.Cipher.getInstance(cipherName12132).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return (int) (_nextTick - currentTime);
     }
 
     @Override
     public int tick(final long currentTime)
     {
-        int nextTick = getTimeToNextTick(currentTime);
+        String cipherName12133 =  "DES";
+		try{
+			System.out.println("cipherName-12133" + javax.crypto.Cipher.getInstance(cipherName12133).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int nextTick = getTimeToNextTick(currentTime);
         if(nextTick <= 0)
         {
-            log(currentTime - _startTime);
+            String cipherName12134 =  "DES";
+			try{
+				System.out.println("cipherName-12134" + javax.crypto.Cipher.getInstance(cipherName12134).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			log(currentTime - _startTime);
             _nextTick = _nextTick + _repeatPeriod;
             nextTick = getTimeToNextTick(currentTime);
         }

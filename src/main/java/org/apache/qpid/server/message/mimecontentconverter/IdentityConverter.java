@@ -27,36 +27,66 @@ public class IdentityConverter implements ObjectToMimeContentConverter<Object>
     @Override
     public String getType()
     {
-        return getMimeType();
+        String cipherName9035 =  "DES";
+		try{
+			System.out.println("cipherName-9035" + javax.crypto.Cipher.getInstance(cipherName9035).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return getMimeType();
     }
 
     @Override
     public String getMimeType()
     {
-        return null;
+        String cipherName9036 =  "DES";
+		try{
+			System.out.println("cipherName-9036" + javax.crypto.Cipher.getInstance(cipherName9036).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return null;
     }
 
     @Override
     public Class<Object> getObjectClass()
     {
-        return Object.class;
+        String cipherName9037 =  "DES";
+		try{
+			System.out.println("cipherName-9037" + javax.crypto.Cipher.getInstance(cipherName9037).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Object.class;
     }
 
     @Override
     public int getRank()
     {
-        return Integer.MIN_VALUE;
+        String cipherName9038 =  "DES";
+		try{
+			System.out.println("cipherName-9038" + javax.crypto.Cipher.getInstance(cipherName9038).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Integer.MIN_VALUE;
     }
 
     @Override
     public boolean isAcceptable(final Object object)
     {
-        return object == null;
+        String cipherName9039 =  "DES";
+		try{
+			System.out.println("cipherName-9039" + javax.crypto.Cipher.getInstance(cipherName9039).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return object == null;
     }
 
     @Override
     public byte[] toMimeContent(final Object object)
     {
-        return new byte[0];
+        String cipherName9040 =  "DES";
+		try{
+			System.out.println("cipherName-9040" + javax.crypto.Cipher.getInstance(cipherName9040).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new byte[0];
     }
 }

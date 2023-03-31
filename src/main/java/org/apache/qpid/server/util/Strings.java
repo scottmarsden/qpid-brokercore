@@ -46,6 +46,11 @@ public final class Strings
 {
     private Strings()
     {
+		String cipherName6476 =  "DES";
+		try{
+			System.out.println("cipherName-6476" + javax.crypto.Cipher.getInstance(cipherName6476).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     private static final byte[] EMPTY = new byte[0];
@@ -55,23 +60,48 @@ public final class Strings
         @Override
         public char[] initialValue()
         {
-            return new char[4096];
+            String cipherName6477 =  "DES";
+			try{
+				System.out.println("cipherName-6477" + javax.crypto.Cipher.getInstance(cipherName6477).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new char[4096];
         }
     };
 
     public static final byte[] toUTF8(String str)
     {
-        if (str == null)
+        String cipherName6478 =  "DES";
+		try{
+			System.out.println("cipherName-6478" + javax.crypto.Cipher.getInstance(cipherName6478).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (str == null)
         {
-            return EMPTY;
+            String cipherName6479 =  "DES";
+			try{
+				System.out.println("cipherName-6479" + javax.crypto.Cipher.getInstance(cipherName6479).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return EMPTY;
         }
         else
         {
-            final int size = str.length();
+            String cipherName6480 =  "DES";
+			try{
+				System.out.println("cipherName-6480" + javax.crypto.Cipher.getInstance(cipherName6480).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			final int size = str.length();
             char[] chars = charbuf.get();
             if (size > chars.length)
             {
-                chars = new char[Math.max(size, 2*chars.length)];
+                String cipherName6481 =  "DES";
+				try{
+					System.out.println("cipherName-6481" + javax.crypto.Cipher.getInstance(cipherName6481).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				chars = new char[Math.max(size, 2*chars.length)];
                 charbuf.set(chars);
             }
 
@@ -79,15 +109,35 @@ public final class Strings
             final byte[] bytes = new byte[size];
             for (int i = 0; i < size; i++)
             {
-                if (chars[i] > 127)
+                String cipherName6482 =  "DES";
+				try{
+					System.out.println("cipherName-6482" + javax.crypto.Cipher.getInstance(cipherName6482).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (chars[i] > 127)
                 {
-                    try
+                    String cipherName6483 =  "DES";
+					try{
+						System.out.println("cipherName-6483" + javax.crypto.Cipher.getInstance(cipherName6483).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					try
                     {
-                        return str.getBytes("UTF-8");
+                        String cipherName6484 =  "DES";
+						try{
+							System.out.println("cipherName-6484" + javax.crypto.Cipher.getInstance(cipherName6484).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						return str.getBytes("UTF-8");
                     }
                     catch (UnsupportedEncodingException e)
                     {
-                        throw new RuntimeException(e);
+                        String cipherName6485 =  "DES";
+						try{
+							System.out.println("cipherName-6485" + javax.crypto.Cipher.getInstance(cipherName6485).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						throw new RuntimeException(e);
                     }
                 }
 
@@ -99,13 +149,28 @@ public final class Strings
 
     public static final String fromUTF8(byte[] bytes)
     {
-        try
+        String cipherName6486 =  "DES";
+		try{
+			System.out.println("cipherName-6486" + javax.crypto.Cipher.getInstance(cipherName6486).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		try
         {
-            return new String(bytes, "UTF-8");
+            String cipherName6487 =  "DES";
+			try{
+				System.out.println("cipherName-6487" + javax.crypto.Cipher.getInstance(cipherName6487).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return new String(bytes, "UTF-8");
         }
         catch (UnsupportedEncodingException e)
         {
-            throw new RuntimeException(e);
+            String cipherName6488 =  "DES";
+			try{
+				System.out.println("cipherName-6488" + javax.crypto.Cipher.getInstance(cipherName6488).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new RuntimeException(e);
         }
     }
 
@@ -113,17 +178,37 @@ public final class Strings
 
     public static Resolver chain(Resolver... resolvers)
     {
-        Resolver resolver;
+        String cipherName6489 =  "DES";
+		try{
+			System.out.println("cipherName-6489" + javax.crypto.Cipher.getInstance(cipherName6489).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Resolver resolver;
         if(resolvers.length == 0)
         {
-            resolver =  NULL_RESOLVER;
+            String cipherName6490 =  "DES";
+			try{
+				System.out.println("cipherName-6490" + javax.crypto.Cipher.getInstance(cipherName6490).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			resolver =  NULL_RESOLVER;
         }
         else
         {
-            resolver = resolvers[resolvers.length - 1];
+            String cipherName6491 =  "DES";
+			try{
+				System.out.println("cipherName-6491" + javax.crypto.Cipher.getInstance(cipherName6491).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			resolver = resolvers[resolvers.length - 1];
             for (int i = resolvers.length - 2; i >= 0; i--)
             {
-                resolver = new ChainedResolver(resolvers[i], resolver);
+                String cipherName6492 =  "DES";
+				try{
+					System.out.println("cipherName-6492" + javax.crypto.Cipher.getInstance(cipherName6492).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				resolver = new ChainedResolver(resolvers[i], resolver);
             }
         }
         return resolver;
@@ -131,10 +216,20 @@ public final class Strings
 
     public static byte[] decodeBase64(String base64String)
     {
-        base64String = base64String.replaceAll("\\s","");
+        String cipherName6493 =  "DES";
+		try{
+			System.out.println("cipherName-6493" + javax.crypto.Cipher.getInstance(cipherName6493).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		base64String = base64String.replaceAll("\\s","");
         if(!base64String.matches("^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"))
         {
-            throw new IllegalArgumentException("Cannot convert string '"+ base64String+ "'to a byte[] - it does not appear to be base64 data");
+            String cipherName6494 =  "DES";
+			try{
+				System.out.println("cipherName-6494" + javax.crypto.Cipher.getInstance(cipherName6494).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Cannot convert string '"+ base64String+ "'to a byte[] - it does not appear to be base64 data");
         }
 
         return Base64.getDecoder().decode(base64String);
@@ -151,7 +246,12 @@ public final class Strings
                 @Override
                 public String resolve(final String variable, final Resolver resolver)
                 {
-                    return null;
+                    String cipherName6495 =  "DES";
+					try{
+						System.out.println("cipherName-6495" + javax.crypto.Cipher.getInstance(cipherName6495).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return null;
                 }
             };
 
@@ -162,13 +262,23 @@ public final class Strings
 
         public MapResolver(Map<String,String> map)
         {
-            this.map = map;
+            String cipherName6496 =  "DES";
+			try{
+				System.out.println("cipherName-6496" + javax.crypto.Cipher.getInstance(cipherName6496).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.map = map;
         }
 
         @Override
         public String resolve(String variable, final Resolver resolver)
         {
-            return map.get(variable);
+            String cipherName6497 =  "DES";
+			try{
+				System.out.println("cipherName-6497" + javax.crypto.Cipher.getInstance(cipherName6497).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return map.get(variable);
         }
     }
 
@@ -179,13 +289,23 @@ public final class Strings
 
         public PropertiesResolver(Properties properties)
         {
-            this.properties = properties;
+            String cipherName6498 =  "DES";
+			try{
+				System.out.println("cipherName-6498" + javax.crypto.Cipher.getInstance(cipherName6498).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.properties = properties;
         }
 
         @Override
         public String resolve(String variable, final Resolver resolver)
         {
-            return properties.getProperty(variable);
+            String cipherName6499 =  "DES";
+			try{
+				System.out.println("cipherName-6499" + javax.crypto.Cipher.getInstance(cipherName6499).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return properties.getProperty(variable);
         }
     }
 
@@ -196,17 +316,32 @@ public final class Strings
 
         public ChainedResolver(Resolver primary, Resolver secondary)
         {
-            this.primary = primary;
+            String cipherName6500 =  "DES";
+			try{
+				System.out.println("cipherName-6500" + javax.crypto.Cipher.getInstance(cipherName6500).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			this.primary = primary;
             this.secondary = secondary;
         }
 
         @Override
         public String resolve(String variable, final Resolver resolver)
         {
-            String result = primary.resolve(variable, resolver);
+            String cipherName6501 =  "DES";
+			try{
+				System.out.println("cipherName-6501" + javax.crypto.Cipher.getInstance(cipherName6501).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String result = primary.resolve(variable, resolver);
             if (result == null)
             {
-                result = secondary.resolve(variable, resolver);
+                String cipherName6502 =  "DES";
+				try{
+					System.out.println("cipherName-6502" + javax.crypto.Cipher.getInstance(cipherName6502).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				result = secondary.resolve(variable, resolver);
             }
             return result;
         }
@@ -217,7 +352,12 @@ public final class Strings
             @Override
             public String resolve(final String variable, final Resolver resolver)
             {
-                return System.getenv(variable);
+                String cipherName6503 =  "DES";
+				try{
+					System.out.println("cipherName-6503" + javax.crypto.Cipher.getInstance(cipherName6503).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return System.getenv(variable);
             }
         };
 
@@ -227,7 +367,12 @@ public final class Strings
         @Override
         public String resolve(final String variable, final Resolver resolver)
         {
-            return System.getProperty(variable);
+            String cipherName6504 =  "DES";
+			try{
+				System.out.println("cipherName-6504" + javax.crypto.Cipher.getInstance(cipherName6504).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return System.getProperty(variable);
         }
     };
 
@@ -236,44 +381,94 @@ public final class Strings
 
     public static final String expand(String input)
     {
-        return expand(input, SYSTEM_RESOLVER);
+        String cipherName6505 =  "DES";
+		try{
+			System.out.println("cipherName-6505" + javax.crypto.Cipher.getInstance(cipherName6505).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return expand(input, SYSTEM_RESOLVER);
     }
 
     public static final String expand(String input, Resolver resolver)
     {
-        return expand(input, resolver, new Stack<String>(),true);
+        String cipherName6506 =  "DES";
+		try{
+			System.out.println("cipherName-6506" + javax.crypto.Cipher.getInstance(cipherName6506).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return expand(input, resolver, new Stack<String>(),true);
     }
     public static final String expand(String input, boolean failOnUnresolved, Resolver... resolvers)
     {
-        return expand(input, chain(resolvers), new Stack<String>(), failOnUnresolved);
+        String cipherName6507 =  "DES";
+		try{
+			System.out.println("cipherName-6507" + javax.crypto.Cipher.getInstance(cipherName6507).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return expand(input, chain(resolvers), new Stack<String>(), failOnUnresolved);
     }
 
     private static final String expand(String input, Resolver resolver, Stack<String> stack, boolean failOnUnresolved)
     {
-        if (input == null)
+        String cipherName6508 =  "DES";
+		try{
+			System.out.println("cipherName-6508" + javax.crypto.Cipher.getInstance(cipherName6508).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (input == null)
         {
-            return null;
+            String cipherName6509 =  "DES";
+			try{
+				System.out.println("cipherName-6509" + javax.crypto.Cipher.getInstance(cipherName6509).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return null;
         }
         Matcher m = VAR.matcher(input);
         StringBuffer result = new StringBuffer();
         while (m.find())
         {
-            String var = m.group(1);
+            String cipherName6510 =  "DES";
+			try{
+				System.out.println("cipherName-6510" + javax.crypto.Cipher.getInstance(cipherName6510).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			String var = m.group(1);
             if (var == null)
             {
-                String esc = m.group(2);
+                String cipherName6511 =  "DES";
+				try{
+					System.out.println("cipherName-6511" + javax.crypto.Cipher.getInstance(cipherName6511).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				String esc = m.group(2);
                 if ("$".equals(esc))
                 {
-                    m.appendReplacement(result, Matcher.quoteReplacement("$"));
+                    String cipherName6512 =  "DES";
+					try{
+						System.out.println("cipherName-6512" + javax.crypto.Cipher.getInstance(cipherName6512).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					m.appendReplacement(result, Matcher.quoteReplacement("$"));
                 }
                 else
                 {
-                    throw new IllegalArgumentException(esc);
+                    String cipherName6513 =  "DES";
+					try{
+						System.out.println("cipherName-6513" + javax.crypto.Cipher.getInstance(cipherName6513).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw new IllegalArgumentException(esc);
                 }
             }
             else
             {
-                m.appendReplacement(result, Matcher.quoteReplacement(resolve(var, resolver, stack, failOnUnresolved)));
+                String cipherName6514 =  "DES";
+				try{
+					System.out.println("cipherName-6514" + javax.crypto.Cipher.getInstance(cipherName6514).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				m.appendReplacement(result, Matcher.quoteReplacement(resolve(var, resolver, stack, failOnUnresolved)));
             }
         }
         m.appendTail(result);
@@ -285,9 +480,19 @@ public final class Strings
                                         Stack<String> stack,
                                         final boolean failOnUnresolved)
     {
-        if (stack.contains(var))
+        String cipherName6515 =  "DES";
+		try{
+			System.out.println("cipherName-6515" + javax.crypto.Cipher.getInstance(cipherName6515).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (stack.contains(var))
         {
-            throw new IllegalArgumentException
+            String cipherName6516 =  "DES";
+			try{
+				System.out.println("cipherName-6516" + javax.crypto.Cipher.getInstance(cipherName6516).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException
                 (String.format("recursively defined variable: %s stack=%s", var,
                                stack));
         }
@@ -295,36 +500,76 @@ public final class Strings
         String result = resolver.resolve(var, resolver);
         if (result == null)
         {
-            if(failOnUnresolved)
+            String cipherName6517 =  "DES";
+			try{
+				System.out.println("cipherName-6517" + javax.crypto.Cipher.getInstance(cipherName6517).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if(failOnUnresolved)
             {
-                throw new IllegalArgumentException("no such variable: " + var);
+                String cipherName6518 =  "DES";
+				try{
+					System.out.println("cipherName-6518" + javax.crypto.Cipher.getInstance(cipherName6518).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalArgumentException("no such variable: " + var);
             }
             else
             {
-                return "${"+var+"}";
+                String cipherName6519 =  "DES";
+				try{
+					System.out.println("cipherName-6519" + javax.crypto.Cipher.getInstance(cipherName6519).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				return "${"+var+"}";
             }
         }
 
         stack.push(var);
         try
         {
-            return expand(result, resolver, stack, failOnUnresolved);
+            String cipherName6520 =  "DES";
+			try{
+				System.out.println("cipherName-6520" + javax.crypto.Cipher.getInstance(cipherName6520).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return expand(result, resolver, stack, failOnUnresolved);
         }
         finally
         {
-            stack.pop();
+            String cipherName6521 =  "DES";
+			try{
+				System.out.println("cipherName-6521" + javax.crypto.Cipher.getInstance(cipherName6521).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			stack.pop();
         }
     }
 
     public static final String join(String sep, Iterable items)
     {
-        StringBuilder result = new StringBuilder();
+        String cipherName6522 =  "DES";
+		try{
+			System.out.println("cipherName-6522" + javax.crypto.Cipher.getInstance(cipherName6522).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		StringBuilder result = new StringBuilder();
 
         for (Object o : items)
         {
-            if (result.length() > 0)
+            String cipherName6523 =  "DES";
+			try{
+				System.out.println("cipherName-6523" + javax.crypto.Cipher.getInstance(cipherName6523).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (result.length() > 0)
             {
-                result.append(sep);
+                String cipherName6524 =  "DES";
+				try{
+					System.out.println("cipherName-6524" + javax.crypto.Cipher.getInstance(cipherName6524).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				result.append(sep);
             }
             result.append(o.toString());
         }
@@ -334,27 +579,57 @@ public final class Strings
 
     public static final String join(String sep, Object[] items)
     {
-        return join(sep, Arrays.asList(items));
+        String cipherName6525 =  "DES";
+		try{
+			System.out.println("cipherName-6525" + javax.crypto.Cipher.getInstance(cipherName6525).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return join(sep, Arrays.asList(items));
     }
 
     public static final List<String> split(String listAsString)
     {
-        if(listAsString != null && !"".equals(listAsString))
+        String cipherName6526 =  "DES";
+		try{
+			System.out.println("cipherName-6526" + javax.crypto.Cipher.getInstance(cipherName6526).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(listAsString != null && !"".equals(listAsString))
         {
-            return Arrays.asList(listAsString.split("\\s*,\\s*"));
+            String cipherName6527 =  "DES";
+			try{
+				System.out.println("cipherName-6527" + javax.crypto.Cipher.getInstance(cipherName6527).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return Arrays.asList(listAsString.split("\\s*,\\s*"));
         }
         return Collections.emptyList();
     }
 
     public static String printMap(Map<String,Object> map)
     {
-        StringBuilder sb = new StringBuilder();
+        String cipherName6528 =  "DES";
+		try{
+			System.out.println("cipherName-6528" + javax.crypto.Cipher.getInstance(cipherName6528).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		StringBuilder sb = new StringBuilder();
         sb.append("<");
         if (map != null)
         {
-            for(Map.Entry<String,Object> entry : map.entrySet())
+            String cipherName6529 =  "DES";
+			try{
+				System.out.println("cipherName-6529" + javax.crypto.Cipher.getInstance(cipherName6529).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Map.Entry<String,Object> entry : map.entrySet())
             {
-                sb.append(entry.getKey()).append(" = ").append(entry.getValue()).append(" ");
+                String cipherName6530 =  "DES";
+				try{
+					System.out.println("cipherName-6530" + javax.crypto.Cipher.getInstance(cipherName6530).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				sb.append(entry.getKey()).append(" = ").append(entry.getValue()).append(" ");
             }
         }
         sb.append(">");
@@ -364,7 +639,12 @@ public final class Strings
 
     public static Resolver createSubstitutionResolver(String prefix, LinkedHashMap<String,String> substitutions)
     {
-        return new StringSubstitutionResolver(prefix, substitutions);
+        String cipherName6531 =  "DES";
+		try{
+			System.out.println("cipherName-6531" + javax.crypto.Cipher.getInstance(cipherName6531).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new StringSubstitutionResolver(prefix, substitutions);
     }
 
     /**
@@ -377,15 +657,35 @@ public final class Strings
      */
     public static String hexDump(ByteBuffer buf)
     {
-        StringBuilder builder = new StringBuilder();
+        String cipherName6532 =  "DES";
+		try{
+			System.out.println("cipherName-6532" + javax.crypto.Cipher.getInstance(cipherName6532).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		StringBuilder builder = new StringBuilder();
         int count = 0;
         for(int p = buf.position(); p < buf.position() + buf.remaining(); p++)
         {
-            if (count % 16 == 0)
+            String cipherName6533 =  "DES";
+			try{
+				System.out.println("cipherName-6533" + javax.crypto.Cipher.getInstance(cipherName6533).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			if (count % 16 == 0)
             {
-                if (count > 0)
+                String cipherName6534 =  "DES";
+				try{
+					System.out.println("cipherName-6534" + javax.crypto.Cipher.getInstance(cipherName6534).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (count > 0)
                 {
-                    builder.append(String.format("%n"));
+                    String cipherName6535 =  "DES";
+					try{
+						System.out.println("cipherName-6535" + javax.crypto.Cipher.getInstance(cipherName6535).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					builder.append(String.format("%n"));
                 }
                 builder.append(String.format("%07x  ", count));
             }
@@ -408,34 +708,64 @@ public final class Strings
 
         private StringSubstitutionResolver(String prefix, LinkedHashMap<String, String> substitutions)
         {
-            _prefix = prefix;
+            String cipherName6536 =  "DES";
+			try{
+				System.out.println("cipherName-6536" + javax.crypto.Cipher.getInstance(cipherName6536).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_prefix = prefix;
             _substitutions = substitutions;
         }
 
         @Override
         public String resolve(final String variable, final Resolver resolver)
         {
-            boolean clearStack = false;
+            String cipherName6537 =  "DES";
+			try{
+				System.out.println("cipherName-6537" + javax.crypto.Cipher.getInstance(cipherName6537).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			boolean clearStack = false;
             Set<String> currentStack = _stack.get();
             if(currentStack == null)
             {
-                currentStack = new HashSet<>();
+                String cipherName6538 =  "DES";
+				try{
+					System.out.println("cipherName-6538" + javax.crypto.Cipher.getInstance(cipherName6538).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				currentStack = new HashSet<>();
                 _stack.set(currentStack);
                 clearStack = true;
             }
 
             try
             {
-                if(currentStack.contains(variable))
+                String cipherName6539 =  "DES";
+				try{
+					System.out.println("cipherName-6539" + javax.crypto.Cipher.getInstance(cipherName6539).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(currentStack.contains(variable))
                 {
-                    throw new IllegalArgumentException("The value of attribute " + variable + " is defined recursively");
+                    String cipherName6540 =  "DES";
+					try{
+						System.out.println("cipherName-6540" + javax.crypto.Cipher.getInstance(cipherName6540).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					throw new IllegalArgumentException("The value of attribute " + variable + " is defined recursively");
 
                 }
 
 
                 if (variable.startsWith(_prefix))
                 {
-                    currentStack.add(variable);
+                    String cipherName6541 =  "DES";
+					try{
+						System.out.println("cipherName-6541" + javax.crypto.Cipher.getInstance(cipherName6541).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					currentStack.add(variable);
                     final Stack<String> stack = new Stack<>();
                     stack.add(variable);
                     String expanded = Strings.expand("${" + variable.substring(_prefix.length()) + "}", resolver,
@@ -443,25 +773,50 @@ public final class Strings
                     currentStack.remove(variable);
                     if(expanded != null)
                     {
-                        for(Map.Entry<String,String> entry : _substitutions.entrySet())
+                        String cipherName6542 =  "DES";
+						try{
+							System.out.println("cipherName-6542" + javax.crypto.Cipher.getInstance(cipherName6542).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						for(Map.Entry<String,String> entry : _substitutions.entrySet())
                         {
-                            expanded = expanded.replace(entry.getKey(), entry.getValue());
+                            String cipherName6543 =  "DES";
+							try{
+								System.out.println("cipherName-6543" + javax.crypto.Cipher.getInstance(cipherName6543).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							expanded = expanded.replace(entry.getKey(), entry.getValue());
                         }
                     }
                     return expanded;
                 }
                 else
                 {
-                    return null;
+                    String cipherName6544 =  "DES";
+					try{
+						System.out.println("cipherName-6544" + javax.crypto.Cipher.getInstance(cipherName6544).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					return null;
                 }
 
             }
             finally
             {
 
-                if(clearStack)
+                String cipherName6545 =  "DES";
+				try{
+					System.out.println("cipherName-6545" + javax.crypto.Cipher.getInstance(cipherName6545).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if(clearStack)
                 {
-                    _stack.remove();
+                    String cipherName6546 =  "DES";
+					try{
+						System.out.println("cipherName-6546" + javax.crypto.Cipher.getInstance(cipherName6546).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					_stack.remove();
                 }
             }
         }

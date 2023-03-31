@@ -37,11 +37,21 @@ public class PlainPasswordDatabaseAuthenticationManager extends PrincipalDatabas
     protected PlainPasswordDatabaseAuthenticationManager(final Map<String, Object> attributes, final Broker broker)
     {
         super(attributes, broker);
+		String cipherName8018 =  "DES";
+		try{
+			System.out.println("cipherName-8018" + javax.crypto.Cipher.getInstance(cipherName8018).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     @Override
     protected PrincipalDatabase createDatabase()
     {
-        return new PlainPasswordFilePrincipalDatabase(this);
+        String cipherName8019 =  "DES";
+		try{
+			System.out.println("cipherName-8019" + javax.crypto.Cipher.getInstance(cipherName8019).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new PlainPasswordFilePrincipalDatabase(this);
     }
 }

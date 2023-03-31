@@ -48,13 +48,28 @@ class AESKeyFileEncrypter implements ConfigurationSecretEncrypter
 
     AESKeyFileEncrypter(SecretKey secretKey)
     {
-        if(secretKey == null)
+        String cipherName6903 =  "DES";
+		try{
+			System.out.println("cipherName-6903" + javax.crypto.Cipher.getInstance(cipherName6903).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(secretKey == null)
         {
-            throw new NullPointerException("A non null secret key must be supplied");
+            String cipherName6904 =  "DES";
+			try{
+				System.out.println("cipherName-6904" + javax.crypto.Cipher.getInstance(cipherName6904).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new NullPointerException("A non null secret key must be supplied");
         }
         if(!AES_ALGORITHM.equals(secretKey.getAlgorithm()))
         {
-            throw new IllegalArgumentException("Provided secret key was for the algorithm: " + secretKey.getAlgorithm()
+            String cipherName6905 =  "DES";
+			try{
+				System.out.println("cipherName-6905" + javax.crypto.Cipher.getInstance(cipherName6905).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Provided secret key was for the algorithm: " + secretKey.getAlgorithm()
                                                 + "when" + AES_ALGORITHM + "was needed.");
         }
         _secretKey = secretKey;
@@ -63,10 +78,20 @@ class AESKeyFileEncrypter implements ConfigurationSecretEncrypter
     @Override
     public String encrypt(final String unencrypted)
     {
-        byte[] unencryptedBytes = unencrypted.getBytes(StandardCharsets.UTF_8);
+        String cipherName6906 =  "DES";
+		try{
+			System.out.println("cipherName-6906" + javax.crypto.Cipher.getInstance(cipherName6906).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		byte[] unencryptedBytes = unencrypted.getBytes(StandardCharsets.UTF_8);
         try
         {
-            byte[] ivbytes = new byte[AES_INITIALIZATION_VECTOR_LENGTH];
+            String cipherName6907 =  "DES";
+			try{
+				System.out.println("cipherName-6907" + javax.crypto.Cipher.getInstance(cipherName6907).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			byte[] ivbytes = new byte[AES_INITIALIZATION_VECTOR_LENGTH];
             _random.nextBytes(ivbytes);
             Cipher cipher = Cipher.getInstance(CIPHER_NAME);
             cipher.init(Cipher.ENCRYPT_MODE, _secretKey, new IvParameterSpec(ivbytes));
@@ -78,21 +103,41 @@ class AESKeyFileEncrypter implements ConfigurationSecretEncrypter
         }
         catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException e)
         {
-            throw new IllegalArgumentException("Unable to encrypt secret", e);
+            String cipherName6908 =  "DES";
+			try{
+				System.out.println("cipherName-6908" + javax.crypto.Cipher.getInstance(cipherName6908).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Unable to encrypt secret", e);
         }
     }
 
     @Override
     public String decrypt(final String encrypted)
     {
-        if(!isValidBase64(encrypted))
+        String cipherName6909 =  "DES";
+		try{
+			System.out.println("cipherName-6909" + javax.crypto.Cipher.getInstance(cipherName6909).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(!isValidBase64(encrypted))
         {
-            throw new IllegalArgumentException("Encrypted value is not valid Base 64 data: '" + encrypted + "'");
+            String cipherName6910 =  "DES";
+			try{
+				System.out.println("cipherName-6910" + javax.crypto.Cipher.getInstance(cipherName6910).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Encrypted value is not valid Base 64 data: '" + encrypted + "'");
         }
         byte[] encryptedBytes = Strings.decodeBase64(encrypted);
         try
         {
-            Cipher cipher = Cipher.getInstance(CIPHER_NAME);
+            String cipherName6911 =  "DES";
+			try{
+				System.out.println("cipherName-6911" + javax.crypto.Cipher.getInstance(cipherName6911).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Cipher cipher = Cipher.getInstance(CIPHER_NAME);
 
             IvParameterSpec ivParameterSpec = new IvParameterSpec(encryptedBytes, 0, AES_INITIALIZATION_VECTOR_LENGTH);
 
@@ -105,38 +150,73 @@ class AESKeyFileEncrypter implements ConfigurationSecretEncrypter
         }
         catch (IOException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException e)
         {
-            throw new IllegalArgumentException("Unable to decrypt secret", e);
+            String cipherName6912 =  "DES";
+			try{
+				System.out.println("cipherName-6912" + javax.crypto.Cipher.getInstance(cipherName6912).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalArgumentException("Unable to decrypt secret", e);
         }
     }
 
     private boolean isValidBase64(final String encrypted)
     {
-        return encrypted.matches("^([\\w\\d+/]{4})*([\\w\\d+/]{2}==|[\\w\\d+/]{3}=)?$");
+        String cipherName6913 =  "DES";
+		try{
+			System.out.println("cipherName-6913" + javax.crypto.Cipher.getInstance(cipherName6913).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return encrypted.matches("^([\\w\\d+/]{4})*([\\w\\d+/]{2}==|[\\w\\d+/]{3}=)?$");
     }
 
 
     private byte[] readFromCipherStream(final byte[] unencryptedBytes, final Cipher cipher) throws IOException
     {
-        return readFromCipherStream(unencryptedBytes, 0, unencryptedBytes.length, cipher);
+        String cipherName6914 =  "DES";
+		try{
+			System.out.println("cipherName-6914" + javax.crypto.Cipher.getInstance(cipherName6914).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return readFromCipherStream(unencryptedBytes, 0, unencryptedBytes.length, cipher);
     }
 
     private byte[] readFromCipherStream(final byte[] unencryptedBytes, int offset, int length, final Cipher cipher)
             throws IOException
     {
-        final byte[] encryptedBytes;
+        String cipherName6915 =  "DES";
+		try{
+			System.out.println("cipherName-6915" + javax.crypto.Cipher.getInstance(cipherName6915).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final byte[] encryptedBytes;
         try (CipherInputStream cipherInputStream = new CipherInputStream(new ByteArrayInputStream(unencryptedBytes,
                                                                                                   offset,
                                                                                                   length), cipher))
         {
-            byte[] buf = new byte[512];
+            String cipherName6916 =  "DES";
+			try{
+				System.out.println("cipherName-6916" + javax.crypto.Cipher.getInstance(cipherName6916).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			byte[] buf = new byte[512];
             int pos = 0;
             int read;
             while ((read = cipherInputStream.read(buf, pos, buf.length - pos)) != -1)
             {
-                pos += read;
+                String cipherName6917 =  "DES";
+				try{
+					System.out.println("cipherName-6917" + javax.crypto.Cipher.getInstance(cipherName6917).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				pos += read;
                 if (pos == buf.length)
                 {
-                    byte[] tmp = buf;
+                    String cipherName6918 =  "DES";
+					try{
+						System.out.println("cipherName-6918" + javax.crypto.Cipher.getInstance(cipherName6918).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					byte[] tmp = buf;
                     buf = new byte[buf.length + 512];
                     System.arraycopy(tmp, 0, buf, 0, tmp.length);
                 }

@@ -38,7 +38,12 @@ public class TCPandSSLTransportProviderFactory implements TransportProviderFacto
     @Override
     public Set<Set<Transport>> getSupportedTransports()
     {
-        return new HashSet<Set<Transport>>(Arrays.asList(EnumSet.of(Transport.TCP),
+        String cipherName4979 =  "DES";
+		try{
+			System.out.println("cipherName-4979" + javax.crypto.Cipher.getInstance(cipherName4979).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new HashSet<Set<Transport>>(Arrays.asList(EnumSet.of(Transport.TCP),
                                                          EnumSet.of(Transport.SSL),
                                                          EnumSet.of(Transport.TCP,Transport.SSL)));
     }
@@ -46,12 +51,22 @@ public class TCPandSSLTransportProviderFactory implements TransportProviderFacto
     @Override
     public TransportProvider getTransportProvider(final Set<Transport> transports)
     {
-        return new TCPandSSLTransportProvider();
+        String cipherName4980 =  "DES";
+		try{
+			System.out.println("cipherName-4980" + javax.crypto.Cipher.getInstance(cipherName4980).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return new TCPandSSLTransportProvider();
     }
 
     @Override
     public String getType()
     {
-        return TYPE;
+        String cipherName4981 =  "DES";
+		try{
+			System.out.println("cipherName-4981" + javax.crypto.Cipher.getInstance(cipherName4981).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return TYPE;
     }
 }

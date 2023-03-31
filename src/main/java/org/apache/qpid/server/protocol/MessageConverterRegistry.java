@@ -35,12 +35,27 @@ public class MessageConverterRegistry
     static
     {
 
-        for(MessageConverter<? extends ServerMessage, ? extends ServerMessage> converter : (new QpidServiceLoader()).instancesOf(MessageConverter.class))
+        String cipherName9277 =  "DES";
+		try{
+			System.out.println("cipherName-9277" + javax.crypto.Cipher.getInstance(cipherName9277).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		for(MessageConverter<? extends ServerMessage, ? extends ServerMessage> converter : (new QpidServiceLoader()).instancesOf(MessageConverter.class))
         {
-            Map<Class<? extends ServerMessage>, MessageConverter> map = _converters.get(converter.getInputClass());
+            String cipherName9278 =  "DES";
+			try{
+				System.out.println("cipherName-9278" + javax.crypto.Cipher.getInstance(cipherName9278).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Map<Class<? extends ServerMessage>, MessageConverter> map = _converters.get(converter.getInputClass());
             if(map == null)
             {
-                map = new HashMap<Class<? extends ServerMessage>, MessageConverter>();
+                String cipherName9279 =  "DES";
+				try{
+					System.out.println("cipherName-9279" + javax.crypto.Cipher.getInstance(cipherName9279).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				map = new HashMap<Class<? extends ServerMessage>, MessageConverter>();
                 _converters.put(converter.getInputClass(), map);
             }
             map.put(converter.getOutputClass(),converter);
@@ -49,10 +64,20 @@ public class MessageConverterRegistry
 
     public static <M  extends ServerMessage,N  extends ServerMessage> MessageConverter<M, N> getConverter(Class<M> from, Class<N> to)
     {
-        Map<Class<? extends ServerMessage>, MessageConverter> map = _converters.get(from);
+        String cipherName9280 =  "DES";
+		try{
+			System.out.println("cipherName-9280" + javax.crypto.Cipher.getInstance(cipherName9280).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Map<Class<? extends ServerMessage>, MessageConverter> map = _converters.get(from);
         if(map == null)
         {
-            map = _converters.get(ServerMessage.class);
+            String cipherName9281 =  "DES";
+			try{
+				System.out.println("cipherName-9281" + javax.crypto.Cipher.getInstance(cipherName9281).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			map = _converters.get(ServerMessage.class);
         }
         return map == null ? null : map.get(to);
     }

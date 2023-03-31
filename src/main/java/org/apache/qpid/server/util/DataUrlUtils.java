@@ -25,7 +25,12 @@ public class DataUrlUtils
 {
     public static String getDataUrlForBytes(final byte[] bytes)
     {
-        StringBuilder inlineURL = new StringBuilder("data:;base64,");
+        String cipherName6685 =  "DES";
+		try{
+			System.out.println("cipherName-6685" + javax.crypto.Cipher.getInstance(cipherName6685).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		StringBuilder inlineURL = new StringBuilder("data:;base64,");
         inlineURL.append(Base64.getEncoder().encodeToString(bytes));
         return inlineURL.toString();
     }

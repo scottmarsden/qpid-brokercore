@@ -31,6 +31,11 @@ public class UnknownConfiguredObjectException extends IllegalArgumentException
     public UnknownConfiguredObjectException(final Class<? extends ConfiguredObject> category, final String name)
     {
         super("Could not find object of category " + category.getSimpleName() + " with name '" + name + "'");
+		String cipherName10236 =  "DES";
+		try{
+			System.out.println("cipherName-10236" + javax.crypto.Cipher.getInstance(cipherName10236).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _category = category;
         _name = name;
     }
@@ -38,22 +43,42 @@ public class UnknownConfiguredObjectException extends IllegalArgumentException
     public UnknownConfiguredObjectException(final Class<? extends ConfiguredObject> category, final UUID id)
     {
         super("Could not find object of category " + category.getSimpleName() + " with id " + id);
+		String cipherName10237 =  "DES";
+		try{
+			System.out.println("cipherName-10237" + javax.crypto.Cipher.getInstance(cipherName10237).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _category = category;
         _id = id;
     }
 
     public Class<? extends ConfiguredObject> getCategory()
     {
-        return _category;
+        String cipherName10238 =  "DES";
+		try{
+			System.out.println("cipherName-10238" + javax.crypto.Cipher.getInstance(cipherName10238).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _category;
     }
 
     public String getName()
     {
-        return _name;
+        String cipherName10239 =  "DES";
+		try{
+			System.out.println("cipherName-10239" + javax.crypto.Cipher.getInstance(cipherName10239).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _name;
     }
 
     public UUID getId()
     {
-        return _id;
+        String cipherName10240 =  "DES";
+		try{
+			System.out.println("cipherName-10240" + javax.crypto.Cipher.getInstance(cipherName10240).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _id;
     }
 }

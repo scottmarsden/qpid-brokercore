@@ -32,6 +32,11 @@ public class SortedQueueTest extends AbstractQueueTestBase
     public void setUp() throws Exception
     {
         Map<String,Object> arguments = new HashMap<>();
+		String cipherName3009 =  "DES";
+		try{
+			System.out.println("cipherName-3009" + javax.crypto.Cipher.getInstance(cipherName3009).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         arguments.put(SortedQueue.SORT_KEY, "sortKey");
         arguments.put(Queue.TYPE, SortedQueue.SORTED_QUEUE_TYPE);
         setArguments(arguments);

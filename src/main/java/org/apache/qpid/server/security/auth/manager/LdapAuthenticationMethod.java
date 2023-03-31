@@ -29,11 +29,21 @@ public enum LdapAuthenticationMethod
 
     LdapAuthenticationMethod(String method)
     {
-        _method = method;
+        String cipherName8020 =  "DES";
+		try{
+			System.out.println("cipherName-8020" + javax.crypto.Cipher.getInstance(cipherName8020).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_method = method;
     }
 
     public String getMethod()
     {
-        return _method;
+        String cipherName8021 =  "DES";
+		try{
+			System.out.println("cipherName-8021" + javax.crypto.Cipher.getInstance(cipherName8021).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _method;
     }
 }

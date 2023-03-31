@@ -31,17 +31,32 @@ public class NoFactoryForTypeException extends IllegalConfigurationException
                                      final String type)
     {
         super("Unknown configured object type '"+type+"' of category '" + category +"'");
+		String cipherName10268 =  "DES";
+		try{
+			System.out.println("cipherName-10268" + javax.crypto.Cipher.getInstance(cipherName10268).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _category = category;
         _type = type;
     }
 
     public String getCategory()
     {
-        return _category;
+        String cipherName10269 =  "DES";
+		try{
+			System.out.println("cipherName-10269" + javax.crypto.Cipher.getInstance(cipherName10269).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _category;
     }
 
     public String getType()
     {
-        return _type;
+        String cipherName10270 =  "DES";
+		try{
+			System.out.println("cipherName-10270" + javax.crypto.Cipher.getInstance(cipherName10270).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _type;
     }
 }

@@ -52,7 +52,12 @@ public class TestSingletonImpl extends AbstractConfiguredObject<TestSingletonImp
         @Override
         public String getName()
         {
-            return "TEST";
+            String cipherName2305 =  "DES";
+			try{
+				System.out.println("cipherName-2305" + javax.crypto.Cipher.getInstance(cipherName2305).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return "TEST";
         }
     };
     private static final Subject SYSTEM_SUBJECT = new Subject(true,
@@ -121,11 +126,21 @@ public class TestSingletonImpl extends AbstractConfiguredObject<TestSingletonImp
     public TestSingletonImpl(final Map<String, Object> attributes)
     {
         super(null, attributes, newTaskExecutor(), TestModel.getInstance());
+		String cipherName2306 =  "DES";
+		try{
+			System.out.println("cipherName-2306" + javax.crypto.Cipher.getInstance(cipherName2306).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
     private static CurrentThreadTaskExecutor newTaskExecutor()
     {
-        CurrentThreadTaskExecutor currentThreadTaskExecutor = new CurrentThreadTaskExecutor();
+        String cipherName2307 =  "DES";
+		try{
+			System.out.println("cipherName-2307" + javax.crypto.Cipher.getInstance(cipherName2307).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		CurrentThreadTaskExecutor currentThreadTaskExecutor = new CurrentThreadTaskExecutor();
         currentThreadTaskExecutor.start();
         return currentThreadTaskExecutor;
     }
@@ -134,151 +149,276 @@ public class TestSingletonImpl extends AbstractConfiguredObject<TestSingletonImp
                              final TaskExecutor taskExecutor)
     {
         super(null, attributes, taskExecutor);
+		String cipherName2308 =  "DES";
+		try{
+			System.out.println("cipherName-2308" + javax.crypto.Cipher.getInstance(cipherName2308).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
     }
 
 
     @Override
     public String getAutomatedPersistedValue()
     {
-        return _automatedPersistedValue;
+        String cipherName2309 =  "DES";
+		try{
+			System.out.println("cipherName-2309" + javax.crypto.Cipher.getInstance(cipherName2309).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _automatedPersistedValue;
     }
 
     @Override
     public String getAutomatedNonPersistedValue()
     {
-        return _automatedNonPersistedValue;
+        String cipherName2310 =  "DES";
+		try{
+			System.out.println("cipherName-2310" + javax.crypto.Cipher.getInstance(cipherName2310).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _automatedNonPersistedValue;
     }
 
     @Override
     public String getDefaultedValue()
     {
-        return _defaultedValue;
+        String cipherName2311 =  "DES";
+		try{
+			System.out.println("cipherName-2311" + javax.crypto.Cipher.getInstance(cipherName2311).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _defaultedValue;
     }
 
     @Override
     public String getStringValue()
     {
-        return _stringValue;
+        String cipherName2312 =  "DES";
+		try{
+			System.out.println("cipherName-2312" + javax.crypto.Cipher.getInstance(cipherName2312).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _stringValue;
     }
 
     @Override
     public Map<String, String> getMapValue()
     {
-        return _mapValue;
+        String cipherName2313 =  "DES";
+		try{
+			System.out.println("cipherName-2313" + javax.crypto.Cipher.getInstance(cipherName2313).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _mapValue;
     }
 
     @Override
     public TestEnum getEnumValue()
     {
-        return _enumValue;
+        String cipherName2314 =  "DES";
+		try{
+			System.out.println("cipherName-2314" + javax.crypto.Cipher.getInstance(cipherName2314).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _enumValue;
     }
 
     @Override
     public Set<TestEnum> getEnumSetValues()
     {
-        return _enumSetValues;
+        String cipherName2315 =  "DES";
+		try{
+			System.out.println("cipherName-2315" + javax.crypto.Cipher.getInstance(cipherName2315).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _enumSetValues;
     }
 
     @Override
     public String getValidValue()
     {
-        return _validValue;
+        String cipherName2316 =  "DES";
+		try{
+			System.out.println("cipherName-2316" + javax.crypto.Cipher.getInstance(cipherName2316).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _validValue;
     }
 
     @Override
     public int getIntValue()
     {
-        return _intValue;
+        String cipherName2317 =  "DES";
+		try{
+			System.out.println("cipherName-2317" + javax.crypto.Cipher.getInstance(cipherName2317).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _intValue;
     }
 
     @Override
     public long getDerivedValue()
     {
-        return DERIVED_VALUE;
+        String cipherName2318 =  "DES";
+		try{
+			System.out.println("cipherName-2318" + javax.crypto.Cipher.getInstance(cipherName2318).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return DERIVED_VALUE;
     }
 
     @Override
     public String getSecureValue()
     {
-        return _secureValue;
+        String cipherName2319 =  "DES";
+		try{
+			System.out.println("cipherName-2319" + javax.crypto.Cipher.getInstance(cipherName2319).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _secureValue;
     }
 
     @Override
     public String getImmutableValue()
     {
-        return _immutableValue;
+        String cipherName2320 =  "DES";
+		try{
+			System.out.println("cipherName-2320" + javax.crypto.Cipher.getInstance(cipherName2320).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _immutableValue;
     }
 
     @Override
     public String getValueWithPattern()
     {
-        return _valueWithPattern;
+        String cipherName2321 =  "DES";
+		try{
+			System.out.println("cipherName-2321" + javax.crypto.Cipher.getInstance(cipherName2321).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _valueWithPattern;
     }
 
     @Override
     public List<String> getListValueWithPattern()
     {
-        return _listValueWithPattern;
+        String cipherName2322 =  "DES";
+		try{
+			System.out.println("cipherName-2322" + javax.crypto.Cipher.getInstance(cipherName2322).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _listValueWithPattern;
     }
 
     @Override
     public Date getDateValue()
     {
-        return _dateValue;
+        String cipherName2323 =  "DES";
+		try{
+			System.out.println("cipherName-2323" + javax.crypto.Cipher.getInstance(cipherName2323).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _dateValue;
     }
 
     @Override
     public Long getLongStatistic()
     {
-        return System.currentTimeMillis();
+        String cipherName2324 =  "DES";
+		try{
+			System.out.println("cipherName-2324" + javax.crypto.Cipher.getInstance(cipherName2324).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return System.currentTimeMillis();
     }
 
     @Override
     public String getAttrWithDefaultFromContextNoInit()
     {
-        return _attrWithDefaultFromContextNoInit;
+        String cipherName2325 =  "DES";
+		try{
+			System.out.println("cipherName-2325" + javax.crypto.Cipher.getInstance(cipherName2325).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _attrWithDefaultFromContextNoInit;
     }
 
     @Override
     public String getAttrWithDefaultFromContextCopyInit()
     {
-        return _attrWithDefaultFromContextCopyInit;
+        String cipherName2326 =  "DES";
+		try{
+			System.out.println("cipherName-2326" + javax.crypto.Cipher.getInstance(cipherName2326).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _attrWithDefaultFromContextCopyInit;
     }
 
     @Override
     public String getAttrWithDefaultFromContextMaterializeInit()
     {
-        return _attrWithDefaultFromContextMaterializeInit;
+        String cipherName2327 =  "DES";
+		try{
+			System.out.println("cipherName-2327" + javax.crypto.Cipher.getInstance(cipherName2327).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _attrWithDefaultFromContextMaterializeInit;
     }
 
     @Override
     protected Principal getSystemPrincipal()
     {
-        return SYSTEM_PRINCIPAL;
+        String cipherName2328 =  "DES";
+		try{
+			System.out.println("cipherName-2328" + javax.crypto.Cipher.getInstance(cipherName2328).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return SYSTEM_PRINCIPAL;
     }
 
     @Override
     protected void logOperation(final String operation)
     {
+		String cipherName2329 =  "DES";
+		try{
+			System.out.println("cipherName-2329" + javax.crypto.Cipher.getInstance(cipherName2329).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
     }
 
     @Override
     public <T> T doAsSystem(PrivilegedAction<T> action)
     {
-        return Subject.doAs(SYSTEM_SUBJECT, action);
+        String cipherName2330 =  "DES";
+		try{
+			System.out.println("cipherName-2330" + javax.crypto.Cipher.getInstance(cipherName2330).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return Subject.doAs(SYSTEM_SUBJECT, action);
     }
 
     @Override
     protected void postSetAttributes(final Set<String> actualUpdatedAttributes)
     {
         super.postSetAttributes(actualUpdatedAttributes);
+		String cipherName2331 =  "DES";
+		try{
+			System.out.println("cipherName-2331" + javax.crypto.Cipher.getInstance(cipherName2331).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _lastReportedSetAttributes.add(Sets.newHashSet(actualUpdatedAttributes));
     }
 
     @Override
     public Set<String> takeLastReportedSetAttributes()
     {
-        return _lastReportedSetAttributes.removeFirst();
+        String cipherName2332 =  "DES";
+		try{
+			System.out.println("cipherName-2332" + javax.crypto.Cipher.getInstance(cipherName2332).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _lastReportedSetAttributes.removeFirst();
     }
 }

@@ -114,44 +114,79 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     public AmqpPortImpl(Map<String, Object> attributes, Container<?> container)
     {
         super(attributes, container);
+		String cipherName11638 =  "DES";
+		try{
+			System.out.println("cipherName-11638" + javax.crypto.Cipher.getInstance(cipherName11638).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _container = container;
     }
 
     @Override
     public int getThreadPoolSize()
     {
-        return _threadPoolSize;
+        String cipherName11639 =  "DES";
+		try{
+			System.out.println("cipherName-11639" + javax.crypto.Cipher.getInstance(cipherName11639).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _threadPoolSize;
     }
 
     @Override
     public int getNumberOfSelectors()
     {
-        return _numberOfSelectors;
+        String cipherName11640 =  "DES";
+		try{
+			System.out.println("cipherName-11640" + javax.crypto.Cipher.getInstance(cipherName11640).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _numberOfSelectors;
     }
 
 
     @Override
     public SSLContext getSSLContext()
     {
-        return _sslContext;
+        String cipherName11641 =  "DES";
+		try{
+			System.out.println("cipherName-11641" + javax.crypto.Cipher.getInstance(cipherName11641).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _sslContext;
     }
 
     @Override
     public boolean isTcpNoDelay()
     {
-        return _tcpNoDelay;
+        String cipherName11642 =  "DES";
+		try{
+			System.out.println("cipherName-11642" + javax.crypto.Cipher.getInstance(cipherName11642).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _tcpNoDelay;
     }
 
     @Override
     public int getMaxOpenConnections()
     {
-        return _maxOpenConnections;
+        String cipherName11643 =  "DES";
+		try{
+			System.out.println("cipherName-11643" + javax.crypto.Cipher.getInstance(cipherName11643).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _maxOpenConnections;
     }
 
     @Override
     protected void onCreate()
     {
         super.onCreate();
+		String cipherName11644 =  "DES";
+		try{
+			System.out.println("cipherName-11644" + javax.crypto.Cipher.getInstance(cipherName11644).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
 
         final Map<String, Object> nameAliasAttributes = new HashMap<>();
         nameAliasAttributes.put(VirtualHostAlias.NAME, "nameAlias");
@@ -174,7 +209,12 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
                          @Override
                          public Object run()
                          {
-                             createChild(VirtualHostAlias.class, nameAliasAttributes);
+                             String cipherName11645 =  "DES";
+							try{
+								System.out.println("cipherName-11645" + javax.crypto.Cipher.getInstance(cipherName11645).getAlgorithm());
+							}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+							}
+							createChild(VirtualHostAlias.class, nameAliasAttributes);
                              createChild(VirtualHostAlias.class, defaultAliasAttributes);
                              createChild(VirtualHostAlias.class, hostnameAliasAttributes);
                              return null;
@@ -186,6 +226,11 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     protected void onOpen()
     {
         super.onOpen();
+		String cipherName11646 =  "DES";
+		try{
+			System.out.println("cipherName-11646" + javax.crypto.Cipher.getInstance(cipherName11646).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         _protocolHandshakeTimeout = getContextValue(Long.class, AmqpPort.PROTOCOL_HANDSHAKE_TIMEOUT);
         _connectionWarnCount = getContextValue(Integer.class, OPEN_CONNECTIONS_WARN_PERCENT);
         _closeWhenNoRoute = getContextValue(Boolean.class, AmqpPort.CLOSE_WHEN_NO_ROUTE);
@@ -201,14 +246,29 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
                 new QpidServiceLoader().getInstancesByType(ConnectionPropertyEnricher.class);
         for(String enricherName : configurationPropertyEnrichers)
         {
-            ConnectionPropertyEnricher enricher = enrichersByType.get(enricherName);
+            String cipherName11647 =  "DES";
+			try{
+				System.out.println("cipherName-11647" + javax.crypto.Cipher.getInstance(cipherName11647).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			ConnectionPropertyEnricher enricher = enrichersByType.get(enricherName);
             if(enricher != null)
             {
-                enrichers.add(enricher);
+                String cipherName11648 =  "DES";
+				try{
+					System.out.println("cipherName-11648" + javax.crypto.Cipher.getInstance(cipherName11648).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				enrichers.add(enricher);
             }
             else
             {
-                LOGGER.warn("Ignoring unknown Connection Property Enricher type: '"+enricherName+"' on port " + this.getName());
+                String cipherName11649 =  "DES";
+				try{
+					System.out.println("cipherName-11649" + javax.crypto.Cipher.getInstance(cipherName11649).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				LOGGER.warn("Ignoring unknown Connection Property Enricher type: '"+enricherName+"' on port " + this.getName());
             }
         }
         _connectionPropertyEnrichers = Collections.unmodifiableList(enrichers);
@@ -217,27 +277,57 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     @Override
     protected State onActivate()
     {
-        if(getAncestor(SystemConfig.class).isManagementMode())
+        String cipherName11650 =  "DES";
+		try{
+			System.out.println("cipherName-11650" + javax.crypto.Cipher.getInstance(cipherName11650).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if(getAncestor(SystemConfig.class).isManagementMode())
         {
-            return State.QUIESCED;
+            String cipherName11651 =  "DES";
+			try{
+				System.out.println("cipherName-11651" + javax.crypto.Cipher.getInstance(cipherName11651).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return State.QUIESCED;
         }
         else
         {
-            Collection<Transport> transports = getTransports();
+            String cipherName11652 =  "DES";
+			try{
+				System.out.println("cipherName-11652" + javax.crypto.Cipher.getInstance(cipherName11652).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Collection<Transport> transports = getTransports();
 
             TransportProvider transportProvider = null;
             final HashSet<Transport> transportSet = new HashSet<>(transports);
             for (TransportProviderFactory tpf : (new QpidServiceLoader()).instancesOf(TransportProviderFactory.class))
             {
-                if (tpf.getSupportedTransports().contains(transports))
+                String cipherName11653 =  "DES";
+				try{
+					System.out.println("cipherName-11653" + javax.crypto.Cipher.getInstance(cipherName11653).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				if (tpf.getSupportedTransports().contains(transports))
                 {
-                    transportProvider = tpf.getTransportProvider(transportSet);
+                    String cipherName11654 =  "DES";
+					try{
+						System.out.println("cipherName-11654" + javax.crypto.Cipher.getInstance(cipherName11654).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					transportProvider = tpf.getTransportProvider(transportSet);
                 }
             }
 
             if (transportProvider == null)
             {
-                throw new IllegalConfigurationException(
+                String cipherName11655 =  "DES";
+				try{
+					System.out.println("cipherName-11655" + javax.crypto.Cipher.getInstance(cipherName11655).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalConfigurationException(
                         "No transport providers found which can satisfy the requirement to support the transports: "
                         + transports
                 );
@@ -245,12 +335,22 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
 
             if (transports.contains(Transport.SSL) || transports.contains(Transport.WSS))
             {
-                _sslContext = createSslContext();
+                String cipherName11656 =  "DES";
+				try{
+					System.out.println("cipherName-11656" + javax.crypto.Cipher.getInstance(cipherName11656).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				_sslContext = createSslContext();
             }
             Protocol defaultSupportedProtocolReply = getDefaultAmqpSupportedReply();
             try
             {
-                _transport = transportProvider.createTransport(transportSet,
+                String cipherName11657 =  "DES";
+				try{
+					System.out.println("cipherName-11657" + javax.crypto.Cipher.getInstance(cipherName11657).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				_transport = transportProvider.createTransport(transportSet,
                                                                _sslContext,
                                                                this,
                                                                getProtocols(),
@@ -260,7 +360,12 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
                 _boundPort = _transport.getAcceptingPort();
                 for (Transport transport : getTransports())
                 {
-                    _container.getEventLogger()
+                    String cipherName11658 =  "DES";
+					try{
+						System.out.println("cipherName-11658" + javax.crypto.Cipher.getInstance(cipherName11658).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					_container.getEventLogger()
                             .message(BrokerMessages.LISTENING(String.valueOf(transport),
                                                               _transport.getAcceptingPort()));
                 }
@@ -268,7 +373,12 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
             }
             catch (PortBindFailureException e)
             {
-                _container.getEventLogger().message(PortMessages.BIND_FAILED(getType().toUpperCase(), getPort()));
+                String cipherName11659 =  "DES";
+				try{
+					System.out.println("cipherName-11659" + javax.crypto.Cipher.getInstance(cipherName11659).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				_container.getEventLogger().message(PortMessages.BIND_FAILED(getType().toUpperCase(), getPort()));
                 throw e;
             }
         }
@@ -277,10 +387,20 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     @Override
     protected boolean updateSSLContext()
     {
-        final Set<Transport> transports = getTransports();
+        String cipherName11660 =  "DES";
+		try{
+			System.out.println("cipherName-11660" + javax.crypto.Cipher.getInstance(cipherName11660).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		final Set<Transport> transports = getTransports();
         if (transports.contains(Transport.SSL) || transports.contains(Transport.WSS))
         {
-            _sslContext = createSslContext();
+            String cipherName11661 =  "DES";
+			try{
+				System.out.println("cipherName-11661" + javax.crypto.Cipher.getInstance(cipherName11661).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_sslContext = createSslContext();
             return _transport.updatesSSLContext();
         }
         return false;
@@ -289,38 +409,73 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     @Override
     protected ListenableFuture<Void> beforeClose()
     {
-        _closingOrDeleting.set(true);
+        String cipherName11662 =  "DES";
+		try{
+			System.out.println("cipherName-11662" + javax.crypto.Cipher.getInstance(cipherName11662).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_closingOrDeleting.set(true);
         return Futures.immediateFuture(null);
     }
 
     @Override
     protected ListenableFuture<Void> onClose()
     {
-        closeTransport();
+        String cipherName11663 =  "DES";
+		try{
+			System.out.println("cipherName-11663" + javax.crypto.Cipher.getInstance(cipherName11663).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		closeTransport();
         return Futures.immediateFuture(null);
     }
 
     @Override
     protected ListenableFuture<Void> beforeDelete()
     {
-        _closingOrDeleting.set(true);
+        String cipherName11664 =  "DES";
+		try{
+			System.out.println("cipherName-11664" + javax.crypto.Cipher.getInstance(cipherName11664).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		_closingOrDeleting.set(true);
         return super.beforeDelete();
     }
 
     @Override
     protected ListenableFuture<Void> onDelete()
     {
-        closeTransport();
+        String cipherName11665 =  "DES";
+		try{
+			System.out.println("cipherName-11665" + javax.crypto.Cipher.getInstance(cipherName11665).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		closeTransport();
         return super.onDelete();
     }
 
     private void closeTransport()
     {
-        if (_transport != null)
+        String cipherName11666 =  "DES";
+		try{
+			System.out.println("cipherName-11666" + javax.crypto.Cipher.getInstance(cipherName11666).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (_transport != null)
         {
-            for(Transport transport : getTransports())
+            String cipherName11667 =  "DES";
+			try{
+				System.out.println("cipherName-11667" + javax.crypto.Cipher.getInstance(cipherName11667).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			for(Transport transport : getTransports())
             {
-                _container.getEventLogger().message(BrokerMessages.SHUTTING_DOWN(String.valueOf(transport), _transport.getAcceptingPort()));
+                String cipherName11668 =  "DES";
+				try{
+					System.out.println("cipherName-11668" + javax.crypto.Cipher.getInstance(cipherName11668).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				_container.getEventLogger().message(BrokerMessages.SHUTTING_DOWN(String.valueOf(transport), _transport.getAcceptingPort()));
             }
 
             _transport.close();
@@ -330,29 +485,54 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     @Override
     public int getNetworkBufferSize()
     {
-        return _container.getNetworkBufferSize();
+        String cipherName11669 =  "DES";
+		try{
+			System.out.println("cipherName-11669" + javax.crypto.Cipher.getInstance(cipherName11669).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _container.getNetworkBufferSize();
     }
 
     @Override
     public List<ConnectionPropertyEnricher> getConnectionPropertyEnrichers()
     {
-        return _connectionPropertyEnrichers;
+        String cipherName11670 =  "DES";
+		try{
+			System.out.println("cipherName-11670" + javax.crypto.Cipher.getInstance(cipherName11670).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _connectionPropertyEnrichers;
     }
 
     @Override
     public int getBoundPort()
     {
-        return _boundPort;
+        String cipherName11671 =  "DES";
+		try{
+			System.out.println("cipherName-11671" + javax.crypto.Cipher.getInstance(cipherName11671).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _boundPort;
     }
 
     @Override
     public void onValidate()
     {
         super.onValidate();
+		String cipherName11672 =  "DES";
+		try{
+			System.out.println("cipherName-11672" + javax.crypto.Cipher.getInstance(cipherName11672).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         Collection<VirtualHostAlias> aliases = getChildren(VirtualHostAlias.class);
         if (aliases.size() == 0)
         {
-            LOGGER.warn("{} has no virtualhost aliases defined.  No AMQP connections will be possible"
+            String cipherName11673 =  "DES";
+			try{
+				System.out.println("cipherName-11673" + javax.crypto.Cipher.getInstance(cipherName11673).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			LOGGER.warn("{} has no virtualhost aliases defined.  No AMQP connections will be possible"
                         + " through this port until at least one alias is added.", this);
         }
 
@@ -363,38 +543,78 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     protected void validateChange(final ConfiguredObject<?> proxyForValidation, final Set<String> changedAttributes)
     {
         super.validateChange(proxyForValidation, changedAttributes);
+		String cipherName11674 =  "DES";
+		try{
+			System.out.println("cipherName-11674" + javax.crypto.Cipher.getInstance(cipherName11674).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
         AmqpPort changed = (AmqpPort) proxyForValidation;
         if (changedAttributes.contains(THREAD_POOL_SIZE) || changedAttributes.contains(NUMBER_OF_SELECTORS))
         {
-            validateThreadPoolSettings(changed);
+            String cipherName11675 =  "DES";
+			try{
+				System.out.println("cipherName-11675" + javax.crypto.Cipher.getInstance(cipherName11675).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			validateThreadPoolSettings(changed);
         }
     }
 
     private void validateThreadPoolSettings(final AmqpPort changed)
     {
-        if (changed.getThreadPoolSize() < 1)
+        String cipherName11676 =  "DES";
+		try{
+			System.out.println("cipherName-11676" + javax.crypto.Cipher.getInstance(cipherName11676).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		if (changed.getThreadPoolSize() < 1)
         {
-            throw new IllegalConfigurationException(String.format("Thread pool size %d on Port %s must be greater than zero.", changed.getThreadPoolSize(), getName()));
+            String cipherName11677 =  "DES";
+			try{
+				System.out.println("cipherName-11677" + javax.crypto.Cipher.getInstance(cipherName11677).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalConfigurationException(String.format("Thread pool size %d on Port %s must be greater than zero.", changed.getThreadPoolSize(), getName()));
         }
         if (changed.getNumberOfSelectors() < 1)
         {
-            throw new IllegalConfigurationException(String.format("Number of Selectors %d on Port %s must be greater than zero.", changed.getNumberOfSelectors(), getName()));
+            String cipherName11678 =  "DES";
+			try{
+				System.out.println("cipherName-11678" + javax.crypto.Cipher.getInstance(cipherName11678).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalConfigurationException(String.format("Number of Selectors %d on Port %s must be greater than zero.", changed.getNumberOfSelectors(), getName()));
         }
         if (changed.getThreadPoolSize() <= changed.getNumberOfSelectors())
         {
-            throw new IllegalConfigurationException(String.format("Number of Selectors %d on Port %s must be greater than the thread pool size %d.", changed.getNumberOfSelectors(), getName(), changed.getThreadPoolSize()));
+            String cipherName11679 =  "DES";
+			try{
+				System.out.println("cipherName-11679" + javax.crypto.Cipher.getInstance(cipherName11679).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalConfigurationException(String.format("Number of Selectors %d on Port %s must be greater than the thread pool size %d.", changed.getNumberOfSelectors(), getName(), changed.getThreadPoolSize()));
         }
     }
 
     private SSLContext createSslContext()
     {
-        KeyStore keyStore = getKeyStore();
+        String cipherName11680 =  "DES";
+		try{
+			System.out.println("cipherName-11680" + javax.crypto.Cipher.getInstance(cipherName11680).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		KeyStore keyStore = getKeyStore();
         Collection<TrustStore> trustStores = getTrustStores();
 
         boolean needClientCert = (Boolean)getAttribute(NEED_CLIENT_AUTH) || (Boolean)getAttribute(WANT_CLIENT_AUTH);
         if (needClientCert && trustStores.isEmpty())
         {
-            throw new IllegalConfigurationException("Client certificate authentication is enabled on AMQP port '"
+            String cipherName11681 =  "DES";
+			try{
+				System.out.println("cipherName-11681" + javax.crypto.Cipher.getInstance(cipherName11681).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new IllegalConfigurationException("Client certificate authentication is enabled on AMQP port '"
                     + this.getName() + "' but no trust store defined");
         }
 
@@ -402,11 +622,21 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
         SSLSessionContext serverSessionContext = sslContext.getServerSessionContext();
         if (getTLSSessionCacheSize() > 0)
         {
-            serverSessionContext.setSessionCacheSize(getTLSSessionCacheSize());
+            String cipherName11682 =  "DES";
+			try{
+				System.out.println("cipherName-11682" + javax.crypto.Cipher.getInstance(cipherName11682).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			serverSessionContext.setSessionCacheSize(getTLSSessionCacheSize());
         }
         if (getTLSSessionTimeout() > 0)
         {
-            serverSessionContext.setSessionTimeout(getTLSSessionTimeout());
+            String cipherName11683 =  "DES";
+			try{
+				System.out.println("cipherName-11683" + javax.crypto.Cipher.getInstance(cipherName11683).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			serverSessionContext.setSessionTimeout(getTLSSessionTimeout());
         }
 
         return sslContext;
@@ -414,24 +644,49 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
 
     private Protocol getDefaultAmqpSupportedReply()
     {
-        String defaultAmqpSupportedReply = getContextKeys(false).contains(AmqpPort.PROPERTY_DEFAULT_SUPPORTED_PROTOCOL_REPLY) ?
+        String cipherName11684 =  "DES";
+		try{
+			System.out.println("cipherName-11684" + javax.crypto.Cipher.getInstance(cipherName11684).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String defaultAmqpSupportedReply = getContextKeys(false).contains(AmqpPort.PROPERTY_DEFAULT_SUPPORTED_PROTOCOL_REPLY) ?
                 getContextValue(String.class, AmqpPort.PROPERTY_DEFAULT_SUPPORTED_PROTOCOL_REPLY) : null;
         Protocol protocol = null;
         if (defaultAmqpSupportedReply != null && defaultAmqpSupportedReply.length() != 0)
         {
-            try
+            String cipherName11685 =  "DES";
+			try{
+				System.out.println("cipherName-11685" + javax.crypto.Cipher.getInstance(cipherName11685).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try
             {
-                protocol = Protocol.valueOf("AMQP_" + defaultAmqpSupportedReply.substring(1));
+                String cipherName11686 =  "DES";
+				try{
+					System.out.println("cipherName-11686" + javax.crypto.Cipher.getInstance(cipherName11686).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				protocol = Protocol.valueOf("AMQP_" + defaultAmqpSupportedReply.substring(1));
             }
             catch(IllegalArgumentException e)
             {
-                LOGGER.warn("The configured default reply ({}) is not a valid value for a protocol.  This value will be ignored", defaultAmqpSupportedReply);
+                String cipherName11687 =  "DES";
+				try{
+					System.out.println("cipherName-11687" + javax.crypto.Cipher.getInstance(cipherName11687).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				LOGGER.warn("The configured default reply ({}) is not a valid value for a protocol.  This value will be ignored", defaultAmqpSupportedReply);
             }
         }
         final Set<Protocol> protocolSet = getProtocols();
         if(protocol != null && !protocolSet.contains(protocol))
         {
-            LOGGER.warn("The configured default reply ({}) to an unsupported protocol version initiation is not"
+            String cipherName11688 =  "DES";
+			try{
+				System.out.println("cipherName-11688" + javax.crypto.Cipher.getInstance(cipherName11688).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			LOGGER.warn("The configured default reply ({}) to an unsupported protocol version initiation is not"
                          + " supported on this port.  Only the following versions are supported: {}",
                          defaultAmqpSupportedReply, protocolSet);
 
@@ -442,10 +697,20 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
 
     public static Set<Protocol> getInstalledProtocols()
     {
-        Set<Protocol> protocols = new HashSet<>();
+        String cipherName11689 =  "DES";
+		try{
+			System.out.println("cipherName-11689" + javax.crypto.Cipher.getInstance(cipherName11689).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Set<Protocol> protocols = new HashSet<>();
         for(ProtocolEngineCreator installedEngine : (new QpidServiceLoader()).instancesOf(ProtocolEngineCreator.class))
         {
-            protocols.add(installedEngine.getVersion());
+            String cipherName11690 =  "DES";
+			try{
+				System.out.println("cipherName-11690" + javax.crypto.Cipher.getInstance(cipherName11690).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			protocols.add(installedEngine.getVersion());
         }
         return protocols;
     }
@@ -453,25 +718,55 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     @SuppressWarnings("unused")
     public static Collection<String> getAllAvailableProtocolCombinations()
     {
-        Set<Protocol> protocols = getInstalledProtocols();
+        String cipherName11691 =  "DES";
+		try{
+			System.out.println("cipherName-11691" + javax.crypto.Cipher.getInstance(cipherName11691).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Set<Protocol> protocols = getInstalledProtocols();
 
         Set<Set<String>> last = new HashSet<>();
         for(Protocol protocol : protocols)
         {
-            last.add(Collections.singleton(protocol.name()));
+            String cipherName11692 =  "DES";
+			try{
+				System.out.println("cipherName-11692" + javax.crypto.Cipher.getInstance(cipherName11692).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			last.add(Collections.singleton(protocol.name()));
         }
 
         Set<Set<String>> protocolCombinations = new HashSet<>(last);
         for(int i = 1; i < protocols.size(); i++)
         {
-            Set<Set<String>> current = new HashSet<>();
+            String cipherName11693 =  "DES";
+			try{
+				System.out.println("cipherName-11693" + javax.crypto.Cipher.getInstance(cipherName11693).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			Set<Set<String>> current = new HashSet<>();
             for(Set<String> set : last)
             {
-                for(Protocol p : protocols)
+                String cipherName11694 =  "DES";
+				try{
+					System.out.println("cipherName-11694" + javax.crypto.Cipher.getInstance(cipherName11694).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				for(Protocol p : protocols)
                 {
-                    if(!set.contains(p.name()))
+                    String cipherName11695 =  "DES";
+					try{
+						System.out.println("cipherName-11695" + javax.crypto.Cipher.getInstance(cipherName11695).getAlgorithm());
+					}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+					}
+					if(!set.contains(p.name()))
                     {
-                        Set<String> potential = new HashSet<>(set);
+                        String cipherName11696 =  "DES";
+						try{
+							System.out.println("cipherName-11696" + javax.crypto.Cipher.getInstance(cipherName11696).getAlgorithm());
+						}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+						}
+						Set<String> potential = new HashSet<>(set);
                         potential.add(p.name());
                         current.add(potential);
                     }
@@ -484,14 +779,29 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
         ObjectMapper mapper = new ObjectMapper();
         for(Set<String> combination : protocolCombinations)
         {
-            try(StringWriter writer = new StringWriter())
+            String cipherName11697 =  "DES";
+			try{
+				System.out.println("cipherName-11697" + javax.crypto.Cipher.getInstance(cipherName11697).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try(StringWriter writer = new StringWriter())
             {
-                mapper.writeValue(writer, combination);
+                String cipherName11698 =  "DES";
+				try{
+					System.out.println("cipherName-11698" + javax.crypto.Cipher.getInstance(cipherName11698).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mapper.writeValue(writer, combination);
                 combinationsAsString.add(writer.toString());
             }
             catch (IOException e)
             {
-                throw new IllegalArgumentException("Unexpected IO Exception generating JSON string", e);
+                String cipherName11699 =  "DES";
+				try{
+					System.out.println("cipherName-11699" + javax.crypto.Cipher.getInstance(cipherName11699).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalArgumentException("Unexpected IO Exception generating JSON string", e);
             }
         }
         return Collections.unmodifiableSet(combinationsAsString);
@@ -500,25 +810,50 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     @SuppressWarnings("unused")
     public static Collection<String> getAllAvailableTransportCombinations()
     {
-        Set<Set<Transport>> combinations = new HashSet<>();
+        String cipherName11700 =  "DES";
+		try{
+			System.out.println("cipherName-11700" + javax.crypto.Cipher.getInstance(cipherName11700).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Set<Set<Transport>> combinations = new HashSet<>();
 
         for(TransportProviderFactory providerFactory : (new QpidServiceLoader()).instancesOf(TransportProviderFactory.class))
         {
-            combinations.addAll(providerFactory.getSupportedTransports());
+            String cipherName11701 =  "DES";
+			try{
+				System.out.println("cipherName-11701" + javax.crypto.Cipher.getInstance(cipherName11701).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			combinations.addAll(providerFactory.getSupportedTransports());
         }
 
         Set<String> combinationsAsString = new HashSet<>(combinations.size());
         ObjectMapper mapper = new ObjectMapper();
         for(Set<Transport> combination : combinations)
         {
-            try(StringWriter writer = new StringWriter())
+            String cipherName11702 =  "DES";
+			try{
+				System.out.println("cipherName-11702" + javax.crypto.Cipher.getInstance(cipherName11702).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			try(StringWriter writer = new StringWriter())
             {
-                mapper.writeValue(writer, combination);
+                String cipherName11703 =  "DES";
+				try{
+					System.out.println("cipherName-11703" + javax.crypto.Cipher.getInstance(cipherName11703).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				mapper.writeValue(writer, combination);
                 combinationsAsString.add(writer.toString());
             }
             catch (IOException e)
             {
-                throw new IllegalArgumentException("Unexpected IO Exception generating JSON string", e);
+                String cipherName11704 =  "DES";
+				try{
+					System.out.println("cipherName-11704" + javax.crypto.Cipher.getInstance(cipherName11704).getAlgorithm());
+				}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+				}
+				throw new IllegalArgumentException("Unexpected IO Exception generating JSON string", e);
             }
         }
         return Collections.unmodifiableSet(combinationsAsString);
@@ -527,31 +862,56 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
 
     public static String getInstalledProtocolsAsString()
     {
-        Set<Protocol> installedProtocols = getInstalledProtocols();
+        String cipherName11705 =  "DES";
+		try{
+			System.out.println("cipherName-11705" + javax.crypto.Cipher.getInstance(cipherName11705).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		Set<Protocol> installedProtocols = getInstalledProtocols();
         ObjectMapper mapper = new ObjectMapper();
 
         try(StringWriter output = new StringWriter())
         {
-            mapper.writeValue(output, installedProtocols);
+            String cipherName11706 =  "DES";
+			try{
+				System.out.println("cipherName-11706" + javax.crypto.Cipher.getInstance(cipherName11706).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			mapper.writeValue(output, installedProtocols);
             return output.toString();
         }
         catch (IOException e)
         {
-            throw new ServerScopedRuntimeException(e);
+            String cipherName11707 =  "DES";
+			try{
+				System.out.println("cipherName-11707" + javax.crypto.Cipher.getInstance(cipherName11707).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			throw new ServerScopedRuntimeException(e);
         }
     }
 
     @Override
     public int incrementConnectionCount()
     {
-        int openConnections = _connectionCount.incrementAndGet();
+        String cipherName11708 =  "DES";
+		try{
+			System.out.println("cipherName-11708" + javax.crypto.Cipher.getInstance(cipherName11708).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int openConnections = _connectionCount.incrementAndGet();
         _totalConnectionCount.incrementAndGet();
         int maxOpenConnections = getMaxOpenConnections();
         if(maxOpenConnections > 0
            && openConnections > (maxOpenConnections * _connectionWarnCount) / 100
            && _connectionCountWarningGiven.compareAndSet(false, true))
         {
-            _container.getEventLogger().message(new PortLogSubject(this),
+            String cipherName11709 =  "DES";
+			try{
+				System.out.println("cipherName-11709" + javax.crypto.Cipher.getInstance(cipherName11709).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_container.getEventLogger().message(new PortLogSubject(this),
                                                 PortMessages.CONNECTION_COUNT_WARN(openConnections,
                                                                                 _connectionWarnCount,
                                                                                 maxOpenConnections));
@@ -562,13 +922,23 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
     @Override
     public int decrementConnectionCount()
     {
-        int openConnections = _connectionCount.decrementAndGet();
+        String cipherName11710 =  "DES";
+		try{
+			System.out.println("cipherName-11710" + javax.crypto.Cipher.getInstance(cipherName11710).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		int openConnections = _connectionCount.decrementAndGet();
         int maxOpenConnections = getMaxOpenConnections();
 
         if(maxOpenConnections > 0
            && openConnections < (maxOpenConnections * square(_connectionWarnCount)) / 10000)
         {
-           _connectionCountWarningGiven.compareAndSet(true,false);
+           String cipherName11711 =  "DES";
+			try{
+				System.out.println("cipherName-11711" + javax.crypto.Cipher.getInstance(cipherName11711).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+		_connectionCountWarningGiven.compareAndSet(true,false);
         }
 
 
@@ -577,77 +947,142 @@ public class AmqpPortImpl extends AbstractPort<AmqpPortImpl> implements AmqpPort
 
     private static int square(int val)
     {
-        return val * val;
+        String cipherName11712 =  "DES";
+		try{
+			System.out.println("cipherName-11712" + javax.crypto.Cipher.getInstance(cipherName11712).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return val * val;
     }
 
     @Override
     public boolean canAcceptNewConnection(final SocketAddress remoteSocketAddress)
     {
-        String addressString = remoteSocketAddress.toString();
+        String cipherName11713 =  "DES";
+		try{
+			System.out.println("cipherName-11713" + javax.crypto.Cipher.getInstance(cipherName11713).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		String addressString = remoteSocketAddress.toString();
         if (_closingOrDeleting.get())
         {
-            _container.getEventLogger().message(new PortLogSubject(this),
+            String cipherName11714 =  "DES";
+			try{
+				System.out.println("cipherName-11714" + javax.crypto.Cipher.getInstance(cipherName11714).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_container.getEventLogger().message(new PortLogSubject(this),
                                                 PortMessages.CONNECTION_REJECTED_CLOSED(addressString));
             return false;
         }
         else if (_maxOpenConnections > 0 && _connectionCount.get() >= _maxOpenConnections)
         {
-            _container.getEventLogger().message(new PortLogSubject(this),
+            String cipherName11715 =  "DES";
+			try{
+				System.out.println("cipherName-11715" + javax.crypto.Cipher.getInstance(cipherName11715).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			_container.getEventLogger().message(new PortLogSubject(this),
                                                 PortMessages.CONNECTION_REJECTED_TOO_MANY(addressString,
                                                                                        _maxOpenConnections));
             return false;
         }
         else
         {
-            return true;
+            String cipherName11716 =  "DES";
+			try{
+				System.out.println("cipherName-11716" + javax.crypto.Cipher.getInstance(cipherName11716).getAlgorithm());
+			}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+			}
+			return true;
         }
     }
 
     @Override
     public int getConnectionCount()
     {
-        return _connectionCount.get();
+        String cipherName11717 =  "DES";
+		try{
+			System.out.println("cipherName-11717" + javax.crypto.Cipher.getInstance(cipherName11717).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _connectionCount.get();
     }
 
     @Override
     public long getTotalConnectionCount()
     {
-        return _totalConnectionCount.get();
+        String cipherName11718 =  "DES";
+		try{
+			System.out.println("cipherName-11718" + javax.crypto.Cipher.getInstance(cipherName11718).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _totalConnectionCount.get();
     }
 
     @Override
     public long getProtocolHandshakeTimeout()
     {
-        return _protocolHandshakeTimeout;
+        String cipherName11719 =  "DES";
+		try{
+			System.out.println("cipherName-11719" + javax.crypto.Cipher.getInstance(cipherName11719).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _protocolHandshakeTimeout;
     }
 
     @Override
     public boolean getCloseWhenNoRoute()
     {
-        return _closeWhenNoRoute;
+        String cipherName11720 =  "DES";
+		try{
+			System.out.println("cipherName-11720" + javax.crypto.Cipher.getInstance(cipherName11720).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _closeWhenNoRoute;
     }
 
     @Override
     public int getSessionCountLimit()
     {
-        return _sessionCountLimit;
+        String cipherName11721 =  "DES";
+		try{
+			System.out.println("cipherName-11721" + javax.crypto.Cipher.getInstance(cipherName11721).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _sessionCountLimit;
     }
 
     @Override
     public int getHeartbeatDelay()
     {
-        return _heartBeatDelay;
+        String cipherName11722 =  "DES";
+		try{
+			System.out.println("cipherName-11722" + javax.crypto.Cipher.getInstance(cipherName11722).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _heartBeatDelay;
     }
 
     @Override
     public int getTLSSessionTimeout()
     {
-        return _tlsSessionTimeout;
+        String cipherName11723 =  "DES";
+		try{
+			System.out.println("cipherName-11723" + javax.crypto.Cipher.getInstance(cipherName11723).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _tlsSessionTimeout;
     }
 
     @Override
     public int getTLSSessionCacheSize()
     {
-        return _tlsSessionCacheSize;
+        String cipherName11724 =  "DES";
+		try{
+			System.out.println("cipherName-11724" + javax.crypto.Cipher.getInstance(cipherName11724).getAlgorithm());
+		}catch(java.security.NoSuchAlgorithmException|javax.crypto.NoSuchPaddingException aRaNDomName){
+		}
+		return _tlsSessionCacheSize;
     }
 }
